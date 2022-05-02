@@ -3,7 +3,6 @@
     "name": "Sloucy",
     "slug": "Sloucy",
     "version": "1.0.0",
-    "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
@@ -23,7 +22,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "se.alphamou.sloucy"
     },
     "web": {
       "favicon": "./assets/favicon.png"

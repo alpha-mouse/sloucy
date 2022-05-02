@@ -1,5 +1,6 @@
 import React, {useEffect, useState, useRef} from 'react';
 import {Animated, Easing, Image, StyleSheet, Text, TouchableHighlight, View} from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 import * as ScreenOrientation from 'expo-screen-orientation';
 import vocabulary from './vocabulary';
 import {electMany, electOne} from './utils';
@@ -89,20 +90,13 @@ const ImagesSection = ({
   images,
   answerIndex,
   onSolved,
+  isPortrait,
 }: {
   images: any[];
   answerIndex: number;
   onSolved: () => void;
+  isPortrait: boolean;
 }) => {
-  var [isPortrait, setIsPortrait] = useState(true);
-  useEffect(() => {
-    ScreenOrientation.getOrientationAsync()
-      .then(orientation => setIsPortrait(isOrientationPortrait(orientation)))
-
-    const subscription = ScreenOrientation.addOrientationChangeListener(event =>
-      setIsPortrait(isOrientationPortrait(event.orientationInfo.orientation)))
-    return () => ScreenOrientation.removeOrientationChangeListener(subscription);
-  }, []);
 
   return (
     <View style={styles.imageBlock}>
@@ -136,11 +130,6 @@ const ImagesSection = ({
     }
     </View>
   );
-
-  function isOrientationPortrait(orientation : ScreenOrientation.Orientation) {
-    return orientation === ScreenOrientation.Orientation.PORTRAIT_DOWN 
-      || orientation === ScreenOrientation.Orientation.PORTRAIT_UP
-  }
 };
 
 const {set: defaultSet, answer: defaultAnswer} = generateQuestion();
@@ -151,13 +140,28 @@ const ImageSelectionGame = () => {
   var [answer, setAnswer] = useState(defaultAnswer);
   var [images, setImages] = useState(defaultImages);
 
+  var [isPortrait, setIsPortrait] = useState(true);
+  useEffect(() => {
+    ScreenOrientation.getOrientationAsync()
+      .then(orientation => setIsPortrait(isOrientationPortrait(orientation)))
+
+    const subscription = ScreenOrientation.addOrientationChangeListener(event =>
+      setIsPortrait(isOrientationPortrait(event.orientationInfo.orientation)))
+    return () => ScreenOrientation.removeOrientationChangeListener(subscription);
+  }, []);
+
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{answer.word}</Text>
+      <StatusBar/>
+      <Text style={{
+        ...styles.text,
+        height: isPortrait ? '9%' : '6%',
+        }}>{answer.word}</Text>
       <ImagesSection
         images={images}
         answerIndex={set.indexOf(answer)}
         onSolved={generateNext}
+        isPortrait={isPortrait}
       />
     </View>
   );
@@ -173,6 +177,11 @@ const ImageSelectionGame = () => {
     setAnswer(nextAnswer);
     setImages(nextSet.map(x => electOne(x.images)));
   }
+
+  function isOrientationPortrait(orientation : ScreenOrientation.Orientation) {
+    return orientation === ScreenOrientation.Orientation.PORTRAIT_DOWN 
+      || orientation === ScreenOrientation.Orientation.PORTRAIT_UP
+  }
 };
 
 const styles = StyleSheet.create({
@@ -185,7 +194,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     textAlignVertical: 'center',
     fontSize: 20,
-    height: 80,
   },
   imageBlock: {
     flexGrow: 1,

@@ -5,6 +5,9 @@ import * as ScreenOrientation from 'expo-screen-orientation';
 import vocabulary from './vocabulary';
 import {electMany, electOne} from './utils';
 
+const wrongColor = '#790909bb';
+const correctColor = '#137909bb';
+
 const ImageBlock = ({
   image,
   isCorrect,
@@ -18,22 +21,35 @@ const ImageBlock = ({
   bringToFront: () => void;
   bringBack: () => void;
 }) => {
-  const degree = useRef(new Animated.Value(0)).current
-  const scale = useRef(new Animated.Value(1)).current
+  const wrongRotationDegree = useRef(new Animated.Value(0)).current
+  const checkOpacity = useRef(new Animated.Value(0)).current
+  const correctScale = useRef(new Animated.Value(1)).current
+  const [highlightColor, setHighlightColor] = useState(correctColor)
 
   return (
     <Animated.View
       style={{
         ...styles.takeAllSpace,
         transform: [
-          { rotate: degree.interpolate({inputRange: [0, 1], outputRange: ['0deg', '5deg']}) },
-          { scale },
+          { rotate: wrongRotationDegree.interpolate({inputRange: [0, 1], outputRange: ['0deg', '5deg']}) },
+          { scale: correctScale },
         ],
       }}>
       <TouchableHighlight
         style={styles.takeAllSpace}
         onPress={ isCorrect ? animateCorrect : animateWrong }>
-        <Image source={image} style={styles.takeAllSpace} />
+        <View style={styles.takeAllSpace}>
+          <Image source={image} style={styles.takeAllSpace} />
+          <Animated.View style={{
+            ...styles.takeAllSpace,
+            opacity: checkOpacity,
+            position: 'absolute',
+            top: 0,
+            borderColor: highlightColor,
+            borderWidth: 5,
+          }}>
+          </Animated.View>
+        </View>
       </TouchableHighlight>
     </Animated.View>
   );
@@ -41,18 +57,35 @@ const ImageBlock = ({
   function animateCorrect() {
     const halfPeriod = 100;
     const useNativeDriver = true;
+    setHighlightColor(correctColor);
     bringToFront();
-    Animated.sequence([
-      Animated.timing(scale, {
-        toValue: 1.1,
-        duration: halfPeriod,
-        useNativeDriver,
-      }),
-      Animated.timing(scale, {
-        toValue: 1,
-        duration: halfPeriod * 2,
-        useNativeDriver,
-      }),
+    Animated.parallel([
+      Animated.sequence([
+        Animated.timing(correctScale, {
+          toValue: 1.1,
+          duration: halfPeriod,
+          useNativeDriver,
+        }),
+        Animated.timing(correctScale, {
+          toValue: 1,
+          duration: halfPeriod * 2,
+          useNativeDriver,
+        }),
+      ]),
+      Animated.sequence([
+        Animated.timing(checkOpacity, {
+          toValue: 1,
+          duration: halfPeriod,
+          easing: Easing.ease,
+          useNativeDriver,
+        }),
+        Animated.timing(checkOpacity, {
+          toValue: 0,
+          duration: halfPeriod,
+          easing: Easing.ease,
+          useNativeDriver,
+        }),
+      ]),
     ]).start(() => { 
       bringBack();
       onCorrectChosen();
@@ -62,26 +95,43 @@ const ImageBlock = ({
   function animateWrong() {
     const quarterPeriod = 50;
     const useNativeDriver = true;
+    setHighlightColor(wrongColor);
     bringToFront();
-    Animated.sequence([
-      Animated.timing(degree, {
-        toValue: 1,
-        duration: quarterPeriod,
-        easing: Easing.linear,
-        useNativeDriver,
-      }),
-      Animated.timing(degree, {
-        toValue: -1,
-        duration: quarterPeriod * 2,
-        easing: Easing.linear,
-        useNativeDriver,
-      }),
-      Animated.timing(degree, {
-        toValue: 0,
-        duration: quarterPeriod,
-        easing: Easing.linear,
-        useNativeDriver,
-      }),
+    Animated.parallel([
+      Animated.sequence([
+        Animated.timing(wrongRotationDegree, {
+          toValue: 1,
+          duration: quarterPeriod,
+          easing: Easing.linear,
+          useNativeDriver,
+        }),
+        Animated.timing(wrongRotationDegree, {
+          toValue: -1,
+          duration: quarterPeriod * 2,
+          easing: Easing.linear,
+          useNativeDriver,
+        }),
+        Animated.timing(wrongRotationDegree, {
+          toValue: 0,
+          duration: quarterPeriod,
+          easing: Easing.linear,
+          useNativeDriver,
+        }),
+      ]),
+      Animated.sequence([
+        Animated.timing(checkOpacity, {
+          toValue: 1,
+          duration: quarterPeriod,
+          easing: Easing.ease,
+          useNativeDriver,
+        }),
+        Animated.timing(checkOpacity, {
+          toValue: 0,
+          duration: quarterPeriod * 3,
+          easing: Easing.ease,
+          useNativeDriver,
+        }),
+      ]),
     ]).start(bringBack);
   };
 };

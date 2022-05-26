@@ -1,11 +1,15 @@
 export class VocabularyItem {
-  constructor(word: string, images: any[]) {
+  constructor(word: string, images: any[], comment?:string) {
     this.word = word;
     this.images = images;
+    this.isEnabled = comment === undefined;
+    this.comment = comment;
   }
 
   word: string;
   images: any[];
+  isEnabled: boolean;
+  comment?: string;
 }
 
 const vocabulary = [
@@ -14,11 +18,14 @@ const vocabulary = [
     require('./data/агрэст2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/агрэст3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('абцас', [], 'Не знайшоў фоткі'),
+  new VocabularyItem('абцужкі', [], 'Не знайшоў фоткі'),
   new VocabularyItem('ажыны', [
     require('./data/ажыны1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/ажыны2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/ажыны3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('алей', [], 'Не прыдумаў як наогул адлюстраваць, каб не было блытаніны з усімі магчымымі жоўтымі вадкасьцямі'),
   new VocabularyItem('аловак', [
     require('./data/аловак1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/аловак2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -44,11 +51,14 @@ const vocabulary = [
     require('./data/багоўка2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/багоўка3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('бзьдзюль', [], 'Не знайшоў фоткі'),
+  new VocabularyItem('бізун', [], 'Не знайшоў фоткі'),
   new VocabularyItem('блазан', [
     require('./data/блазан1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/блазан2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/блазан3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('бліскавіца', [], 'Як адрозьніць ад "маланкі"?'),
   new VocabularyItem('боты', [
     require('./data/боты1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/боты2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -59,6 +69,9 @@ const vocabulary = [
     require('./data/бохан2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/бохан3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('бразготка', [], 'Не знайшоў фоткі'),
+  new VocabularyItem('бросьня', [], 'Не знайшоў фоткі'),
+  new VocabularyItem('брыль', [], 'Не знайшоў фоткі'),
   new VocabularyItem('бульба', [
     require('./data/бульба1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/бульба2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -99,26 +112,32 @@ const vocabulary = [
     require('./data/валошка2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/валошка3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('вандроўнік', [], 'Не знайшоў фоткі'),
   new VocabularyItem('вежа', [
     require('./data/вежа1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/вежа2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/вежа3.jpg'), // Da voli https://creativecommons.org/licenses/by-sa/3.0/ (cropped and resized)
   ]),
+  new VocabularyItem('вейкі', [], 'Не знайшоў фоткі'),
   new VocabularyItem('вогнішча', [
     require('./data/вогнішча1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/вогнішча2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/вогнішча3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('вопратка', [], 'Не знайшоў фоткі'),
+  new VocabularyItem('вэлюм', [], 'Не знайшоў фоткі'),
   new VocabularyItem('гаманец', [
     require('./data/гаманец1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/гаманец2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/гаманец3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('ганак', [], 'Не знайшоў фоткі'),
   new VocabularyItem('гіль', [
     require('./data/гіль1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/гіль2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/гіль3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('груца', [], 'Не знайшоў фоткі'),
   new VocabularyItem('гузік', [
     require('./data/гузік1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/гузік2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -139,6 +158,7 @@ const vocabulary = [
     require('./data/дзьмухавец2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/дзьмухавец3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('дзяга', [], 'Канфлікт з "пас", "папруга", "рэмень"'),
   new VocabularyItem('драбіны', [
     require('./data/драбіны1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/драбіны2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -154,16 +174,21 @@ const vocabulary = [
     require('./data/журавіны2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/журавіны3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('Завея', [], 'Канфлікт з "завіруха"'),
+  new VocabularyItem('Завіруха', [], 'Канфлікт з "завея"'),
   new VocabularyItem('запалка', [
     require('./data/запалка1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/запалка2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/запалка3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('зрэнка', [], 'Не знайшоў фоткі'),
+  new VocabularyItem('зьнічка', [], 'Не знайшоў фоткі'),
   new VocabularyItem('зэдлік', [
     require('./data/зэдлік1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/зэдлік2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/зэдлік3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('імбрык', [], 'Я больш ня ўпэўнены што знычыць гэтае слова'),
   new VocabularyItem('кавадла', [
     require('./data/кавадла1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/кавадла2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -179,6 +204,7 @@ const vocabulary = [
     require('./data/кажан2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/кажан3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('камізэлька', [], 'Не знайшоў фоткі'),
   new VocabularyItem('канапа', [
     require('./data/канапа1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/канапа2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -189,6 +215,7 @@ const vocabulary = [
     require('./data/капялюш2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/капялюш3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('карак', [], 'Не знайшоў фоткі'),
   new VocabularyItem('каралі', [
     require('./data/каралі1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/каралі2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -209,11 +236,13 @@ const vocabulary = [
     require('./data/кафля2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/кафля3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('каўнер', [], 'Не знайшоў фоткі'),
   new VocabularyItem('келіх', [
     require('./data/келіх1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/келіх2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/келіх3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('ківач', [], 'Не знайшоў фоткі'),
   new VocabularyItem('кіпцюры', [
     require('./data/кіпцюры1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/кіпцюры2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -224,6 +253,9 @@ const vocabulary = [
     require('./data/кішэня2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/кішэня3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('кіёк', [], 'Не знайшоў фоткі'),
+  new VocabularyItem('кнот', [], 'Не знайшоў фоткі'),
+  new VocabularyItem('конаўка', [], 'Не знайшоў фоткі'),
   new VocabularyItem('конік', [
     require('./data/конік1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/конік2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -234,21 +266,25 @@ const vocabulary = [
     require('./data/корак2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/корак3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('коўдра', [], 'Не знайшоў фоткі'),
   new VocabularyItem('кошык', [
     require('./data/кошык1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/кошык2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/кошык3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('краткі', [], 'Не знайшоў фоткі'),
   new VocabularyItem('кружэлка', [
     require('./data/кружэлка1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/кружэлка2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/кружэлка3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('крыгаход', [], 'Не знайшоў фоткі'),
   new VocabularyItem('крэйда', [
     require('./data/крэйда1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/крэйда2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/крэйда3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('куфаль', [], 'Не знайшоў фоткі'),
   new VocabularyItem('куфар', [
     require('./data/куфар1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/куфар2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -264,6 +300,7 @@ const vocabulary = [
     require('./data/ланцуг2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/ланцуг3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('ласунка', [], 'Як наогул можна відавочна паказаць?'),
   new VocabularyItem('лінарка', [
     require('./data/лінарка1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/лінарка2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -304,11 +341,19 @@ const vocabulary = [
     require('./data/лялька2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/лялька3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('маладзік', [], 'Не знайшоў фоткі'),
+  new VocabularyItem('маланка', [], 'Канфлікт з бліскавіцай'),
+  new VocabularyItem('майткі', [], 'Не знайшоў фоткі'),
+  new VocabularyItem('матузкі', [], 'Не знайшоў фоткі'),
   new VocabularyItem('мураш', [
     require('./data/мураш1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/мураш2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/мураш3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('мутэрка', [], 'Не знайшоў фоткі'),
+  new VocabularyItem('мыліца', [], 'Не знайшоў фоткі'),
+  new VocabularyItem('мятлік', [], 'Не знайшоў фоткі'),
+  new VocabularyItem('навальніца', [], 'Не знайшоў фоткі, і магчымы канфлікт з "бліскавіцай"/"маланкай"'),
   new VocabularyItem('намёт', [
     require('./data/намёт1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/намёт2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -324,6 +369,8 @@ const vocabulary = [
     require('./data/паліца2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/паліца3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('панчохі', [], 'Не знайшоў фоткі'),
+  new VocabularyItem('папруга', [], 'Канфлікт шмат з чым'),
   new VocabularyItem('парасон', [
     require('./data/парасон1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/парасон2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -339,6 +386,8 @@ const vocabulary = [
     require('./data/парэчкі2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/парэчкі3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('пастарунак', [], 'Не знайшоў фоткі'),
+  new VocabularyItem('патыліца', [], 'Не знайшоў фоткі'),
   new VocabularyItem('патэльня', [
     require('./data/патэльня1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/патэльня2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -354,11 +403,13 @@ const vocabulary = [
     require('./data/пацук2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/пацук3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('паштоўка', [], 'Не знайшоў фоткі'),
   new VocabularyItem('певень', [
     require('./data/певень1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/певень2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/певень3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('парнік', [], 'Не знайшоў фоткі'),
   new VocabularyItem('пігулка', [
     require('./data/пігулка1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/пігулка2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -374,6 +425,9 @@ const vocabulary = [
     require('./data/пляшка2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/пляшка3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('полымя', [], 'Не знайшоў фоткі, каб не канфліктавалі з "вогнішчам"'),
+  new VocabularyItem('попел', [], 'Не знайшоў фоткі'),
+  new VocabularyItem('порткі', [], 'Не знайшоў фоткі, і што наконт "нагавіцаў"?'),
   new VocabularyItem('поўня', [
     require('./data/поўня1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/поўня2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -389,6 +443,8 @@ const vocabulary = [
     require('./data/прас2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/прас3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('прывід', [], 'Не знайшоў фоткі, і што наконт "здані"?'),
+  new VocabularyItem('пыса', [], 'Не знайшоў фоткі'),
   new VocabularyItem('пэндзаль', [
     require('./data/пэндзаль1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/пэндзаль2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -399,6 +455,9 @@ const vocabulary = [
     require('./data/пялёсткі2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/пялёсткі3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('пярліна', [], 'Не знайшоў фотак асобных каб не канйліктавалі з "карáлямі"'),
+  new VocabularyItem('рагоз', [], 'Не знайшоў фоткі'),
+  new VocabularyItem('раёк', [], 'Не знайшоў фоткі, ды й як паказаць адназначна паказаць наогул?'),
   new VocabularyItem('разынкі', [
     require('./data/разынкі1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/разынкі2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -419,16 +478,20 @@ const vocabulary = [
     require('./data/рыдлёўка2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/рыдлёўка3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('рысунак', [], 'Не знайшоў фоткі'),
   new VocabularyItem('рэйкі', [
     require('./data/рэйкі1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/рэйкі2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/рэйкі3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('скалкі', [], 'Не знайшоў фоткі'),
   new VocabularyItem('скарбонка', [
     require('./data/скарбонка1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/скарбонка2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/скарбонка3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('сківіца', [], 'Не знайшоў фоткі'),
+  new VocabularyItem('скронь', [], 'Не знайшоў фоткі'),
   new VocabularyItem('скрыня', [
     require('./data/скрыня1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/скрыня2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -454,6 +517,7 @@ const vocabulary = [
     require('./data/смагард2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/смагард3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('спадніца', [], 'Не знайшоў фоткі'),
   new VocabularyItem('станік', [
     require('./data/станік1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/станік2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -464,6 +528,7 @@ const vocabulary = [
     require('./data/стос2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/стос3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('строй', [], 'Не знайшоў фоткі'),
   new VocabularyItem('стужка', [
     require('./data/стужка1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/стужка2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -474,6 +539,7 @@ const vocabulary = [
     require('./data/стырно2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/стырно3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('сукенка', [], 'Не знайшоў фоткі'),
   new VocabularyItem('сумёт', [
     require('./data/сумёт1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/сумёт2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -484,6 +550,8 @@ const vocabulary = [
     require('./data/суніцы2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/суніцы3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('сходы', [], 'Не знайшоў фоткі'),
+  new VocabularyItem('сшытак', [], 'Не знайшоў фоткі'),
   new VocabularyItem('сьвердзел', [
     require('./data/сьвердзел1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/сьвердзел2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -494,6 +562,7 @@ const vocabulary = [
     require('./data/сьцізорык2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/сьцізорык3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('сьцягно', [], 'Не знайшоў фоткі'),
   new VocabularyItem('сякера', [
     require('./data/сякера1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/сякера2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -514,6 +583,7 @@ const vocabulary = [
     require('./data/трускаўка2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/трускаўка3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('трысьнёг', [], 'Канфлікт з "чаротам"?'),
   new VocabularyItem('фатэль', [
     require('./data/фатэль1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/фатэль2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -524,6 +594,7 @@ const vocabulary = [
     require('./data/фіранкі2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/фіранкі3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('футра', [], 'Не знайшоў фоткі'),
   new VocabularyItem('хваля', [
     require('./data/хваля1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/хваля2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -534,6 +605,7 @@ const vocabulary = [
     require('./data/хмарачос2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/хмарачос3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('хрушч', [], 'Не знайшоў фоткі'),
   new VocabularyItem('цукерка', [
     require('./data/цукерка1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/цукерка2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -579,6 +651,8 @@ const vocabulary = [
     require('./data/чаравікі2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/чаравікі3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('чарга', [], 'Не знайшоў фоткі'),
+  new VocabularyItem('чарот', [], 'Канфлікт з "трысьнягом"?'),
   new VocabularyItem('шалі', [
     require('./data/шалі1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/шалі2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -589,6 +663,7 @@ const vocabulary = [
     require('./data/шалік2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/шалік3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('Шашок', [], 'Чым дакладна адрозьніваецца ад "тхара"?'),
   new VocabularyItem('шкарпэткі', [
     require('./data/шкарпэткі1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/шкарпэткі2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -619,11 +694,16 @@ const vocabulary = [
     require('./data/шчамлётка2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/шчамлётка3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('шыба', [], 'Не знайшоў фоткі'),
   new VocabularyItem('шэрань', [
     require('./data/шэрань1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/шэрань2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/шэрань3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('электравік', [], 'Не знайшоў фоткі'),
+  new VocabularyItem('яліна', [], 'Не знайшоў фоткі'),
 ];
 
-export default vocabulary;
+export default vocabulary.filter(x => x.isEnabled);
+
+export const fullVocabulary = vocabulary;

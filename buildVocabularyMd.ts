@@ -1,3 +1,5 @@
+// This file is not about the app itself but rather about building vocabulary.md
+
 import { fullVocabulary  } from "./vocabulary";
 import * as fs from 'fs';
 

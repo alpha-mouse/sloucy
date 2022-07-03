@@ -23,6 +23,8 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
+      "permissions": [],
+      "versionCode": 2,
       "package": "se.alphamou.sloucy"
     },
     "web": {

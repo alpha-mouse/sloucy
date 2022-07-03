@@ -1,13 +1,16 @@
 # Слоўнік
 
-**агрэст**  
-<img src="./data/агрэст-gooseberry1.jpg" width="200" height="200" alt="агрэст-gooseberry1" /> <img src="./data/агрэст-gooseberry2.jpg" width="200" height="200" alt="агрэст-gooseberry2" /> <img src="./data/агрэст-gooseberry3.jpg" width="200" height="200" alt="агрэст-gooseberry3" /> 
+**абрус**  
+todo 
 
 **абцас**  
 Не знайшоў фоткі
 
 **абцужкі**  
 Не знайшоў фоткі
+
+**агрэст**  
+<img src="./data/агрэст-gooseberry1.jpg" width="200" height="200" alt="агрэст-gooseberry1" /> <img src="./data/агрэст-gooseberry2.jpg" width="200" height="200" alt="агрэст-gooseberry2" /> <img src="./data/агрэст-gooseberry3.jpg" width="200" height="200" alt="агрэст-gooseberry3" /> 
 
 **ажыны**  
 <img src="./data/ажыны-blackberry1.jpg" width="200" height="200" alt="ажыны-blackberry1" /> <img src="./data/ажыны-blackberry2.jpg" width="200" height="200" alt="ажыны-blackberry2" /> <img src="./data/ажыны-blackberry3.jpg" width="200" height="200" alt="ажыны-blackberry3" /> 
@@ -24,6 +27,9 @@
 **арэлі**  
 <img src="./data/арэлі-swing1.jpg" width="200" height="200" alt="арэлі-swing1" /> <img src="./data/арэлі-swing2.jpg" width="200" height="200" alt="арэлі-swing2" /> <img src="./data/арэлі-swing3.jpg" width="200" height="200" alt="арэлі-swing3" /> 
 
+**аскепак**  
+todo
+
 **асадка**  
 <img src="./data/асадка-pen1.jpg" width="200" height="200" alt="асадка-pen1" /> <img src="./data/асадка-pen2.jpg" width="200" height="200" alt="асадка-pen2" /> <img src="./data/асадка-pen3.jpg" width="200" height="200" alt="асадка-pen3" /> 
 
@@ -35,6 +41,9 @@
 
 **бізун**  
 Не знайшоў фоткі
+
+**бірулька**  
+todo
 
 **блазан**  
 <img src="./data/блазан-jester1.jpg" width="200" height="200" alt="блазан-jester1" /> <img src="./data/блазан-jester2.jpg" width="200" height="200" alt="блазан-jester2" /> <img src="./data/блазан-jester3.jpg" width="200" height="200" alt="блазан-jester3" /> 
@@ -63,6 +72,9 @@
 **бурак**  
 <img src="./data/бурак-beetroot1.jpg" width="200" height="200" alt="бурак-beetroot1" /> <img src="./data/бурак-beetroot2.jpg" width="200" height="200" alt="бурак-beetroot2" /> <img src="./data/бурак-beetroot3.jpg" width="200" height="200" alt="бурак-beetroot3" /> 
 
+**бурбалка**  
+todo
+
 **бурштын**  
 <img src="./data/бурштын-amber1.jpg" width="200" height="200" alt="бурштын-amber1" /> <img src="./data/бурштын-amber2.jpg" width="200" height="200" alt="бурштын-amber2" /> <img src="./data/бурштын-amber3.jpg" width="200" height="200" alt="бурштын-amber3" /> 
 
@@ -90,6 +102,9 @@
 **вейкі**  
 Не знайшоў фоткі
 
+**ветразь**  
+todo
+
 **вогнішча**  
 <img src="./data/вогнішча-bonfire1.jpg" width="200" height="200" alt="вогнішча-bonfire1" /> <img src="./data/вогнішча-bonfire2.jpg" width="200" height="200" alt="вогнішча-bonfire2" /> <img src="./data/вогнішча-bonfire3.jpg" width="200" height="200" alt="вогнішча-bonfire3" /> 
 
@@ -99,7 +114,13 @@
 **вэлюм**  
 Не знайшоў фоткі
 
-**гаманец**  
+**абрус**  
+todo
+
+**вясёлка**  
+todo
+
+**вяхотка**  
 <img src="./data/гаманец-wallet1.jpg" width="200" height="200" alt="гаманец-wallet1" /> <img src="./data/гаманец-wallet2.jpg" width="200" height="200" alt="гаманец-wallet2" /> <img src="./data/гаманец-wallet3.jpg" width="200" height="200" alt="гаманец-wallet3" /> 
 
 **ганак**  
@@ -132,6 +153,12 @@
 **дыван**  
 <img src="./data/дыван-carpet1.jpg" width="200" height="200" alt="дыван-carpet1" /> <img src="./data/дыван-carpet2.jpg" width="200" height="200" alt="дыван-carpet2" /> <img src="./data/дыван-carpet3.jpg" width="200" height="200" alt="дыван-carpet3" /> 
 
+**жаўнер**  
+todo
+
+**жвір**  
+todo
+
 **журавіны**  
 <img src="./data/журавіны-cranberries1.jpg" width="200" height="200" alt="журавіны-cranberries1" /> <img src="./data/журавіны-cranberries2.jpg" width="200" height="200" alt="журавіны-cranberries2" /> <img src="./data/журавіны-cranberries3.jpg" width="200" height="200" alt="журавіны-cranberries3" /> 
 
@@ -147,6 +174,9 @@
 **заплечнік**  
 <img src="./data/заплечнік-backpack1.jpg" width="200" height="200" alt="заплечнік-backpack1" /> <img src="./data/заплечнік-backpack2.jpg" width="200" height="200" alt="заплечнік-backpack2" /> <img src="./data/заплечнік-backpack3.jpg" width="200" height="200" alt="заплечнік-backpack3" /> 
 
+**зеўра**  
+todo
+
 **зрэнка**  
 Не знайшоў фоткі
 
@@ -158,6 +188,9 @@
 
 **імбрык**  
 Я больш ня ўпэўнены што знычыць гэтае слова
+
+**ірты**  
+todo
 
 **кавадла**  
 <img src="./data/кавадла-anvil1.jpg" width="200" height="200" alt="кавадла-anvil1" /> <img src="./data/кавадла-anvil2.jpg" width="200" height="200" alt="кавадла-anvil2" /> <img src="./data/кавадла-anvil3.jpg" width="200" height="200" alt="кавадла-anvil3" /> 
@@ -276,6 +309,9 @@
 **лядзяк**  
 <img src="./data/лядзяк-icicle1.jpg" width="200" height="200" alt="лядзяк-icicle1" /> <img src="./data/лядзяк-icicle2.jpg" width="200" height="200" alt="лядзяк-icicle2" /> <img src="./data/лядзяк-icicle3.jpg" width="200" height="200" alt="лядзяк-icicle3" /> 
 
+**лязо**  
+todo
+
 **лялька**  
 <img src="./data/лялька-doll1.jpg" width="200" height="200" alt="лялька-doll1" /> <img src="./data/лялька-doll2.jpg" width="200" height="200" alt="лялька-doll2" /> <img src="./data/лялька-doll3.jpg" width="200" height="200" alt="лялька-doll3" /> 
 
@@ -384,6 +420,9 @@
 **прывід**  
 Не знайшоў фоткі, і што наконт "здані"?
 
+**пухір**  
+todo
+
 **пыса**  
 Не знайшоў фоткі
 
@@ -413,6 +452,9 @@
 
 **рыдлёўка**  
 <img src="./data/рыдлёўка-spade1.jpg" width="200" height="200" alt="рыдлёўка-spade1" /> <img src="./data/рыдлёўка-spade2.jpg" width="200" height="200" alt="рыдлёўка-spade2" /> <img src="./data/рыдлёўка-spade3.jpg" width="200" height="200" alt="рыдлёўка-spade3" /> 
+
+**рызьзё**  
+todo
 
 **рысунак**  
 Не знайшоў фоткі
@@ -513,6 +555,9 @@
 **футра**  
 Не знайшоў фоткі
 
+**халява**  
+todo
+
 **хваля**  
 <img src="./data/хваля-wave1.jpg" width="200" height="200" alt="хваля-wave1" /> <img src="./data/хваля-wave2.jpg" width="200" height="200" alt="хваля-wave2" /> <img src="./data/хваля-wave3.jpg" width="200" height="200" alt="хваля-wave3" /> 
 
@@ -555,6 +600,9 @@
 **чарот**  
 Канфлікт з "трысьнягом"?
 
+**човен**  
+todo
+
 **шалі**  
 <img src="./data/шалі-scales-b1.jpg" width="200" height="200" alt="шалі-scales-b1" /> <img src="./data/шалі-scales-b2.jpg" width="200" height="200" alt="шалі-scales-b2" /> <img src="./data/шалі-scales-b3.jpg" width="200" height="200" alt="шалі-scales-b3" /> 
 
@@ -590,6 +638,12 @@
 
 **электравік**  
 Не знайшоў фоткі
+
+**ядваб**  
+todo
+
+**ялавец**  
+todo
 
 **яліна**  
 Не знайшоў фоткі

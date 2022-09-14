@@ -1,7 +1,7 @@
 # Слоўнік
 
 **абрус**  
-todo 
+Не знайшоў фоткі
 
 **абцас**  
 Не знайшоў фоткі
@@ -24,11 +24,14 @@ todo
 **анёл**  
 <img src="./data/анёл-angel1.jpg" width="200" height="200" alt="анёл-angel1" /> <img src="./data/анёл-angel2.jpg" width="200" height="200" alt="анёл-angel2" /> <img src="./data/анёл-angel3.jpg" width="200" height="200" alt="анёл-angel3" /> 
 
+**апалонік**  
+Двухсэнсоўнае слова, не прыдумаў што зрабіць
+
 **арэлі**  
 <img src="./data/арэлі-swing1.jpg" width="200" height="200" alt="арэлі-swing1" /> <img src="./data/арэлі-swing2.jpg" width="200" height="200" alt="арэлі-swing2" /> <img src="./data/арэлі-swing3.jpg" width="200" height="200" alt="арэлі-swing3" /> 
 
 **аскепак**  
-todo
+<img src="./data/аскепак-shard1.jpg" width="200" height="200" alt="аскепак-shard1" /> <img src="./data/аскепак-shard2.jpg" width="200" height="200" alt="аскепак-shard2" /> <img src="./data/аскепак-shard3.jpg" width="200" height="200" alt="аскепак-shard3" /> 
 
 **асадка**  
 <img src="./data/асадка-pen1.jpg" width="200" height="200" alt="асадка-pen1" /> <img src="./data/асадка-pen2.jpg" width="200" height="200" alt="асадка-pen2" /> <img src="./data/асадка-pen3.jpg" width="200" height="200" alt="асадка-pen3" /> 
@@ -43,7 +46,7 @@ todo
 Не знайшоў фоткі
 
 **бірулька**  
-todo
+<img src="./data/бірулька-keychain1.jpg" width="200" height="200" alt="бірулька-keychain1" /> <img src="./data/бірулька-keychain2.jpg" width="200" height="200" alt="бірулька-keychain2" /> <img src="./data/бірулька-keychain3.jpg" width="200" height="200" alt="бірулька-keychain3" /> 
 
 **блазан**  
 <img src="./data/блазан-jester1.jpg" width="200" height="200" alt="блазан-jester1" /> <img src="./data/блазан-jester2.jpg" width="200" height="200" alt="блазан-jester2" /> <img src="./data/блазан-jester3.jpg" width="200" height="200" alt="блазан-jester3" /> 
@@ -72,8 +75,8 @@ todo
 **бурак**  
 <img src="./data/бурак-beetroot1.jpg" width="200" height="200" alt="бурак-beetroot1" /> <img src="./data/бурак-beetroot2.jpg" width="200" height="200" alt="бурак-beetroot2" /> <img src="./data/бурак-beetroot3.jpg" width="200" height="200" alt="бурак-beetroot3" /> 
 
-**бурбалка**  
-todo
+**бурбалкі**  
+<img src="./data/бурбалкі-bubbles1.jpg" width="200" height="200" alt="бурбалкі-bubbles1" /> <img src="./data/бурбалкі-bubbles2.jpg" width="200" height="200" alt="бурбалкі-bubbles2" /> <img src="./data/бурбалкі-bubbles3.jpg" width="200" height="200" alt="бурбалкі-bubbles3" /> 
 
 **бурштын**  
 <img src="./data/бурштын-amber1.jpg" width="200" height="200" alt="бурштын-amber1" /> <img src="./data/бурштын-amber2.jpg" width="200" height="200" alt="бурштын-amber2" /> <img src="./data/бурштын-amber3.jpg" width="200" height="200" alt="бурштын-amber3" /> 
@@ -83,6 +86,9 @@ todo
 
 **бэз**  
 <img src="./data/бэз-lilac1.jpg" width="200" height="200" alt="бэз-lilac1" /> <img src="./data/бэз-lilac2.jpg" width="200" height="200" alt="бэз-lilac2" /> <img src="./data/бэз-lilac3.jpg" width="200" height="200" alt="бэз-lilac3" /> 
+
+**вавёрка**  
+<img src="./data/вавёрка-squirrel1.jpg" width="200" height="200" alt="вавёрка-squirrel1" /> <img src="./data/вавёрка-squirrel2.jpg" width="200" height="200" alt="вавёрка-squirrel2" /> <img src="./data/вавёрка-squirrel3.jpg" width="200" height="200" alt="вавёрка-squirrel3" /> 
 
 **вазок**  
 <img src="./data/вазок-pram1.jpg" width="200" height="200" alt="вазок-pram1" /> <img src="./data/вазок-pram2.jpg" width="200" height="200" alt="вазок-pram2" /> <img src="./data/вазок-pram3.jpg" width="200" height="200" alt="вазок-pram3" /> 
@@ -103,7 +109,10 @@ todo
 Не знайшоў фоткі
 
 **ветразь**  
-todo
+<img src="./data/ветразь-sail1.jpg" width="200" height="200" alt="ветразь-sail1" /> <img src="./data/ветразь-sail2.jpg" width="200" height="200" alt="ветразь-sail2" /> <img src="./data/ветразь-sail3.jpg" width="200" height="200" alt="ветразь-sail3" /> 
+
+**відэлец**  
+<img src="./data/відэлец-fork1.jpg" width="200" height="200" alt="відэлец-fork1" /> <img src="./data/відэлец-fork2.jpg" width="200" height="200" alt="відэлец-fork2" /> <img src="./data/відэлец-fork3.jpg" width="200" height="200" alt="відэлец-fork3" /> 
 
 **вогнішча**  
 <img src="./data/вогнішча-bonfire1.jpg" width="200" height="200" alt="вогнішча-bonfire1" /> <img src="./data/вогнішча-bonfire2.jpg" width="200" height="200" alt="вогнішча-bonfire2" /> <img src="./data/вогнішча-bonfire3.jpg" width="200" height="200" alt="вогнішча-bonfire3" /> 
@@ -114,17 +123,20 @@ todo
 **вэлюм**  
 Не знайшоў фоткі
 
-**абрус**  
-todo
-
 **вясёлка**  
-todo
+<img src="./data/вясёлка-rainbow1.jpg" width="200" height="200" alt="вясёлка-rainbow1" /> <img src="./data/вясёлка-rainbow2.jpg" width="200" height="200" alt="вясёлка-rainbow2" /> <img src="./data/вясёлка-rainbow3.jpg" width="200" height="200" alt="вясёлка-rainbow3" /> 
 
 **вяхотка**  
+Не знайшоў фоткі
+
+**гаманец**  
 <img src="./data/гаманец-wallet1.jpg" width="200" height="200" alt="гаманец-wallet1" /> <img src="./data/гаманец-wallet2.jpg" width="200" height="200" alt="гаманец-wallet2" /> <img src="./data/гаманец-wallet3.jpg" width="200" height="200" alt="гаманец-wallet3" /> 
 
 **ганак**  
 Не знайшоў фоткі
+
+**гарбуз**  
+<img src="./data/гарбуз-pumpkin1.jpg" width="200" height="200" alt="гарбуз-pumpkin1" /> <img src="./data/гарбуз-pumpkin2.jpg" width="200" height="200" alt="гарбуз-pumpkin2" /> <img src="./data/гарбуз-pumpkin3.jpg" width="200" height="200" alt="гарбуз-pumpkin3" /> 
 
 **гіль**  
 <img src="./data/гіль-bullfinch1.jpg" width="200" height="200" alt="гіль-bullfinch1" /> <img src="./data/гіль-bullfinch2.jpg" width="200" height="200" alt="гіль-bullfinch2" /> <img src="./data/гіль-bullfinch3.jpg" width="200" height="200" alt="гіль-bullfinch3" /> 
@@ -154,10 +166,10 @@ todo
 <img src="./data/дыван-carpet1.jpg" width="200" height="200" alt="дыван-carpet1" /> <img src="./data/дыван-carpet2.jpg" width="200" height="200" alt="дыван-carpet2" /> <img src="./data/дыван-carpet3.jpg" width="200" height="200" alt="дыван-carpet3" /> 
 
 **жаўнер**  
-todo
+Не знайшоў фотка якія б мне спадабаліся
 
 **жвір**  
-todo
+<img src="./data/жвір-gravel1.jpg" width="200" height="200" alt="жвір-gravel1" /> <img src="./data/жвір-gravel2.jpg" width="200" height="200" alt="жвір-gravel2" /> <img src="./data/жвір-gravel3.jpg" width="200" height="200" alt="жвір-gravel3" /> 
 
 **журавіны**  
 <img src="./data/журавіны-cranberries1.jpg" width="200" height="200" alt="журавіны-cranberries1" /> <img src="./data/журавіны-cranberries2.jpg" width="200" height="200" alt="журавіны-cranberries2" /> <img src="./data/журавіны-cranberries3.jpg" width="200" height="200" alt="журавіны-cranberries3" /> 
@@ -174,8 +186,11 @@ todo
 **заплечнік**  
 <img src="./data/заплечнік-backpack1.jpg" width="200" height="200" alt="заплечнік-backpack1" /> <img src="./data/заплечнік-backpack2.jpg" width="200" height="200" alt="заплечнік-backpack2" /> <img src="./data/заплечнік-backpack3.jpg" width="200" height="200" alt="заплечнік-backpack3" /> 
 
+**збан**  
+<img src="./data/збан-jug1.jpg" width="200" height="200" alt="збан-jug1" /> <img src="./data/збан-jug2.jpg" width="200" height="200" alt="збан-jug2" /> <img src="./data/збан-jug3.jpg" width="200" height="200" alt="збан-jug3" /> 
+
 **зеўра**  
-todo
+Не прыдумаў як перадаць
 
 **зрэнка**  
 Не знайшоў фоткі
@@ -190,7 +205,7 @@ todo
 Я больш ня ўпэўнены што знычыць гэтае слова
 
 **ірты**  
-todo
+Ці сапраўды слова ўжываецца?
 
 **кавадла**  
 <img src="./data/кавадла-anvil1.jpg" width="200" height="200" alt="кавадла-anvil1" /> <img src="./data/кавадла-anvil2.jpg" width="200" height="200" alt="кавадла-anvil2" /> <img src="./data/кавадла-anvil3.jpg" width="200" height="200" alt="кавадла-anvil3" /> 
@@ -222,11 +237,17 @@ todo
 **каўка**  
 <img src="./data/каўка-jackdaw1.jpg" width="200" height="200" alt="каўка-jackdaw1" /> <img src="./data/каўка-jackdaw2.jpg" width="200" height="200" alt="каўка-jackdaw2" /> <img src="./data/каўка-jackdaw3.jpg" width="200" height="200" alt="каўка-jackdaw3" /> 
 
+**каўнер**  
+Не знайшоў фоткі
+
 **кафля**  
 <img src="./data/кафля-tiles1.jpg" width="200" height="200" alt="кафля-tiles1" /> <img src="./data/кафля-tiles2.jpg" width="200" height="200" alt="кафля-tiles2" /> <img src="./data/кафля-tiles3.jpg" width="200" height="200" alt="кафля-tiles3" /> 
 
-**каўнер**  
-Не знайшоў фоткі
+**качалка**  
+<img src="./data/качалка-rolling-pin1.jpg" width="200" height="200" alt="качалка-rolling-pin1" /> <img src="./data/качалка-rolling-pin2.jpg" width="200" height="200" alt="качалка-rolling-pin2" /> <img src="./data/качалка-rolling-pin3.jpg" width="200" height="200" alt="качалка-rolling-pin3" /> 
+
+**качка**  
+<img src="./data/качка-duck1.jpg" width="200" height="200" alt="качка-duck1" /> <img src="./data/качка-duck2.jpg" width="200" height="200" alt="качка-duck2" /> <img src="./data/качка-duck3.jpg" width="200" height="200" alt="качка-duck3" /> 
 
 **келіх**  
 <img src="./data/келіх-glass1.jpg" width="200" height="200" alt="келіх-glass1" /> <img src="./data/келіх-glass2.jpg" width="200" height="200" alt="келіх-glass2" /> <img src="./data/келіх-glass3.jpg" width="200" height="200" alt="келіх-glass3" /> 
@@ -310,7 +331,7 @@ todo
 <img src="./data/лядзяк-icicle1.jpg" width="200" height="200" alt="лядзяк-icicle1" /> <img src="./data/лядзяк-icicle2.jpg" width="200" height="200" alt="лядзяк-icicle2" /> <img src="./data/лядзяк-icicle3.jpg" width="200" height="200" alt="лядзяк-icicle3" /> 
 
 **лязо**  
-todo
+Не знайшоў фоткі / як перадаць
 
 **лялька**  
 <img src="./data/лялька-doll1.jpg" width="200" height="200" alt="лялька-doll1" /> <img src="./data/лялька-doll2.jpg" width="200" height="200" alt="лялька-doll2" /> <img src="./data/лялька-doll3.jpg" width="200" height="200" alt="лялька-doll3" /> 
@@ -420,8 +441,11 @@ todo
 **прывід**  
 Не знайшоў фоткі, і што наконт "здані"?
 
+**прынада**  
+<img src="./data/прынада-bait1.jpg" width="200" height="200" alt="прынада-bait1" /> <img src="./data/прынада-bait2.jpg" width="200" height="200" alt="прынада-bait2" /> <img src="./data/прынада-bait3.jpg" width="200" height="200" alt="прынада-bait3" /> 
+
 **пухір**  
-todo
+Не знайшоў фоткі
 
 **пыса**  
 Не знайшоў фоткі
@@ -492,6 +516,9 @@ todo
 **спадніца**  
 Не знайшоў фоткі
 
+**сподак**  
+<img src="./data/сподак-saucer1.jpg" width="200" height="200" alt="сподак-saucer1" /> <img src="./data/сподак-saucer2.jpg" width="200" height="200" alt="сподак-saucer2" /> <img src="./data/сподак-saucer3.jpg" width="200" height="200" alt="сподак-saucer3" /> 
+
 **станік**  
 <img src="./data/станік-bra1.jpg" width="200" height="200" alt="станік-bra1" /> <img src="./data/станік-bra2.jpg" width="200" height="200" alt="станік-bra2" /> <img src="./data/станік-bra3.jpg" width="200" height="200" alt="станік-bra3" /> 
 
@@ -556,7 +583,7 @@ todo
 Не знайшоў фоткі
 
 **халява**  
-todo
+Не знайшоў фоткі
 
 **хваля**  
 <img src="./data/хваля-wave1.jpg" width="200" height="200" alt="хваля-wave1" /> <img src="./data/хваля-wave2.jpg" width="200" height="200" alt="хваля-wave2" /> <img src="./data/хваля-wave3.jpg" width="200" height="200" alt="хваля-wave3" /> 
@@ -601,7 +628,7 @@ todo
 Канфлікт з "трысьнягом"?
 
 **човен**  
-todo
+<img src="./data/човен-boat1.jpg" width="200" height="200" alt="човен-boat1" /> <img src="./data/човен-boat2.jpg" width="200" height="200" alt="човен-boat2" /> <img src="./data/човен-boat3.jpg" width="200" height="200" alt="човен-boat3" /> 
 
 **шалі**  
 <img src="./data/шалі-scales-b1.jpg" width="200" height="200" alt="шалі-scales-b1" /> <img src="./data/шалі-scales-b2.jpg" width="200" height="200" alt="шалі-scales-b2" /> <img src="./data/шалі-scales-b3.jpg" width="200" height="200" alt="шалі-scales-b3" /> 
@@ -609,7 +636,7 @@ todo
 **шалік**  
 <img src="./data/шалік-scarf1.jpg" width="200" height="200" alt="шалік-scarf1" /> <img src="./data/шалік-scarf2.jpg" width="200" height="200" alt="шалік-scarf2" /> <img src="./data/шалік-scarf3.jpg" width="200" height="200" alt="шалік-scarf3" /> 
 
-**Шашок**  
+**шашок**  
 Чым дакладна адрозьніваецца ад "тхара"?
 
 **шкарпэткі**  
@@ -640,10 +667,10 @@ todo
 Не знайшоў фоткі
 
 **ядваб**  
-todo
+Не знайшоў як перадаць
 
 **ялавец**  
-todo
+Не знайшоў як перадаць
 
 **яліна**  
 Не знайшоў фоткі

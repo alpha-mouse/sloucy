@@ -2,7 +2,7 @@
   "expo": {
     "name": "Sloucy",
     "slug": "Sloucy",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
@@ -24,7 +24,7 @@
         "backgroundColor": "#FFFFFF"
       },
       "permissions": [],
-      "versionCode": 2,
+      "versionCode": 3,
       "package": "se.alphamou.sloucy"
     },
     "web": {

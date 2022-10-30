@@ -2,7 +2,7 @@ import React, {useEffect, useState, useRef} from 'react';
 import {Animated, Easing, Image, StyleSheet, Text, TouchableHighlight, View} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import * as ScreenOrientation from 'expo-screen-orientation';
-import vocabulary from './vocabulary';
+import vocabulary, { TextStyle } from './vocabulary';
 import {electMany, electOne} from './utils';
 
 const wrongColor = '#790909bb';
@@ -204,9 +204,13 @@ const ImageSelectionGame = () => {
     <View style={styles.container}>
       <StatusBar/>
       <Text style={{
-        ...styles.text,
+        ...styles.definition,
         height: isPortrait ? '9%' : '6%',
-        }}>{answer.word}</Text>
+        }}>
+          {answer.entry.heading.map((textPart, index) => {
+            return (<Text key={index} style={ textPart.style === TextStyle.stressed ? styles.stressed : {}}>{ textPart.text }</Text>)
+          })}
+      </Text>
       <ImagesSection
         images={images}
         answerIndex={set.indexOf(answer)}
@@ -239,11 +243,14 @@ const styles = StyleSheet.create({
     flexDirection: 'column-reverse',
     height: '100%',
   },
-  text: {
+  definition: {
     backgroundColor: 'beige',
     textAlign: 'center',
     textAlignVertical: 'center',
     fontSize: 20,
+  },
+  stressed: {
+    color: 'red',
   },
   imageBlock: {
     flexGrow: 1,

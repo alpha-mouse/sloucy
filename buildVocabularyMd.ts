@@ -1,6 +1,6 @@
 // This file is not about the app itself but rather about building vocabulary.md
 
-import { fullVocabulary  } from "./vocabulary";
+import { fullVocabulary, TextStyle  } from "./vocabulary";
 import * as fs from 'fs';
 
 // I'm stupefied by how file writing works in this bloody node
@@ -8,7 +8,8 @@ import * as fs from 'fs';
 let content = '# Слоўнік\n\n'
 
 fullVocabulary.forEach(item => {
-  content += `**${item.word}**  \n`;
+  const heading = item.entry.heading.map(x => x.style === TextStyle.regular ? x.text : `_${x.text}_`).join('');
+  content += `**${heading}**  \n`;
   if (item.isEnabled) {
     item.images.forEach((image: string) => {
       const imageName = image.match(/([^/]+)\.\w+$/)[1];

@@ -1,11 +1,13 @@
 export class VocabularyItem {
   constructor(word: string, images: any[], comment?: string) {
+    this.key = word;
     this.entry = VocabularyEntry.fromString(word);
     this.images = images;
     this.isEnabled = comment === undefined;
     this.comment = comment;
   }
 
+  key: string;
   entry: VocabularyEntry;
   images: any[];
   isEnabled: boolean;

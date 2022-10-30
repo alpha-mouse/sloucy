@@ -2,11 +2,12 @@ import React, {useEffect, useState, useRef} from 'react';
 import {Animated, Easing, Image, StyleSheet, Text, TouchableHighlight, View} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import * as ScreenOrientation from 'expo-screen-orientation';
-import vocabulary, { TextStyle } from './vocabulary';
+import vocabulary, { TextStyle, VocabularyItem } from './vocabulary';
 import {electMany, electOne} from './utils';
 
 const wrongColor = '#790909bb';
 const correctColor = '#137909bb';
+const recentWordExclusionHorizon = 10; // do not propose guessing the same word if was already proposed within the 10 last ones
 
 const ImageBlock = ({
   image,
@@ -189,6 +190,7 @@ const ImageSelectionGame = () => {
   var [set, setSet] = useState(defaultSet);
   var [answer, setAnswer] = useState(defaultAnswer);
   var [images, setImages] = useState(defaultImages);
+  var [recentAnswers, setRecentAnswers] = useState([] as VocabularyItem[]);
 
   var [isPortrait, setIsPortrait] = useState(true);
   useEffect(() => {
@@ -221,12 +223,14 @@ const ImageSelectionGame = () => {
   );
 
   function generateNext() {
+    const nextRecentAnswers = [...recentAnswers, answer].slice(-recentWordExclusionHorizon);
+    setRecentAnswers(nextRecentAnswers);
     let nextSet, nextAnswer;
     do {
       const next = generateQuestion();
       nextSet = next.set;
       nextAnswer = next.answer;
-    } while (nextAnswer === answer);
+    } while (nextRecentAnswers.includes(nextAnswer));
     setSet(nextSet);
     setAnswer(nextAnswer);
     setImages(nextSet.map(x => electOne(x.images)));

@@ -1,9 +1,9 @@
-import React, {useEffect, useState, useRef} from 'react';
-import {Animated, Easing, Image, StyleSheet, Text, TouchableHighlight, View} from 'react-native';
+import React, { useEffect, useState, useRef } from 'react';
+import { Animated, Easing, Image, StyleSheet, Text, TouchableHighlight, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import * as ScreenOrientation from 'expo-screen-orientation';
 import vocabulary, { TextStyle, VocabularyItem } from './vocabulary';
-import {electMany, electOne} from './utils';
+import { electMany, electOne } from './utils';
 
 const wrongColor = '#790909bb';
 const correctColor = '#137909bb';
@@ -32,13 +32,13 @@ const ImageBlock = ({
       style={{
         ...styles.takeAllSpace,
         transform: [
-          { rotate: wrongRotationDegree.interpolate({inputRange: [0, 1], outputRange: ['0deg', '5deg']}) },
+          { rotate: wrongRotationDegree.interpolate({ inputRange: [0, 1], outputRange: ['0deg', '5deg'] }) },
           { scale: correctScale },
         ],
       }}>
       <TouchableHighlight
         style={styles.takeAllSpace}
-        onPress={ isCorrect ? animateCorrect : animateWrong }>
+        onPress={isCorrect ? animateCorrect : animateWrong}>
         <View style={styles.takeAllSpace}>
           <Image source={image} style={styles.takeAllSpace} />
           <Animated.View style={{
@@ -87,7 +87,7 @@ const ImageBlock = ({
           useNativeDriver,
         }),
       ]),
-    ]).start(() => { 
+    ]).start(() => {
       bringBack();
       onCorrectChosen();
     });
@@ -158,10 +158,10 @@ const ImagesSection = ({
           <View
             key={index}
             style={{
-                ...(isPortrait ? styles.imageWrapperPortrait : styles.imageWrapperLandscape),
-                zIndex,
-                elevation: zIndex,
-              }}>
+              ...(isPortrait ? styles.imageWrapperPortrait : styles.imageWrapperLandscape),
+              zIndex,
+              elevation: zIndex,
+            }}>
             <ImageBlock
               image={image}
               isCorrect={index === answerIndex}
@@ -178,12 +178,12 @@ const ImagesSection = ({
           }
         }
       })
-    }
+      }
     </View>
   );
 };
 
-const {set: defaultSet, answer: defaultAnswer} = generateQuestion();
+const { set: defaultSet, answer: defaultAnswer } = generateQuestion();
 const defaultImages = defaultSet.map(x => electOne(x.images));
 
 const ImageSelectionGame = () => {
@@ -204,14 +204,14 @@ const ImageSelectionGame = () => {
 
   return (
     <View style={styles.container}>
-      <StatusBar/>
+      <StatusBar />
       <Text style={{
         ...styles.definition,
         height: isPortrait ? '9%' : '6%',
-        }}>
-          {answer.entry.heading.map((textPart, index) => {
-            return (<Text key={index} style={ textPart.style === TextStyle.stressed ? styles.stressed : {}}>{ textPart.text }</Text>)
-          })}
+      }}>
+        {answer.entry.heading.map((textPart, index) => {
+          return (<Text key={index} style={textPart.style === TextStyle.stressed ? styles.stressed : {}}>{textPart.text}</Text>)
+        })}
       </Text>
       <ImagesSection
         images={images}
@@ -236,8 +236,8 @@ const ImageSelectionGame = () => {
     setImages(nextSet.map(x => electOne(x.images)));
   }
 
-  function isOrientationPortrait(orientation : ScreenOrientation.Orientation) {
-    return orientation === ScreenOrientation.Orientation.PORTRAIT_DOWN 
+  function isOrientationPortrait(orientation: ScreenOrientation.Orientation) {
+    return orientation === ScreenOrientation.Orientation.PORTRAIT_DOWN
       || orientation === ScreenOrientation.Orientation.PORTRAIT_UP
   }
 };
@@ -279,7 +279,7 @@ const styles = StyleSheet.create({
 function generateQuestion() {
   const set = electMany(vocabulary, 6);
   const answer = electOne(set);
-  return {set, answer};
+  return { set, answer };
 }
 
 export default ImageSelectionGame;

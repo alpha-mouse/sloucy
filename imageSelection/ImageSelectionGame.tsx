@@ -3,7 +3,8 @@ import { Animated, Easing, Image, StyleSheet, Text, TouchableHighlight, View } f
 import { StatusBar } from 'expo-status-bar';
 import * as ScreenOrientation from 'expo-screen-orientation';
 import vocabulary, { TextStyle, VocabularyItem } from './vocabulary';
-import { electMany, electOne } from './utils';
+import { electMany, electOne } from './../utils';
+import { getStats, ImageSelectionGameStats, mutateStats } from './persistence'
 
 const wrongColor = '#790909bb';
 const correctColor = '#137909bb';
@@ -13,12 +14,14 @@ const ImageBlock = ({
   image,
   isCorrect,
   onCorrectChosen,
+  onWrongChosen,
   bringToFront,
   bringBack,
 }: {
   image: any;
   isCorrect: boolean;
   onCorrectChosen: () => void;
+  onWrongChosen: () => void;
   bringToFront: () => void;
   bringBack: () => void;
 }) => {
@@ -133,19 +136,24 @@ const ImageBlock = ({
           useNativeDriver,
         }),
       ]),
-    ]).start(bringBack);
+    ]).start(() => {
+      bringBack();
+      onWrongChosen();
+    });
   };
 };
 
 const ImagesSection = ({
   images,
   answerIndex,
-  onSolved,
+  onCorrectChosen,
+  onWrongChosen,
   isPortrait,
 }: {
   images: any[];
   answerIndex: number;
-  onSolved: () => void;
+  onCorrectChosen: () => void;
+  onWrongChosen: () => void;
   isPortrait: boolean;
 }) => {
 
@@ -165,18 +173,13 @@ const ImagesSection = ({
             <ImageBlock
               image={image}
               isCorrect={index === answerIndex}
-              onCorrectChosen={handlePress}
+              onCorrectChosen={onCorrectChosen}
+              onWrongChosen={onWrongChosen}
               bringToFront={() => setAtTheFront(true)}
               bringBack={() => setAtTheFront(false)}
             />
           </View>
         );
-
-        function handlePress() {
-          if (index === answerIndex) {
-            onSolved();
-          }
-        }
       })
       }
     </View>
@@ -191,8 +194,9 @@ const ImageSelectionGame = () => {
   var [answer, setAnswer] = useState(defaultAnswer);
   var [images, setImages] = useState(defaultImages);
   var [recentAnswers, setRecentAnswers] = useState([] as VocabularyItem[]);
-
+  var [isPerfect, setIsPerfect] = useState(true);
   var [isPortrait, setIsPortrait] = useState(true);
+
   useEffect(() => {
     ScreenOrientation.getOrientationAsync()
       .then(orientation => setIsPortrait(isOrientationPortrait(orientation)))
@@ -216,13 +220,14 @@ const ImageSelectionGame = () => {
       <ImagesSection
         images={images}
         answerIndex={set.indexOf(answer)}
-        onSolved={generateNext}
+        onCorrectChosen={onCorrectChosen}
+        onWrongChosen={onWrongChosen}
         isPortrait={isPortrait}
       />
     </View>
   );
 
-  function generateNext() {
+  function onCorrectChosen() {
     const nextRecentAnswers = [...recentAnswers, answer].slice(-recentWordExclusionHorizon);
     setRecentAnswers(nextRecentAnswers);
     let nextSet, nextAnswer;
@@ -234,6 +239,25 @@ const ImageSelectionGame = () => {
     setSet(nextSet);
     setAnswer(nextAnswer);
     setImages(nextSet.map(x => electOne(x.images)));
+    mutateStats(stats => {
+      const result = ImageSelectionGameStats.fromOther(stats);
+      result.attemptClicks ++;
+      result.successClicks ++;
+      if (!result.seenWords.includes(answer.key))
+        result.seenWords.push(answer.key);
+      if (isPerfect && !result.perfectedWords.includes(answer.key))
+        result.perfectedWords.push(answer.key);
+      return result;
+    });
+  }
+
+  function onWrongChosen() {
+    setIsPerfect(false);
+    mutateStats(stats => {
+      const result = ImageSelectionGameStats.fromOther(stats);
+      result.attemptClicks ++;
+      return result;
+    })
   }
 
   function isOrientationPortrait(orientation: ScreenOrientation.Orientation) {

@@ -1,6 +1,6 @@
 // This file is not about the app itself but rather about building vocabulary.md
 
-import { fullVocabulary, TextStyle  } from "./vocabulary";
+import { fullVocabulary, TextStyle  } from "../imageSelection/vocabulary";
 import * as fs from 'fs';
 
 // I'm stupefied by how file writing works in this bloody node
@@ -13,7 +13,7 @@ fullVocabulary.forEach(item => {
   if (item.isEnabled) {
     item.images.forEach((image: string) => {
       const imageName = image.match(/([^/]+)\.\w+$/)[1];
-      content += `<img src="${image}" width="200" height="200" alt="${imageName}" /> `;
+      content += `<img src="${image.replace('../', '')}" width="200" height="200" alt="${imageName}" /> `;
     });
     content += '\n';
   } else {

@@ -3,7 +3,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 export class ImageSelectionGameStats {
   static fromOther(other: ImageSelectionGameStats) {
     const result = new ImageSelectionGameStats();
-    result.setsCompleted = other.setsCompleted;
+    result.runsCompleted = other.runsCompleted;
     result.attemptClicks = other.attemptClicks;
     result.successClicks = other.successClicks;
     result.seenWords = [...other.seenWords];
@@ -12,7 +12,7 @@ export class ImageSelectionGameStats {
   }
 
   version = 1;
-  setsCompleted = 0;
+  runsCompleted = 0;
   attemptClicks = 0;
   successClicks = 0;
   seenWords: String[] = [];
@@ -28,7 +28,7 @@ let currentStats: ImageSelectionGameStats;
 const initializationPromise = AsyncStorage
   .getItem(key)
   .then(stats => {
-    currentStats = JSON.parse(stats) || defaultStats
+    currentStats = stats ? JSON.parse(stats) : defaultStats
     return;
   }, () => defaultStats);
 

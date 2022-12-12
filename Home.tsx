@@ -13,7 +13,7 @@ const Home = ({ navigation }: Props) => {
       <TouchableHighlight
         style={{ ...styles.takeAllSpace, ...styles.gameButtons }}
         onPress={() => navigation.navigate('ImageSelectionGame')}>
-        <Text style={styles.gameButton}>Згуляць</Text>
+        <Text style={styles.gameButton}>згуляць</Text>
       </TouchableHighlight>
     </View>
   );
@@ -36,10 +36,10 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'beige',
+    backgroundColor: 'white',
   },
   gameButton: {
     fontSize: 30,
-    color: '303a46'
+    color: '#A92B1F',
   },
 });

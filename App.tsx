@@ -7,6 +7,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import Home from './Home';
 import { Routes } from './Routes'
+import ImageSelectionCompletion from './imageSelection/ImageSelectionCompletion';
 
 SplashScreen.preventAutoHideAsync();
 const Stack = createNativeStackNavigator<Routes>();
@@ -34,6 +35,7 @@ const App = () => {
         <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Home">
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="ImageSelectionGame" component={ImageSelectionGame} />
+          <Stack.Screen name="ImageSelectionCompletion" component={ImageSelectionCompletion} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

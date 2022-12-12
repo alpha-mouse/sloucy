@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import * as ScreenOrientation from 'expo-screen-orientation';
 import vocabulary, { TextStyle } from './vocabulary';
-import { electMany, electManyExceptFor, electOne, randomInsert } from './../utils';
+import { electMany, electManyExceptFor, electOne, randomInsert } from '../randomization';
 import { ImageSelectionGameStats, mutateStats } from './persistence';
 import { ImagesSection } from './ImagesSection';
 import { Routes } from './../Routes';
@@ -12,12 +12,13 @@ import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 type Props = NativeStackScreenProps<Routes, 'ImageSelectionGame'>;
 
 const questionsPerRun = 10;
-const run = generateRun(questionsPerRun);
+let run = generateRun(questionsPerRun);
 
 const ImageSelectionGame = ({ navigation }: Props) => {
   var [runIndex, setRunIndex] = useState(0);
   var { set, answer, images } = run[runIndex];
   var [isPerfect, setIsPerfect] = useState(true);
+  var [newWordsSeen, setNewWordsSeen] = useState(0);
   var [isPortrait, setIsPortrait] = useState(true);
 
   useEffect(() => {
@@ -59,8 +60,10 @@ const ImageSelectionGame = ({ navigation }: Props) => {
       const result = ImageSelectionGameStats.fromOther(stats);
       result.attemptClicks++;
       result.successClicks++;
-      if (!result.seenWords.includes(answer.key))
+      if (!result.seenWords.includes(answer.key)) {
         result.seenWords.push(answer.key);
+        setNewWordsSeen(newWordsSeen + 1);
+      }
       if (isPerfect && !result.perfectedWords.includes(answer.key))
         result.perfectedWords.push(answer.key);
       if (runCompleted)
@@ -69,7 +72,8 @@ const ImageSelectionGame = ({ navigation }: Props) => {
     });
 
     if (runCompleted) {
-      navigation.goBack();
+      run = generateRun(questionsPerRun);
+      navigation.replace("ImageSelectionCompletion", { isPerfect, newWordsSeen });
     }
     else {
       setRunIndex(runIndex + 1);

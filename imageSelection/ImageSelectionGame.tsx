@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import * as ScreenOrientation from 'expo-screen-orientation';
-import vocabulary, { TextStyle } from './vocabulary';
-import { electMany, electManyExceptFor, electOne, randomInsert } from '../randomization';
-import { ImageSelectionGameStats, mutateStats } from './persistence';
+import vocabulary, { TextStyle, VocabularyItem } from './vocabulary';
+import { electManyWeighted, electManyExceptFor, electOne, randomInsert } from '../randomization';
+import { ImageSelectionGameStats, mutateStats, getStats } from './persistence';
 import { ImagesSection } from './ImagesSection';
 import { Routes } from './../Routes';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
@@ -63,7 +63,8 @@ const ImageSelectionGame = ({ navigation }: Props) => {
       result.successClicks++;
       if (!result.seenWords.includes(answer.key)) {
         result.seenWords.push(answer.key);
-        setNewWordsSeen(newWordsSeen + 1);
+        newWordsSeen++;
+        setNewWordsSeen(newWordsSeen);
       }
       if (isPerfect && !result.perfectedWords.includes(answer.key))
         result.perfectedWords.push(answer.key);
@@ -108,12 +109,23 @@ const styles = StyleSheet.create({
 });
 
 function generateRun(questionsNumber: number) {
-  const answers = electMany(vocabulary, questionsNumber);
+  var stats = getStats();
+  const answers = electManyWeighted(vocabulary, vocabularyItemWeight, questionsNumber);
   return answers.map(answer => {
     var set = electManyExceptFor(vocabulary, [answer], 5);
     randomInsert(set, answer);
     return { set, answer, images: set.map(x => electOne(x.images)) };
   });
+
+  function vocabularyItemWeight(item: VocabularyItem) : number {
+    // show less of perfected words
+    if (stats.perfectedWords.includes(item.key))
+      return 1;
+    // but a bit more of attempted but not perfected ones 
+    if (stats.seenWords.includes(item.key))
+      3;
+    return 2;
+  }
 }
 
 export default ImageSelectionGame;

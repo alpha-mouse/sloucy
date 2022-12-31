@@ -27,6 +27,31 @@ function electManyExceptFor<T>(array: T[], exclusion: T[], count: number): T[] {
   return result;
 }
 
+function electManyWeighted<T>(array: T[], weight: (item: T) => number, count: number): T[] {
+  if (array.length < count) {
+    throw Error(`Cannot elect ${count} out of ${array.length}`);
+  }
+  const weights: number[] = array.map(weight);
+  const totalWeight = weights.reduce((x, y) => x + y);
+  const indices: number[] = [];
+  while (indices.length !== count) {
+    const candidateCumulativeWeight = Math.random() * totalWeight;
+    let candidate = 0;
+    let cumulativeWeight = 0;
+    for (let i = 0; i < weights.length; i++) {
+      cumulativeWeight += weights[i];
+      if (candidateCumulativeWeight < cumulativeWeight) {
+        candidate = i;
+        break;
+      }
+    }
+    if (!indices.includes(candidate)) {
+      indices.push(candidate);
+    }
+  }
+  return indices.map(i => array[i]);
+}
+
 function electOne<T>(array: T[]): T {
   return array[getRandomInt(array.length)];
 }
@@ -43,6 +68,7 @@ function randomInsert<T>(array: T[], element: T): void {
 export {
   electMany,
   electManyExceptFor,
+  electManyWeighted,
   electOne,
   getRandomInt,
   randomInsert,

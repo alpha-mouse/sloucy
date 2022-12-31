@@ -33,6 +33,7 @@ const initializationPromise = AsyncStorage
   }, () => defaultStats);
 
 function getStats() { return currentStats; }
+
 function mutateStats(mutator: (stats: ImageSelectionGameStats) => ImageSelectionGameStats) {
   const stateSnapshot = currentStats = mutator(currentStats);
   AsyncStorage.setItem(key, JSON.stringify(stateSnapshot))

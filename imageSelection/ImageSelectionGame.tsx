@@ -8,6 +8,7 @@ import { ImageSelectionGameStats, mutateStats } from './persistence';
 import { ImagesSection } from './ImagesSection';
 import { Routes } from './../Routes';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { isOrientationPortrait } from './../utils';
 
 type Props = NativeStackScreenProps<Routes, 'ImageSelectionGame'>;
 
@@ -87,11 +88,6 @@ const ImageSelectionGame = ({ navigation }: Props) => {
       result.attemptClicks++;
       return result;
     })
-  }
-
-  function isOrientationPortrait(orientation: ScreenOrientation.Orientation) {
-    return orientation === ScreenOrientation.Orientation.PORTRAIT_DOWN
-      || orientation === ScreenOrientation.Orientation.PORTRAIT_UP
   }
 };
 

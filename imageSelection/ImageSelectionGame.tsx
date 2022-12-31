@@ -13,12 +13,18 @@ import { isOrientationPortrait } from './../utils';
 type Props = NativeStackScreenProps<Routes, 'ImageSelectionGame'>;
 
 const questionsPerRun = 10;
-let run = generateRun(questionsPerRun);
+let run: {
+  set: VocabularyItem[];
+  answer: VocabularyItem;
+  images: any[];
+}[] | null = null;
 
 const ImageSelectionGame = ({ navigation }: Props) => {
+  run = run || generateRun(questionsPerRun);
   var [runIndex, setRunIndex] = useState(0);
   var { set, answer, images } = run[runIndex];
-  var [isPerfect, setIsPerfect] = useState(true);
+  var [isPerfectWord, setIsPerfectWord] = useState(true);
+  var [isPerfectRun, setIsPerfectRun] = useState(true);
   var [newWordsSeen, setNewWordsSeen] = useState(0);
   var [isPortrait, setIsPortrait] = useState(true);
 
@@ -66,16 +72,18 @@ const ImageSelectionGame = ({ navigation }: Props) => {
         newWordsSeen++;
         setNewWordsSeen(newWordsSeen);
       }
-      if (isPerfect && !result.perfectedWords.includes(answer.key))
+      if (isPerfectWord && !result.perfectedWords.includes(answer.key))
         result.perfectedWords.push(answer.key);
       if (runCompleted)
         result.runsCompleted++;
       return result;
     });
 
+    setIsPerfectWord(true);
+
     if (runCompleted) {
       run = generateRun(questionsPerRun);
-      navigation.replace("ImageSelectionCompletion", { isPerfect, newWordsSeen });
+      navigation.replace("ImageSelectionCompletion", { isPerfect: isPerfectRun, newWordsSeen });
     }
     else {
       setRunIndex(runIndex + 1);
@@ -83,7 +91,8 @@ const ImageSelectionGame = ({ navigation }: Props) => {
   }
 
   function onWrongChosen() {
-    setIsPerfect(false);
+    setIsPerfectWord(false);
+    setIsPerfectRun(false);
     mutateStats(stats => {
       const result = ImageSelectionGameStats.fromOther(stats);
       result.attemptClicks++;

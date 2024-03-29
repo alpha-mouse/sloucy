@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import * as ScreenOrientation from 'expo-screen-orientation';
+import Constants from 'expo-constants';
 import vocabulary, { TextStyle, VocabularyItem } from './vocabulary';
 import { electManyWeighted, electManyExceptFor, electOne, randomInsert } from '../randomization';
 import { ImageSelectionGameStats, mutateStats, getStats } from './persistence';
@@ -42,7 +43,7 @@ const ImageSelectionGame = ({ navigation }: Props) => {
       <StatusBar />
       <Text style={{
         ...styles.definition,
-        height: isPortrait ? '9%' : '6%',
+        ...(isPortrait ? styles.definitionPortrait : styles.definitionLandscape),
       }}>
         {answer.entry.heading.map((textPart, index) => {
           return (<Text key={index} style={textPart.style === TextStyle.stressed ? styles.stressed : {}}>{textPart.text}</Text>)
@@ -103,14 +104,21 @@ const ImageSelectionGame = ({ navigation }: Props) => {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'column-reverse',
     height: '100%',
+    backgroundColor: 'beige',
   },
   definition: {
-    backgroundColor: 'beige',
     textAlign: 'center',
     textAlignVertical: 'center',
+    height: '9%',
     fontSize: 20,
+  },
+  definitionPortrait: {
+    marginTop: Constants.statusBarHeight,
+    fontSize: 24,
+  },
+  definitionLandscape: {
+    fontSize: 16,
   },
   stressed: {
     color: 'red',

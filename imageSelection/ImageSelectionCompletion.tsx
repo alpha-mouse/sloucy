@@ -22,7 +22,7 @@ const ImageSelectionCompletion = ({ route, navigation }: Props) => {
         style={{ ...styles.takeAllSpace, ...styles.gameCompletion }}
         underlayColor={constants.underlay}
         onPress={() => navigation.goBack()}>
-          <View style={{ display:'flex' }}>
+          <View style={{ display:'flex', alignItems: 'center' }}>
             <Svg
               width={200}
               height={200}

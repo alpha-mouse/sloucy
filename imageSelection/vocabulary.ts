@@ -638,10 +638,10 @@ const vocabulary = [
     require('./../data/слоік-jar2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./../data/слоік-jar3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
-  new VocabularyItem('смаг`ард', [
-    require('./../data/смагард-emerald1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
-    require('./../data/смагард-emerald2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
-    require('./../data/смагард-emerald3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
+  new VocabularyItem('смар`агд', [
+    require('./../data/смарагд-emerald1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
+    require('./../data/смарагд-emerald2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
+    require('./../data/смарагд-emerald3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
   new VocabularyItem('спадн`іца', [], 'Не знайшоў фоткі'),
   new VocabularyItem('сп`одак', [

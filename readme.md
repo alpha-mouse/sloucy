@@ -6,7 +6,7 @@
 
 Ідэі і прапановы прымаюцца ў [issues](https://github.com/alpha-mouse/sloucy/issues).
 
-Каб запусьціць лякальна - `expo start -a`. А перад тым напэўна трэба паставіць ды наладзіць тое expo, ды Android Studio, ды можа яшчэ штось.
+Каб запусьціць лякальна - `npx expo start -a`. А перад тым напэўна трэба паставіць ды наладзіць тое expo, ды Android Studio, ды можа яшчэ штось.
 
 Каб сабраць _vocabulary.md_
  * `npx tsc .\buildVocabularyMd.ts`

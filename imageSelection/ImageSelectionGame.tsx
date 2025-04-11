@@ -14,6 +14,7 @@ import { isOrientationPortrait } from './../utils';
 type Props = NativeStackScreenProps<Routes, 'ImageSelectionGame'>;
 
 const questionsPerRun = 10;
+const imagesPerQuestion = 6;
 let run: {
   set: VocabularyItem[];
   answer: VocabularyItem;
@@ -83,7 +84,7 @@ const ImageSelectionGame = ({ navigation }: Props) => {
     setIsPerfectWord(true);
 
     if (runCompleted) {
-      run = generateRun(questionsPerRun);
+      run = generateRun();
       navigation.replace("ImageSelectionCompletion", { isPerfect: isPerfectRun, newWordsSeen });
     }
     else {
@@ -125,11 +126,11 @@ const styles = StyleSheet.create({
   },
 });
 
-function generateRun(questionsNumber: number) {
+function generateRun(questionsNumber: number = questionsPerRun, imagesNumber: number = imagesPerQuestion) {
   var stats = getStats();
   const answers = electManyWeighted(vocabulary, vocabularyItemWeight, questionsNumber);
   return answers.map(answer => {
-    var set = electManyExceptFor(vocabulary, [answer], 5);
+    var set = electManyExceptFor(vocabulary, exclusionChecker(answer), imagesPerQuestion - 1);
     randomInsert(set, answer);
     return { set, answer, images: set.map(x => electOne(x.images)) };
   });
@@ -142,6 +143,24 @@ function generateRun(questionsNumber: number) {
     if (stats.seenWords.includes(item.key))
       3;
     return 2;
+  }
+
+  function exclusionChecker(answer: VocabularyItem): (takenItems: VocabularyItem[], item: VocabularyItem) => boolean {
+    const answerWords = [answer.canonical];
+    answerWords.push(...(answer.exclusion || []));
+    return (takenItems: VocabularyItem[], item: VocabularyItem) => {
+      if (takenItems.includes(item))
+        return false;
+      if (answerWords.includes(item.canonical))
+        return false;
+      if (item.exclusion) {
+        for (const word of item.exclusion) {
+          if (answerWords.includes(word))
+            return false;
+        }
+      }
+      return true;
+    }
   }
 }
 

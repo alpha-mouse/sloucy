@@ -12,7 +12,7 @@ function electMany<T>(array: T[], count: number): T[] {
   return indices.map(i => array[i]);
 }
 
-function electManyExceptFor<T>(array: T[], exclusion: T[], count: number): T[] {
+function electManyExceptFor<T>(array: T[], predicate: ((alreadyTaken: T[], candidate: T) => boolean), count: number): T[] {
   if (array.length < count) {
     throw Error(`Cannot elect ${count} out of ${array.length}`);
   }
@@ -20,7 +20,7 @@ function electManyExceptFor<T>(array: T[], exclusion: T[], count: number): T[] {
   while (result.length !== count) {
     const candidateIndex = getRandomInt(array.length);
     var candidate = array[candidateIndex];
-    if (!result.includes(candidate) && !exclusion.includes(candidate)) {
+    if (predicate(result, candidate)) {
       result.push(candidate);
     }
   }

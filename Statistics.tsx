@@ -1,6 +1,7 @@
 import { StyleSheet, View, Text, TouchableHighlight } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { Routes } from './Routes';
+import { Link } from 'expo-router';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import * as constants from './constants';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -41,19 +42,24 @@ const Statistics = ({ navigation }: Props) => {
           <Text>назад</Text>
         </TouchableHighlight>
       </View>
-      { statsAreEmpty
-        ?
-          <View style={styles.stats}>
+      <View style={styles.stats}>
+        { statsAreEmpty
+          ?
             <Text style={styles.statText}>пакуль ні адной гульні ня пройдзена</Text>
-          </View>
-        :
-          <View style={styles.stats}>
-            <Text style={styles.statText}>гульняў пройдзена: {stats.runsCompleted}</Text>
-            <Text style={styles.statText}>словаў вывучана: {stats.perfectedWords.length} ({perfectedPercentage.toFixed(2)}%)</Text>
-            <Text style={styles.statText}>словаў пабачана: {stats.seenWords.length} ({seenPercentage.toFixed(2)}%)</Text>
-            <Text style={styles.statText}>майстэрства: {mastery.toFixed(2)}%</Text>
-          </View>
-      }
+          :
+            <View>
+              <Text style={styles.statText}>гульняў пройдзена: {stats.runsCompleted}</Text>
+              <Text style={styles.statText}>словаў вывучана: {stats.perfectedWords.length} ({perfectedPercentage.toFixed(2)}%)</Text>
+              <Text style={styles.statText}>словаў пабачана: {stats.seenWords.length} ({seenPercentage.toFixed(2)}%)</Text>
+              <Text style={styles.statText}>майстэрства: {mastery.toFixed(2)}%</Text>
+            </View>
+        }
+      </View>
+      <View style={styles.info}>
+        <Text>Зыходны код на GitHub:</Text>
+        <Text><Link style={styles.link} href="https://github.com/alpha-mouse/sloucy">https://github.com/alpha-mouse/sloucy</Link>.</Text>
+        <Text>Заўвагам і прапановам я таксама буду там вельмі рады ❤️.</Text>
+      </View>
     </SafeAreaView>
   );
 };
@@ -73,12 +79,21 @@ const styles = StyleSheet.create({
   },
   stats: {
     flex: 1,
-    width: '100%',
-    height: '100%',
     padding: 10,
     backgroundColor: 'white',
   },
+  info: {
+    flex: 0.2,
+    padding: 10,
+    backgroundColor: 'white',
+    borderTopWidth: 1,
+    borderTopColor: constants.underlay,
+  },
   statText: {
     fontSize: 16,
+  },
+  link: {
+    color: constants.linkColor,
+    textDecorationLine: 'underline',
   },
 });

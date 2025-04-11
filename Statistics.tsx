@@ -45,7 +45,7 @@ const Statistics = ({ navigation }: Props) => {
       <View style={styles.stats}>
         { statsAreEmpty
           ?
-            <Text style={styles.statText}>пакуль ні адной гульні ня пройдзена</Text>
+            <Text style={styles.statText}>пакуль ніводнай гульні ня пройдзена</Text>
           :
             <View>
               <Text style={styles.statText}>гульняў пройдзена: {stats.runsCompleted}</Text>

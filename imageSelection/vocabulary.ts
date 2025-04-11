@@ -353,7 +353,7 @@ const vocabulary = [
     require('./../data/гарлачык-water-lily1.jpg'), // https://pixabay.com/photos/water-lily-aquatic-plant-5370781/
     require('./../data/гарлачык-water-lily2.jpg'), // https://pixabay.com/photos/water-lily-blossom-bloom-petals-7233788/
     require('./../data/гарлачык-water-lily3.jpg'), // https://pixabay.com/photos/water-lily-white-aquatic-plant-140727/
-  ]),
+  ], ['кветка']),
   new VocabularyItem('гар`одніна', [
     require('./../data/гародніна-vegetables1.jpg'), // https://www.freepik.com/free-photo/top-view-fruits-vegetables-bell-peppers-apples-carrot-coriander-cauliflower-persimmon-radish-cherry-tomatoes-red-cabbage-tomatoes-green-hot-pepper_17233567.htm
     require('./../data/гародніна-vegetables2.jpg'), // https://www.freepik.com/free-photo/healthy-vegetables-wooden-table_13013675.htm
@@ -1144,10 +1144,10 @@ const vocabulary = [
     require('./../data/сланечнік-sunflower2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./../data/сланечнік-sunflower3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
-  new VocabularyItem('слім`ак', [
-    require('./../data/слімак-snail1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
-    require('./../data/слімак-snail2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
-    require('./../data/слімак-snail3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
+  new VocabularyItem('сьлім`ак', [
+    require('./../data/сьлімак-snail1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
+    require('./../data/сьлімак-snail2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
+    require('./../data/сьлімак-snail3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
   new VocabularyItem('сл`оік', [
     require('./../data/слоік-jar1.jpg'), // Pixabay https://pixabay.com/service/terms/#license

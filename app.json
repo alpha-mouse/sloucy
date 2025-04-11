@@ -24,7 +24,7 @@
         "backgroundColor": "#FFFFFF"
       },
       "permissions": [],
-      "versionCode": 6,
+      "versionCode": 7,
       "package": "se.alphamou.sloucy"
     },
     "web": {

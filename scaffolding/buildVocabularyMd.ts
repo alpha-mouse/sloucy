@@ -9,7 +9,11 @@ let content = '# Слоўнік\n\n'
 
 fullVocabulary.forEach(item => {
   const heading = item.entry.heading.map(x => x.style === TextStyle.regular ? x.text : `_${x.text}_`).join('');
-  content += `**${heading}**  \n`;
+  let exclusion = '';
+  if (item.exclusion && item.exclusion.length) {
+    exclusion = '!(' + item.exclusion.join(', ') + ')';
+  }
+  content += `**${heading}** ${exclusion}  \n`;
   if (item.isEnabled) {
     item.images.forEach((image: string) => {
       const imageName = image.match(/([^/]+)\.\w+$/)[1];

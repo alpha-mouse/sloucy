@@ -183,7 +183,7 @@
 **гарб_у_з**   
 <img src="./data/гарбуз-pumpkin1.jpg" width="200" height="200" alt="гарбуз-pumpkin1" /> <img src="./data/гарбуз-pumpkin2.jpg" width="200" height="200" alt="гарбуз-pumpkin2" /> <img src="./data/гарбуз-pumpkin3.jpg" width="200" height="200" alt="гарбуз-pumpkin3" /> 
 
-**гарл_а_чык**   
+**гарл_а_чык** !(кветка)  
 <img src="./data/гарлачык-water-lily1.jpg" width="200" height="200" alt="гарлачык-water-lily1" /> <img src="./data/гарлачык-water-lily2.jpg" width="200" height="200" alt="гарлачык-water-lily2" /> <img src="./data/гарлачык-water-lily3.jpg" width="200" height="200" alt="гарлачык-water-lily3" /> 
 
 **гар_о_дніна**   
@@ -768,8 +768,8 @@ todo
 **слан_е_чнік**   
 <img src="./data/сланечнік-sunflower1.jpg" width="200" height="200" alt="сланечнік-sunflower1" /> <img src="./data/сланечнік-sunflower2.jpg" width="200" height="200" alt="сланечнік-sunflower2" /> <img src="./data/сланечнік-sunflower3.jpg" width="200" height="200" alt="сланечнік-sunflower3" /> 
 
-**слім_а_к**   
-<img src="./data/слімак-snail1.jpg" width="200" height="200" alt="слімак-snail1" /> <img src="./data/слімак-snail2.jpg" width="200" height="200" alt="слімак-snail2" /> <img src="./data/слімак-snail3.jpg" width="200" height="200" alt="слімак-snail3" /> 
+**сьлім_а_к**   
+<img src="./data/сьлімак-snail1.jpg" width="200" height="200" alt="сьлімак-snail1" /> <img src="./data/сьлімак-snail2.jpg" width="200" height="200" alt="сьлімак-snail2" /> <img src="./data/сьлімак-snail3.jpg" width="200" height="200" alt="сьлімак-snail3" /> 
 
 **сл_о_ік**   
 <img src="./data/слоік-jar1.jpg" width="200" height="200" alt="слоік-jar1" /> <img src="./data/слоік-jar2.jpg" width="200" height="200" alt="слоік-jar2" /> <img src="./data/слоік-jar3.jpg" width="200" height="200" alt="слоік-jar3" /> 

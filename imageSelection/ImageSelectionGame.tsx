@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import * as ScreenOrientation from 'expo-screen-orientation';
 import Constants from 'expo-constants';
+import { RFPercentage } from "react-native-responsive-fontsize";
 import vocabulary, { TextStyle, VocabularyItem } from './vocabulary';
 import { electManyWeighted, electManyExceptFor, electOne, randomInsert } from '../randomization';
 import { ImageSelectionGameStats, mutateStats, getStats } from './persistence';
@@ -10,6 +11,7 @@ import { ImagesSection } from './ImagesSection';
 import { Routes } from './../Routes';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { isOrientationPortrait } from './../utils';
+
 
 type Props = NativeStackScreenProps<Routes, 'ImageSelectionGame'>;
 
@@ -42,14 +44,16 @@ const ImageSelectionGame = ({ navigation }: Props) => {
   return (
     <View style={styles.container}>
       <StatusBar />
-      <Text style={{
+      <View style={{
         ...styles.definition,
         ...(isPortrait ? styles.definitionPortrait : styles.definitionLandscape),
       }}>
-        {answer.entry.heading.map((textPart, index) => {
-          return (<Text key={index} style={textPart.style === TextStyle.stressed ? styles.stressed : {}}>{textPart.text}</Text>)
-        })}
-      </Text>
+        <Text style={(isPortrait ? styles.definitionTextPortrait : styles.definitionTextLandscape)}>
+          {answer.entry.heading.map((textPart, index) => {
+            return (<Text key={index} style={textPart.style === TextStyle.stressed ? styles.stressed : {}}>{textPart.text}</Text>)
+          })}
+        </Text>
+      </View>
       <ImagesSection
         images={images}
         answerIndex={set.indexOf(answer)}
@@ -109,17 +113,22 @@ const styles = StyleSheet.create({
     backgroundColor: 'beige',
   },
   definition: {
-    textAlign: 'center',
-    textAlignVertical: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
     height: '9%',
-    fontSize: 20,
   },
   definitionPortrait: {
     marginTop: Constants.statusBarHeight,
-    fontSize: 24,
   },
   definitionLandscape: {
-    fontSize: 16,
+  },
+  definitionTextPortrait: {
+    fontSize: RFPercentage(3),
+  },
+  definitionTextLandscape: {
+    fontSize: RFPercentage(2),
   },
   stressed: {
     color: 'red',

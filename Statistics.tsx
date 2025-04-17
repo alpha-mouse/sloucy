@@ -39,26 +39,26 @@ const Statistics = ({ navigation }: Props) => {
           style={styles.button}
           underlayColor={constants.underlay}
           onPress={() => navigation.navigate('Home')}>
-          <Text>назад</Text>
+          <Text>Назад</Text>
         </TouchableHighlight>
       </View>
       <View style={styles.stats}>
         { statsAreEmpty
           ?
-            <Text style={styles.statText}>пакуль ніводнай гульні ня пройдзена</Text>
+            <Text style={styles.statText}>Пакуль ніводнай гульні ня пройдзена</Text>
           :
             <View>
-              <Text style={styles.statText}>гульняў пройдзена: {stats.runsCompleted}</Text>
-              <Text style={styles.statText}>словаў вывучана: {stats.perfectedWords.length} ({perfectedPercentage.toFixed(2)}%)</Text>
-              <Text style={styles.statText}>словаў пабачана: {stats.seenWords.length} ({seenPercentage.toFixed(2)}%)</Text>
-              <Text style={styles.statText}>майстэрства: {mastery.toFixed(2)}%</Text>
+              <Text style={styles.statText}>Гульняў пройдзена: {stats.runsCompleted}</Text>
+              <Text style={styles.statText}>Словаў вывучана: {stats.perfectedWords.length} ({perfectedPercentage.toFixed(2)}%)</Text>
+              <Text style={styles.statText}>Словаў пабачана: {stats.seenWords.length} ({seenPercentage.toFixed(2)}%)</Text>
+              <Text style={styles.statText}>Майстэрства: {mastery.toFixed(2)}%</Text>
             </View>
         }
       </View>
       <View style={styles.info}>
         <Text>Зыходны код на GitHub:</Text>
-        <Text><Link style={styles.link} href="https://github.com/alpha-mouse/sloucy">https://github.com/alpha-mouse/sloucy</Link>.</Text>
-        <Text>Заўвагам і прапановам я таксама буду там вельмі рады ❤️.</Text>
+        <Text><Link style={styles.link} href="https://github.com/alpha-mouse/sloucy">https://github.com/alpha-mouse/sloucy</Link></Text>
+        <Text>Заўвагам і прапановам я таксама буду там вельмі рады ❤️</Text>
       </View>
     </SafeAreaView>
   );

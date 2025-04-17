@@ -29,14 +29,14 @@ const Home = ({ navigation }: Props) => {
         style={{ ...styles.takeAllSpace, ...styles.gameButtons }}
         underlayColor={constants.underlay}
         onPress={() => navigation.navigate('ImageSelectionGame')}>
-        <Text style={styles.gameButton}>згуляць</Text>
+        <Text style={styles.gameButton}>Згуляць</Text>
       </TouchableHighlight>
       <View style={{ height: isPortrait ? '9%' : '6%', }}>
         <TouchableHighlight
           style={{...styles.takeAllSpace, justifyContent: 'center', padding: 10,}}
           underlayColor={constants.underlay}
           onPress={() => navigation.navigate('Statistics')}>
-          <Text>статыстыка</Text>
+          <Text>Статыстыка</Text>
         </TouchableHighlight>
       </View>
     </View>

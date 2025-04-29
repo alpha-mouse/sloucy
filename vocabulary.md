@@ -480,7 +480,7 @@
 **лін_а_рка**   
 <img src="./data/ruler1.jpg" width="200" height="200" alt="ruler1" /> <img src="./data/ruler2.jpg" width="200" height="200" alt="ruler2" /> <img src="./data/ruler3.jpg" width="200" height="200" alt="ruler3" /> 
 
-**літ_а_ра**   
+**л_і_тара**   
 <img src="./data/letter1.jpg" width="200" height="200" alt="letter1" /> <img src="./data/letter2.jpg" width="200" height="200" alt="letter2" /> <img src="./data/letter3.jpg" width="200" height="200" alt="letter3" /> 
 
 **ліхам_а_нка**   

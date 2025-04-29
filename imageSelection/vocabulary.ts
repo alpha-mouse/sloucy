@@ -764,7 +764,7 @@ const vocabulary = [
     require('./../data/ruler2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./../data/ruler3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
-  new VocabularyItem('літ`ара', [
+  new VocabularyItem('л`ітара', [
     require('./../data/letter1.jpg'), // 
     require('./../data/letter2.jpg'), // 
     require('./../data/letter3.jpg'), // 
@@ -908,7 +908,7 @@ const vocabulary = [
     require('./../data/gift3.jpg'), // https://www.freepik.com/free-photo/woman-hands-holding-wrapped-white-box-with-golden-bow-focus-box_13083288.htm
   ]),
   new VocabularyItem('падр`учнік', [
-    require('./../data/workbook1.jpg'), // у тэчцы
+    require('./../data/workbook1.jpg'), // 
     require('./../data/workbook2.jpg'), // https://pixabay.com/photos/book-textbook-college-learning-845280/
     require('./../data/workbook3.jpg'), // https://unsplash.com/photos/a-stack-of-books-sitting-on-top-of-a-wooden-table-4o3FFu9jenw
   ], ['стос']),
@@ -1408,9 +1408,9 @@ const vocabulary = [
     require('./../data/gorge3.jpg'), // https://pixabay.com/photos/mountain-river-ravine-nature-7011475/
   ]),
   new VocabularyItem('чарав`ікі', [
-    require('./../data/shoes1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
-    require('./../data/shoes2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
-    require('./../data/shoes3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
+    require('./../data/shoes1.jpg'), // https://www.freepik.com/free-photo/young-couple-love-posing-old-town-cropped-feet_10355892.htm
+    require('./../data/shoes2.jpg'), // ШІ
+    require('./../data/shoes3.jpg'), // ШІ
   ]),
   new VocabularyItem('чарадзей:ка', [
     require('./../data/wizard1.jpg'), // ШІ

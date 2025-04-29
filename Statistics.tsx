@@ -50,7 +50,7 @@ const Statistics = ({ navigation }: Props) => {
             <View>
               <Text style={styles.statText}>Гульняў пройдзена: {stats.runsCompleted}</Text>
               <Text style={styles.statText}>Словаў вывучана: {stats.perfectedWords.length} ({perfectedPercentage.toFixed(2)}%)</Text>
-              <Text style={styles.statText}>Словаў пабачана: {stats.seenWords.length} ({seenPercentage.toFixed(2)}%)</Text>
+              <Text style={styles.statText}>Словаў пабачана: {stats.seenWords.length}/{totalWords} ({seenPercentage.toFixed(2)}%)</Text>
               <Text style={styles.statText}>Майстэрства: {mastery.toFixed(2)}%</Text>
             </View>
         }
@@ -58,7 +58,7 @@ const Statistics = ({ navigation }: Props) => {
       <View style={styles.info}>
         <Text>Зыходны код на GitHub:</Text>
         <Text><Link style={styles.link} href="https://github.com/alpha-mouse/sloucy">https://github.com/alpha-mouse/sloucy</Link></Text>
-        <Text>Заўвагам і прапановам я таксама буду там вельмі рады ❤️</Text>
+        <Text>Заўвагі і прапановы можна на пошту кідаць: <Link style={styles.link} href="mailto:sloucy1@gmail.com">sloucy1@gmail.com</Link></Text>
       </View>
     </SafeAreaView>
   );

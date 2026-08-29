@@ -1,7 +1,6 @@
-import { StyleSheet, View, Text, TouchableHighlight } from 'react-native';
+import { Linking, StyleSheet, View, Text, TouchableHighlight } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { Routes } from './Routes';
-import { Link } from 'expo-router';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import * as constants from './constants';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -57,8 +56,8 @@ const Statistics = ({ navigation }: Props) => {
       </View>
       <View style={styles.info}>
         <Text>Зыходны код на GitHub:</Text>
-        <Text><Link style={styles.link} href="https://github.com/alpha-mouse/sloucy">https://github.com/alpha-mouse/sloucy</Link></Text>
-        <Text>Заўвагі і прапановы можна на пошту кідаць: <Link style={styles.link} href="mailto:sloucy1@gmail.com">sloucy1@gmail.com</Link></Text>
+        <Text><Text style={styles.link} onPress={() => Linking.openURL('https://github.com/alpha-mouse/sloucy')}>https://github.com/alpha-mouse/sloucy</Text></Text>
+        <Text>Заўвагі і прапановы можна на пошту кідаць: <Text style={styles.link} onPress={() => Linking.openURL('mailto:sloucy1@gmail.com')}>sloucy1@gmail.com</Text></Text>
       </View>
     </SafeAreaView>
   );
@@ -70,6 +69,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
     height: '100%',
+    backgroundColor: 'white',
   },
   button: {
     display: 'flex',

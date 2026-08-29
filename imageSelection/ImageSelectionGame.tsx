@@ -2,15 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import * as ScreenOrientation from 'expo-screen-orientation';
-import Constants from 'expo-constants';
-import { RFPercentage } from "react-native-responsive-fontsize";
+import { SafeAreaView } from 'react-native-safe-area-context';
 import vocabulary, { TextStyle, VocabularyItem } from './vocabulary';
 import { electManyWeighted, electManyExceptFor, electOne, randomInsert } from '../randomization';
 import { ImageSelectionGameStats, mutateStats, getStats } from './persistence';
 import { ImagesSection } from './ImagesSection';
 import { Routes } from './../Routes';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { isOrientationPortrait } from './../utils';
+import { isOrientationPortrait, responsiveFontSize } from './../utils';
 
 
 type Props = NativeStackScreenProps<Routes, 'ImageSelectionGame'>;
@@ -42,12 +41,9 @@ const ImageSelectionGame = ({ navigation }: Props) => {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <StatusBar />
-      <View style={{
-        ...styles.definition,
-        ...(isPortrait ? styles.definitionPortrait : styles.definitionLandscape),
-      }}>
+      <View style={styles.definition}>
         <Text style={(isPortrait ? styles.definitionTextPortrait : styles.definitionTextLandscape)}>
           {answer.entry.heading.map((textPart, index) => {
             return (<Text key={index} style={textPart.style === TextStyle.stressed ? styles.stressed : {}}>{textPart.text}</Text>)
@@ -61,13 +57,13 @@ const ImageSelectionGame = ({ navigation }: Props) => {
         onWrongChosen={onWrongChosen}
         isPortrait={isPortrait}
       />
-    </View>
+    </SafeAreaView>
   );
 
   function onCorrectChosen() {
 
     const nextRunIndex = runIndex + 1;
-    const runCompleted = nextRunIndex === run.length;
+    const runCompleted = nextRunIndex === run!.length;
 
     mutateStats(stats => {
       const result = ImageSelectionGameStats.fromOther(stats);
@@ -119,16 +115,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: '9%',
   },
-  definitionPortrait: {
-    marginTop: Constants.statusBarHeight,
-  },
-  definitionLandscape: {
-  },
   definitionTextPortrait: {
-    fontSize: RFPercentage(3),
+    fontSize: responsiveFontSize(3),
   },
   definitionTextLandscape: {
-    fontSize: RFPercentage(2),
+    fontSize: responsiveFontSize(2),
   },
   stressed: {
     color: 'red',

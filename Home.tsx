@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Routes } from './Routes';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import * as constants from './constants';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import * as ScreenOrientation from 'expo-screen-orientation';
 import { isOrientationPortrait } from './utils';
 
@@ -23,7 +24,7 @@ const Home = ({ navigation }: Props) => {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <StatusBar />
       <TouchableHighlight
         style={{ ...styles.takeAllSpace, ...styles.gameButtons }}
@@ -39,7 +40,7 @@ const Home = ({ navigation }: Props) => {
           <Text>Статыстыка</Text>
         </TouchableHighlight>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -50,6 +51,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
     height: '100%',
+    backgroundColor: 'white',
   },
   takeAllSpace: {
     flex: 1,

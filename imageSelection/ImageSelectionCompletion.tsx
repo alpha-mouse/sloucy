@@ -4,6 +4,7 @@ import React from 'react';
 import { Routes } from './../Routes';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import Svg, { Path } from "react-native-svg"
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { pluralize } from '../linguistics';
 import * as constants from './../constants';
 
@@ -16,7 +17,7 @@ const ImageSelectionCompletion = ({ route, navigation }: Props) => {
   const { isPerfect, newWordsSeen } = route.params;
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <StatusBar />
       <TouchableHighlight
         style={{ ...styles.takeAllSpace, ...styles.gameCompletion }}
@@ -37,7 +38,7 @@ const ImageSelectionCompletion = ({ route, navigation }: Props) => {
             }
           </View>
       </TouchableHighlight>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -48,6 +49,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'column-reverse',
     height: '100%',
+    backgroundColor: 'white',
   },
   takeAllSpace: {
     flex: 1,

@@ -32,7 +32,7 @@ Releasing means bumping three fields in [app.json](app.json) together: `expo.ver
 
 ## Architecture
 
-Entry point is [App.tsx](App.tsx) (via `node_modules/expo/AppEntry.js`), not a routes directory. Navigation is **@react-navigation native-stack**, with the four screens declared inline and typed by [Routes.tsx](Routes.tsx). `expo-router` is listed as an Expo plugin but is used only for its `<Link>` component in [Statistics.tsx](Statistics.tsx) — there is no file-based routing here.
+Entry point is [App.tsx](App.tsx) (via `node_modules/expo/AppEntry.js`), not a routes directory. Navigation is **@react-navigation native-stack**, with the four screens declared inline and typed by [Routes.tsx](Routes.tsx). There is no file-based routing and no `expo-router`; the two external links in [Statistics.tsx](Statistics.tsx) use `Linking.openURL`.
 
 Startup blocks on `initializationPromise` from [imageSelection/persistence.ts](imageSelection/persistence.ts) before hiding the splash screen, so that stats are in memory before any screen renders.
 
@@ -64,6 +64,8 @@ A single AsyncStorage key, `ImageSelectionStats`, holding a JSON `ImageSelection
 
 ### Layout conventions
 
-Every screen subscribes to `expo-screen-orientation` and keeps an `isPortrait` boolean, switching between paired `*Portrait`/`*Landscape` style objects (the image grid is 2×3 in portrait, 3×2 in landscape). [utils.ts](utils.ts) has the shared `isOrientationPortrait` helper. Font sizes use `RFPercentage` from `react-native-responsive-fontsize` rather than fixed points. Brand colours live in [constants.ts](constants.ts).
+Every screen subscribes to `expo-screen-orientation` and keeps an `isPortrait` boolean, switching between paired `*Portrait`/`*Landscape` style objects (the image grid is 2×3 in portrait, 3×2 in landscape). [utils.ts](utils.ts) has the shared `isOrientationPortrait` helper and `responsiveFontSize`, a local port of the abandoned `react-native-responsive-fontsize`, used for font sizes rather than fixed points. Brand colours live in [constants.ts](constants.ts).
+
+Every screen roots in `SafeAreaView` from `react-native-safe-area-context` (under the `SafeAreaProvider` in [App.tsx](App.tsx)) because edge-to-edge is mandatory at `targetSdk` 36 — content otherwise draws under the status bar and the gesture pill. Each screen's `container` therefore needs an explicit `backgroundColor`, or the inset strips render as bare window background.
 
 [linguistics.tsx](linguistics.tsx) has `pluralize` for Belarusian number agreement (one/few/many) — use it for any counted noun in the UI.

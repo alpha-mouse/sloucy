@@ -1,71 +1,110 @@
-import { StyleSheet, View, Text, TouchableHighlight } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
-import React, { useEffect, useState } from 'react';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { Routes } from './Routes';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import * as constants from './constants';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import * as ScreenOrientation from 'expo-screen-orientation';
-import { isOrientationPortrait } from './utils';
+import Screen from './components/Screen';
+import { color, radius, shadow, space, type } from './theme';
+import { useIsPortrait } from './utils';
 
 type Props = NativeStackScreenProps<Routes, 'Home'>;
 
 const Home = ({ navigation }: Props) => {
 
-  var [isPortrait, setIsPortrait] = useState(true);
-
-  useEffect(() => {
-    ScreenOrientation.getOrientationAsync()
-      .then(orientation => setIsPortrait(isOrientationPortrait(orientation)))
-
-    const subscription = ScreenOrientation.addOrientationChangeListener(event =>
-      setIsPortrait(isOrientationPortrait(event.orientationInfo.orientation)))
-    return () => ScreenOrientation.removeOrientationChangeListener(subscription);
-  }, []);
+  const isPortrait = useIsPortrait();
 
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar />
-      <TouchableHighlight
-        style={{ ...styles.takeAllSpace, ...styles.gameButtons }}
-        underlayColor={constants.underlay}
-        onPress={() => navigation.navigate('ImageSelectionGame')}>
-        <Text style={styles.gameButton}>Згуляць</Text>
-      </TouchableHighlight>
-      <View style={{ height: isPortrait ? '9%' : '6%', }}>
-        <TouchableHighlight
-          style={{...styles.takeAllSpace, justifyContent: 'center', padding: 10,}}
-          underlayColor={constants.underlay}
-          onPress={() => navigation.navigate('Statistics')}>
-          <Text>Статыстыка</Text>
-        </TouchableHighlight>
-      </View>
-    </SafeAreaView>
+    <Screen>
+      {/* Уся панэль - адна вялікая кнопка, як і было; проста цяпер відаць, што кнопка. */}
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel="Згуляць"
+        onPress={() => navigation.navigate('ImageSelectionGame')}
+        style={({ pressed }) => [styles.panel, pressed && styles.panelPressed]}>
+        <Text style={[
+          isPortrait ? type.display : type.title,
+          styles.wordmark,
+        ]}>СЛОЎЦЫ</Text>
+        <View style={styles.rule} />
+        <View style={styles.callToAction}>
+          <Text style={[type.headline, styles.callToActionText]}>ЗГУЛЯЦЬ</Text>
+          <Text style={styles.callToActionChevron}>›</Text>
+        </View>
+      </Pressable>
+
+      <Pressable
+        accessibilityRole="button"
+        onPress={() => navigation.navigate('Statistics')}
+        style={({ pressed }) => [styles.statisticsRow, pressed && styles.statisticsRowPressed]}
+        android_ripple={{ color: color.line }}>
+        <Text style={[type.label, styles.statisticsLabel]}>Статыстыка</Text>
+        <Text style={styles.statisticsChevron}>›</Text>
+      </Pressable>
+    </Screen>
   );
 };
-
 
 export default Home;
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'column',
-    height: '100%',
-    backgroundColor: 'white',
-  },
-  takeAllSpace: {
+  panel: {
     flex: 1,
-    width: '100%',
-    height: '100%',
-  },
-  gameButtons: {
-    display: 'flex',
+    margin: space.lg,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'white',
+    borderRadius: radius.lg,
+    borderWidth: 1,
+    borderColor: color.lineStrong,
+    backgroundColor: color.surface,
+    ...shadow,
   },
-  gameButton: {
-    fontSize: 30,
-    color: constants.brand,
+  panelPressed: {
+    backgroundColor: color.brandSoft,
+    borderColor: color.brand,
+  },
+  wordmark: {
+    color: color.brand,
+    letterSpacing: 4,
+    textAlign: 'center',
+  },
+  rule: {
+    width: 44,
+    height: 2,
+    marginTop: space.lg,
+    marginBottom: space.xl,
+    borderRadius: radius.pill,
+    backgroundColor: color.brand,
+  },
+  callToAction: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  callToActionText: {
+    color: color.ink,
+    letterSpacing: 2,
+  },
+  callToActionChevron: {
+    fontSize: 26,
+    lineHeight: 30,
+    marginLeft: space.sm,
+    color: color.inkFaint,
+  },
+  statisticsRow: {
+    height: 56,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: space.xl,
+    borderTopWidth: 1,
+    borderTopColor: color.line,
+  },
+  statisticsRowPressed: {
+    backgroundColor: color.line,
+  },
+  statisticsLabel: {
+    color: color.inkMuted,
+  },
+  statisticsChevron: {
+    fontSize: 22,
+    lineHeight: 26,
+    color: color.inkFaint,
   },
 });

@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
-import * as ScreenOrientation from 'expo-screen-orientation';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import vocabulary, { TextStyle, VocabularyItem } from './vocabulary';
 import { electManyWeighted, electManyExceptFor, electOne, randomInsert } from '../randomization';
 import { ImageSelectionGameStats, mutateStats, getStats } from './persistence';
 import { ImagesSection } from './ImagesSection';
 import { Routes } from './../Routes';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { isOrientationPortrait, responsiveFontSize } from './../utils';
+import Screen from './../components/Screen';
+import ProgressBar from './../components/ProgressBar';
+import { color, font, space } from './../theme';
+import { responsiveFontSize, useIsPortrait } from './../utils';
 
 
 type Props = NativeStackScreenProps<Routes, 'ImageSelectionGame'>;
@@ -29,26 +29,23 @@ const ImageSelectionGame = ({ navigation }: Props) => {
   var [isPerfectWord, setIsPerfectWord] = useState(true);
   var [isPerfectRun, setIsPerfectRun] = useState(true);
   var [newWordsSeen, setNewWordsSeen] = useState(0);
-  var [isPortrait, setIsPortrait] = useState(true);
-
-  useEffect(() => {
-    ScreenOrientation.getOrientationAsync()
-      .then(orientation => setIsPortrait(isOrientationPortrait(orientation)))
-
-    const subscription = ScreenOrientation.addOrientationChangeListener(event =>
-      setIsPortrait(isOrientationPortrait(event.orientationInfo.orientation)))
-    return () => ScreenOrientation.removeOrientationChangeListener(subscription);
-  }, []);
+  var isPortrait = useIsPortrait();
 
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar />
-      <View style={styles.definition}>
-        <Text style={(isPortrait ? styles.definitionTextPortrait : styles.definitionTextLandscape)}>
-          {answer.entry.heading.map((textPart, index) => {
-            return (<Text key={index} style={textPart.style === TextStyle.stressed ? styles.stressed : {}}>{textPart.text}</Text>)
-          })}
-        </Text>
+    <Screen background={color.canvasGame}>
+      <View style={styles.prompt}>
+        <View style={styles.promptText}>
+          <Text style={[
+            styles.definitionText,
+            isPortrait ? styles.definitionTextPortrait : styles.definitionTextLandscape,
+          ]}>
+            {answer.entry.heading.map((textPart, index) => {
+              return (<Text key={index} style={textPart.style === TextStyle.stressed ? styles.stressed : {}}>{textPart.text}</Text>)
+            })}
+          </Text>
+        </View>
+        {/* Колькі пытаньняў з дзесяці ўжо адказана. */}
+        <ProgressBar value={runIndex / run.length} height={4} track={color.line} />
       </View>
       <ImagesSection
         images={images}
@@ -57,7 +54,7 @@ const ImageSelectionGame = ({ navigation }: Props) => {
         onWrongChosen={onWrongChosen}
         isPortrait={isPortrait}
       />
-    </SafeAreaView>
+    </Screen>
   );
 
   function onCorrectChosen() {
@@ -104,17 +101,21 @@ const ImageSelectionGame = ({ navigation }: Props) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    height: '100%',
-    backgroundColor: 'beige',
+  prompt: {
+    height: '10%',
   },
-  definition: {
-    display: 'flex',
-    flexDirection: 'column',
+  promptText: {
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    height: '9%',
+    paddingHorizontal: space.lg,
   },
+  definitionText: {
+    fontFamily: font.semiBold,
+    color: color.ink,
+    textAlign: 'center',
+  },
+  // Памер слова ідзе ад вышыні экрану, а не з шкалы - яно мусіць запаўняць блок.
   definitionTextPortrait: {
     fontSize: responsiveFontSize(3),
   },
@@ -122,7 +123,7 @@ const styles = StyleSheet.create({
     fontSize: responsiveFontSize(2),
   },
   stressed: {
-    color: 'red',
+    color: color.brand,
   },
 });
 

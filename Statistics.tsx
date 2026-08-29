@@ -1,99 +1,117 @@
-import { Linking, StyleSheet, View, Text, TouchableHighlight } from 'react-native';
-import React, { useEffect, useState } from 'react';
+import { Linking, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Routes } from './Routes';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import * as constants from './constants';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import Screen from './components/Screen';
+import StatTile from './components/StatTile';
 import { getStats } from './imageSelection/persistence';
 import vocabulary from './imageSelection/vocabulary';
-import * as ScreenOrientation from 'expo-screen-orientation';
-import { isOrientationPortrait } from './utils';
+import { color, space, type } from './theme';
 
 type Props = NativeStackScreenProps<Routes, 'Statistics'>;
 
-const Statistics = ({ navigation }: Props) => {
-
-  var [isPortrait, setIsPortrait] = useState(true);
-
-  useEffect(() => {
-    ScreenOrientation.getOrientationAsync()
-      .then(orientation => setIsPortrait(isOrientationPortrait(orientation)))
-
-    const subscription = ScreenOrientation.addOrientationChangeListener(event =>
-      setIsPortrait(isOrientationPortrait(event.orientationInfo.orientation)))
-    return () => ScreenOrientation.removeOrientationChangeListener(subscription);
-  }, []);
+// Кнопка "назад" цяпер родная, з загалоўка навігацыі - свая больш не патрэбная.
+const Statistics = (_: Props) => {
 
   const stats = getStats();
   const statsAreEmpty = stats.attemptClicks === 0;
   const totalWords = vocabulary.length;
-  const perfectedPercentage = statsAreEmpty ? 0 : stats.perfectedWords.length / totalWords * 100;
-  const seenPercentage = statsAreEmpty ? 0 : stats.seenWords.length / totalWords * 100;
+  const perfected = stats.perfectedWords.length;
+  const seen = stats.seenWords.length;
   const mastery = statsAreEmpty ? 0 : stats.successClicks / stats.attemptClicks * 100;
 
   return (
-    <SafeAreaView style={{ ...styles.container }}>
-      <View style={{ height: isPortrait ? '9%' : '6%', }}>
-        <TouchableHighlight
-          style={styles.button}
-          underlayColor={constants.underlay}
-          onPress={() => navigation.navigate('Home')}>
-          <Text>Назад</Text>
-        </TouchableHighlight>
-      </View>
-      <View style={styles.stats}>
-        { statsAreEmpty
+    // Загаловак навігацыі ўжо закрывае верхнюю ўстаўку.
+    <Screen edges={['bottom', 'left', 'right']}>
+      <ScrollView style={styles.scroll} contentContainerStyle={styles.content}>
+        {statsAreEmpty
           ?
-            <Text style={styles.statText}>Пакуль ніводнай гульні ня пройдзена</Text>
+          <View style={styles.empty}>
+            <Text style={[type.body, styles.emptyText]}>Пакуль ніводнай гульні ня пройдзена</Text>
+          </View>
           :
-            <View>
-              <Text style={styles.statText}>Гульняў пройдзена: {stats.runsCompleted}</Text>
-              <Text style={styles.statText}>Словаў вывучана: {stats.perfectedWords.length} ({perfectedPercentage.toFixed(2)}%)</Text>
-              <Text style={styles.statText}>Словаў пабачана: {stats.seenWords.length}/{totalWords} ({seenPercentage.toFixed(2)}%)</Text>
-              <Text style={styles.statText}>Майстэрства: {mastery.toFixed(2)}%</Text>
+          <>
+            <View style={styles.row}>
+              <StatTile
+                value={`${stats.runsCompleted}`}
+                label="гульняў пройдзена"
+                tint={color.ink}
+                style={styles.rowTile}
+              />
+              <StatTile
+                value={`${mastery.toFixed(0)}%`}
+                label="майстэрства"
+                tint={color.ink}
+                style={styles.rowTile}
+              />
             </View>
+            <StatTile
+              value={`${perfected} / ${totalWords}`}
+              label="словаў вывучана"
+              progress={perfected / totalWords}
+              tint={color.brand}
+            />
+            <StatTile
+              value={`${seen} / ${totalWords}`}
+              label="словаў пабачана"
+              progress={seen / totalWords}
+              tint={color.accent}
+            />
+          </>
         }
-      </View>
+      </ScrollView>
+
       <View style={styles.info}>
-        <Text>Зыходны код на GitHub:</Text>
-        <Text><Text style={styles.link} onPress={() => Linking.openURL('https://github.com/alpha-mouse/sloucy')}>https://github.com/alpha-mouse/sloucy</Text></Text>
-        <Text>Заўвагі і прапановы можна на пошту кідаць: <Text style={styles.link} onPress={() => Linking.openURL('mailto:sloucy1@gmail.com')}>sloucy1@gmail.com</Text></Text>
+        <Text style={[type.caption, styles.infoText]}>Зыходны код на GitHub:</Text>
+        <Text style={[type.caption, styles.link]} onPress={() => Linking.openURL('https://github.com/alpha-mouse/sloucy')}>
+          https://github.com/alpha-mouse/sloucy
+        </Text>
+        <Text style={[type.caption, styles.infoText, styles.infoSpaced]}>
+          Заўвагі і прапановы можна на пошту кідаць:{' '}
+          <Text style={styles.link} onPress={() => Linking.openURL('mailto:sloucy1@gmail.com')}>sloucy1@gmail.com</Text>
+        </Text>
       </View>
-    </SafeAreaView>
+    </Screen>
   );
 };
 
 export default Statistics;
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'column',
-    height: '100%',
-    backgroundColor: 'white',
-  },
-  button: {
-    display: 'flex',
-    justifyContent: 'center',
-    height: '100%',
-    padding: 10,
-  },
-  stats: {
+  scroll: {
     flex: 1,
-    padding: 10,
-    backgroundColor: 'white',
+  },
+  content: {
+    padding: space.lg,
+    gap: space.md,
+  },
+  row: {
+    flexDirection: 'row',
+    gap: space.md,
+  },
+  rowTile: {
+    flex: 1,
+  },
+  empty: {
+    paddingVertical: space.xxxl,
+    alignItems: 'center',
+  },
+  emptyText: {
+    color: color.inkMuted,
+    textAlign: 'center',
   },
   info: {
-    flex: 0.2,
-    padding: 10,
-    backgroundColor: 'white',
+    padding: space.lg,
     borderTopWidth: 1,
-    borderTopColor: constants.underlay,
+    borderTopColor: color.line,
   },
-  statText: {
-    fontSize: 16,
+  infoText: {
+    color: color.inkMuted,
+  },
+  infoSpaced: {
+    marginTop: space.sm,
   },
   link: {
-    color: constants.linkColor,
+    color: color.accent,
     textDecorationLine: 'underline',
   },
 });

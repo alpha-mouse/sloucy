@@ -62,10 +62,20 @@ A single AsyncStorage key, `ImageSelectionStats`, holding a JSON `ImageSelection
 
 "Perfected" means answered correctly on the first attempt in some run; "seen" means answered correctly at all.
 
+### Design system
+
+[theme.ts](theme.ts) is the single source of truth for the look: `color` (brand red plus a warm neutral ramp), `space`, `radius`, `type` (a fixed scale, each entry carrying its `fontFamily`), and one `shadow` preset. Screens should not hardcode colours, font sizes or spacing — there is no `constants.ts` any more.
+
+The app is set in **Inter**, loaded in [App.tsx](App.tsx) via `Font.loadAsync(fontAssets)`, which is `Promise.all`'d with `initializationPromise` so nothing renders before the font is ready. `fontAssets` in [theme.ts](theme.ts) `require()`s the four .ttf files by path on purpose: importing from the `@expo-google-fonts/inter` root drags all 18 weights (~6 MB) into the bundle. React Native does not inherit `fontFamily`, so every `Text` needs a `type.*` style (nested `Text` inside a styled `Text` does inherit — that is how the stressed vowel works).
+
+Four shared components live in [components/](components/): `Screen` (SafeAreaView + background + `edges`), `Button` (`Pressable`-based, `primary`/`secondary`/`ghost`), `ProgressBar`, `StatTile`. Use `Pressable`, not `TouchableHighlight` — it gives Android ripple and a real pressed state.
+
 ### Layout conventions
 
-Every screen subscribes to `expo-screen-orientation` and keeps an `isPortrait` boolean, switching between paired `*Portrait`/`*Landscape` style objects (the image grid is 2×3 in portrait, 3×2 in landscape). [utils.ts](utils.ts) has the shared `isOrientationPortrait` helper and `responsiveFontSize`, a local port of the abandoned `react-native-responsive-fontsize`, used for font sizes rather than fixed points. Brand colours live in [constants.ts](constants.ts).
+Screens switch between paired `*Portrait`/`*Landscape` style objects (the image grid is 2×3 in portrait, 3×2 in landscape) off the `useIsPortrait()` hook in [utils.ts](utils.ts), which owns the single `expo-screen-orientation` subscription. `responsiveFontSize`, also there, is a local port of the abandoned `react-native-responsive-fontsize`; it is now used only for the vocabulary word on the game screen, which must scale to the viewport. All other text comes from the `type` scale.
 
-Every screen roots in `SafeAreaView` from `react-native-safe-area-context` (under the `SafeAreaProvider` in [App.tsx](App.tsx)) because edge-to-edge is mandatory at `targetSdk` 36 — content otherwise draws under the status bar and the gesture pill. Each screen's `container` therefore needs an explicit `backgroundColor`, or the inset strips render as bare window background.
+Every screen roots in the `Screen` component, which wraps `SafeAreaView` from `react-native-safe-area-context` (under the `SafeAreaProvider` in [App.tsx](App.tsx)) because edge-to-edge is mandatory at `targetSdk` 36 — content otherwise draws under the status bar and the gesture pill. `Screen` always paints a `backgroundColor`, or the inset strips render as bare window background. Screens under a navigation header pass `edges={['bottom', 'left', 'right']}` so the top inset is not applied twice.
+
+Headers are off by default (`headerShown: false`); Statistics is the exception and gets a native header, which is where its back button comes from.
 
 [linguistics.tsx](linguistics.tsx) has `pluralize` for Belarusian number agreement (one/few/many) — use it for any counted noun in the UI.

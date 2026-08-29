@@ -15,7 +15,8 @@ fullVocabulary.forEach(item => {
   }
   content += `**${heading}** ${exclusion}  \n`;
   if (item.isEnabled) {
-    item.images.forEach((image: string) => {
+    item.images.forEach(source => {
+      const image = source as unknown as string;
       const imageName = image.match(/([^/]+)\.\w+$/)![1];
       content += `<img src="${image.replace('../', '')}" width="200" height="200" alt="${imageName}" /> `;
     });

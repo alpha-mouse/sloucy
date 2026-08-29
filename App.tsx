@@ -13,7 +13,7 @@ import ImageSelectionCompletion from './imageSelection/ImageSelectionCompletion'
 import Statistics from './Statistics';
 import { color, font, fontAssets } from './theme';
 
-SplashScreen.preventAutoHideAsync();
+SplashScreen.preventAutoHideAsync().catch(() => { });
 const Stack = createNativeStackNavigator<Routes>();
 
 const App = () => {
@@ -30,9 +30,9 @@ const App = () => {
       .then(() => setAppIsReady(true));
   }, []);
 
-  const onLayoutRootView = useCallback(async () => {
+  const onLayoutRootView = useCallback(() => {
     if (appIsReady) {
-      await SplashScreen.hideAsync();
+      SplashScreen.hideAsync().catch(() => { });
     }
   }, [appIsReady]);
 

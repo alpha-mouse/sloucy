@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, ViewStyle } from 'react-native';
+import { StyleProp, StyleSheet, Text, View, ViewStyle } from 'react-native';
 import { color, radius, shadow, space, type } from '../theme';
 import ProgressBar from './ProgressBar';
 
@@ -14,7 +14,7 @@ const StatTile = ({
   // When given (0..1), the tile grows a progress bar under the label.
   progress?: number;
   tint?: string;
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
 }) => (
   <View style={[styles.tile, style]}>
     <Text style={[type.number, styles.value, { color: tint }]}>{value}</Text>

@@ -1,15 +1,15 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { ImageSourcePropType, StyleSheet, Text, View } from 'react-native';
 import vocabulary, { TextStyle, VocabularyItem } from './vocabulary';
 import { electManyWeighted, electManyExceptFor, electOne, randomInsert } from '../randomization';
-import { ImageSelectionGameStats, mutateStats, getStats } from './persistence';
+import { copyStats, mutateStats, getStats } from './persistence';
 import { ImagesSection } from './ImagesSection';
 import { Routes } from './../Routes';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import Screen from './../components/Screen';
 import ProgressBar from './../components/ProgressBar';
 import { color, font, space } from './../theme';
-import { responsiveFontSize, useIsPortrait } from './../utils';
+import { useResponsiveFontSize, useIsPortrait } from './../utils';
 
 
 type Props = NativeStackScreenProps<Routes, 'ImageSelectionGame'>;
@@ -19,35 +19,35 @@ const imagesPerQuestion = 6;
 let run: {
   set: VocabularyItem[];
   answer: VocabularyItem;
-  images: any[];
+  images: ImageSourcePropType[];
 }[] | null = null;
 
 const ImageSelectionGame = ({ navigation }: Props) => {
-  run = run || generateRun(questionsPerRun);
-  var [runIndex, setRunIndex] = useState(0);
-  var { set, answer, images } = run[runIndex];
-  var [isPerfectWord, setIsPerfectWord] = useState(true);
-  var [isPerfectRun, setIsPerfectRun] = useState(true);
-  var [newWordsSeen, setNewWordsSeen] = useState(0);
-  var isPortrait = useIsPortrait();
+  const currentRun = run = run || generateRun(questionsPerRun);
+  const [runIndex, setRunIndex] = useState(0);
+  const { set, answer, images } = currentRun[runIndex];
+  const [isPerfectWord, setIsPerfectWord] = useState(true);
+  const [isPerfectRun, setIsPerfectRun] = useState(true);
+  const [newWordsSeen, setNewWordsSeen] = useState(0);
+  const isPortrait = useIsPortrait();
+  const fontSize = useResponsiveFontSize(isPortrait ? 3 : 2);
 
   return (
     <Screen background={color.canvasGame}>
       <View style={styles.prompt}>
         <View style={styles.promptText}>
-          <Text style={[
-            styles.definitionText,
-            isPortrait ? styles.definitionTextPortrait : styles.definitionTextLandscape,
-          ]}>
+          <Text style={[styles.definitionText, { fontSize }]}>
             {answer.entry.heading.map((textPart, index) => {
               return (<Text key={index} style={textPart.style === TextStyle.stressed ? styles.stressed : {}}>{textPart.text}</Text>)
             })}
           </Text>
         </View>
         {/* Колькі пытаньняў з дзесяці ўжо адказана. */}
-        <ProgressBar value={runIndex / run.length} height={4} track={color.line} />
+        <ProgressBar value={runIndex / currentRun.length} height={4} track={color.line} />
       </View>
+      {/* key па пытаньні: пліткі перастварваюцца, і анімацыі не цягнуцца з папярэдняга. */}
       <ImagesSection
+        key={runIndex}
         images={images}
         answerIndex={set.indexOf(answer)}
         onCorrectChosen={onCorrectChosen}
@@ -60,17 +60,15 @@ const ImageSelectionGame = ({ navigation }: Props) => {
   function onCorrectChosen() {
 
     const nextRunIndex = runIndex + 1;
-    const runCompleted = nextRunIndex === run!.length;
+    const runCompleted = nextRunIndex === currentRun.length;
+    const isNewWord = !getStats().seenWords.includes(answer.key);
 
     mutateStats(stats => {
-      const result = ImageSelectionGameStats.fromOther(stats);
+      const result = copyStats(stats);
       result.attemptClicks++;
       result.successClicks++;
-      if (!result.seenWords.includes(answer.key)) {
+      if (isNewWord)
         result.seenWords.push(answer.key);
-        newWordsSeen++;
-        setNewWordsSeen(newWordsSeen);
-      }
       if (isPerfectWord && !result.perfectedWords.includes(answer.key))
         result.perfectedWords.push(answer.key);
       if (runCompleted)
@@ -78,14 +76,19 @@ const ImageSelectionGame = ({ navigation }: Props) => {
       return result;
     });
 
+    if (isNewWord)
+      setNewWordsSeen(x => x + 1);
     setIsPerfectWord(true);
 
     if (runCompleted) {
       run = generateRun();
-      navigation.replace("ImageSelectionCompletion", { isPerfect: isPerfectRun, newWordsSeen });
+      navigation.replace("ImageSelectionCompletion", {
+        isPerfect: isPerfectRun,
+        newWordsSeen: newWordsSeen + (isNewWord ? 1 : 0),
+      });
     }
     else {
-      setRunIndex(runIndex + 1);
+      setRunIndex(nextRunIndex);
     }
   }
 
@@ -93,7 +96,7 @@ const ImageSelectionGame = ({ navigation }: Props) => {
     setIsPerfectWord(false);
     setIsPerfectRun(false);
     mutateStats(stats => {
-      const result = ImageSelectionGameStats.fromOther(stats);
+      const result = copyStats(stats);
       result.attemptClicks++;
       return result;
     })
@@ -115,23 +118,16 @@ const styles = StyleSheet.create({
     color: color.ink,
     textAlign: 'center',
   },
-  // Памер слова ідзе ад вышыні экрану, а не з шкалы - яно мусіць запаўняць блок.
-  definitionTextPortrait: {
-    fontSize: responsiveFontSize(3),
-  },
-  definitionTextLandscape: {
-    fontSize: responsiveFontSize(2),
-  },
   stressed: {
     color: color.brand,
   },
 });
 
 function generateRun(questionsNumber: number = questionsPerRun, imagesNumber: number = imagesPerQuestion) {
-  var stats = getStats();
+  const stats = getStats();
   const answers = electManyWeighted(vocabulary, vocabularyItemWeight, questionsNumber);
   return answers.map(answer => {
-    var set = electManyExceptFor(vocabulary, exclusionChecker(answer), imagesPerQuestion - 1);
+    const set = electManyExceptFor(vocabulary, exclusionChecker(answer), imagesNumber - 1);
     randomInsert(set, answer);
     return { set, answer, images: set.map(x => electOne(x.images)) };
   });
@@ -140,9 +136,9 @@ function generateRun(questionsNumber: number = questionsPerRun, imagesNumber: nu
     // show less of perfected words
     if (stats.perfectedWords.includes(item.key))
       return 1;
-    // but a bit more of attempted but not perfected ones 
+    // but a bit more of attempted but not perfected ones
     if (stats.seenWords.includes(item.key))
-      3;
+      return 3;
     return 2;
   }
 

@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View, ViewStyle } from 'react-native';
+import { Pressable, StyleProp, StyleSheet, Text, View, ViewStyle } from 'react-native';
 import { color, radius, shadow, space, type } from '../theme';
 
 export type ButtonVariant = 'primary' | 'secondary' | 'ghost';
@@ -15,7 +15,7 @@ const Button = ({
   onPress: () => void;
   variant?: ButtonVariant;
   chevron?: boolean;
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
 }) => {
   const scheme = schemes[variant];
 

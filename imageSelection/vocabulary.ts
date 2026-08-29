@@ -1,5 +1,7 @@
+import { ImageSourcePropType } from 'react-native';
+
 export class VocabularyItem {
-  constructor(word: string, images: any[], exclusion?: string[], comment?: string) {
+  constructor(word: string, images: ImageSourcePropType[], exclusion?: string[], comment?: string) {
     this.key = word;
     this.canonical = word.replace(/`/g, '');
     this.entry = VocabularyEntry.fromString(word);
@@ -12,7 +14,7 @@ export class VocabularyItem {
   key: string;
   canonical: string;
   entry: VocabularyEntry;
-  images: any[];
+  images: ImageSourcePropType[];
   isEnabled: boolean;
   exclusion?: string[];
   comment?: string;

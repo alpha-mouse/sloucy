@@ -1,4 +1,4 @@
-import { StyleSheet, View, ViewStyle } from 'react-native';
+import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 import { color, radius } from '../theme';
 
 const ProgressBar = ({
@@ -13,7 +13,7 @@ const ProgressBar = ({
   height?: number;
   fill?: string;
   track?: string;
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
 }) => {
   const clamped = Math.max(0, Math.min(1, Number.isFinite(value) ? value : 0));
 

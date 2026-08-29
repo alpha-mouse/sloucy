@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import { Animated, Easing, Image, StyleSheet, TouchableHighlight, View } from 'react-native';
+import { useState, useRef } from 'react';
+import { Animated, Easing, Image, ImageSourcePropType, Pressable, StyleSheet, View } from 'react-native';
 
 const wrongColor = '#790909bb';
 const correctColor = '#137909bb';
@@ -7,17 +7,16 @@ const correctColor = '#137909bb';
 const ImageBlock = ({
   image,
   isCorrect,
-  onCorrectChosen,
-  onWrongChosen,
-  bringToFront,
-  bringBack,
+  disabled,
+  onStart,
+  onSettled,
 }: {
-  image: any;
+  image: ImageSourcePropType;
   isCorrect: boolean;
-  onCorrectChosen: () => void;
-  onWrongChosen: () => void;
-  bringToFront: () => void;
-  bringBack: () => void;
+  disabled: boolean;
+  onStart: () => void;
+  // finished === false значыць, што анімацыю перарвалі - тады адказ не залічваецца.
+  onSettled: (finished: boolean, isCorrect: boolean) => void;
 }) => {
   const wrongRotationDegree = useRef(new Animated.Value(0)).current
   const checkOpacity = useRef(new Animated.Value(0)).current
@@ -26,29 +25,28 @@ const ImageBlock = ({
 
   return (
     <Animated.View
-      style={{
-        ...styles.takeAllSpace,
-        transform: [
-          { rotate: wrongRotationDegree.interpolate({ inputRange: [0, 1], outputRange: ['0deg', '5deg'] }) },
-          { scale: correctScale },
-        ],
-      }}>
-      <TouchableHighlight
+      style={[
+        styles.takeAllSpace,
+        {
+          transform: [
+            { rotate: wrongRotationDegree.interpolate({ inputRange: [0, 1], outputRange: ['0deg', '5deg'] }) },
+            { scale: correctScale },
+          ],
+        },
+      ]}>
+      <Pressable
         style={styles.takeAllSpace}
+        disabled={disabled}
         onPress={isCorrect ? animateCorrect : animateWrong}>
         <View style={styles.takeAllSpace}>
           <Image source={image} style={styles.takeAllSpace} />
-          <Animated.View style={{
-            ...styles.takeAllSpace,
-            opacity: checkOpacity,
-            position: 'absolute',
-            top: 0,
-            borderColor: highlightColor,
-            borderWidth: 5,
-          }}>
-          </Animated.View>
+          <Animated.View style={[
+            styles.takeAllSpace,
+            styles.highlight,
+            { opacity: checkOpacity, borderColor: highlightColor },
+          ]} />
         </View>
-      </TouchableHighlight>
+      </Pressable>
     </Animated.View>
   );
 
@@ -56,7 +54,7 @@ const ImageBlock = ({
     const halfPeriod = 100;
     const useNativeDriver = true;
     setHighlightColor(correctColor);
-    bringToFront();
+    onStart();
     Animated.parallel([
       Animated.sequence([
         Animated.timing(correctScale, {
@@ -84,17 +82,14 @@ const ImageBlock = ({
           useNativeDriver,
         }),
       ]),
-    ]).start(() => {
-      bringBack();
-      onCorrectChosen();
-    });
+    ]).start(({ finished }) => onSettled(finished, true));
   };
 
   function animateWrong() {
     const quarterPeriod = 50;
     const useNativeDriver = true;
     setHighlightColor(wrongColor);
-    bringToFront();
+    onStart();
     Animated.parallel([
       Animated.sequence([
         Animated.timing(wrongRotationDegree, {
@@ -130,10 +125,7 @@ const ImageBlock = ({
           useNativeDriver,
         }),
       ]),
-    ]).start(() => {
-      bringBack();
-      onWrongChosen();
-    });
+    ]).start(({ finished }) => onSettled(finished, false));
   };
 };
 
@@ -144,33 +136,33 @@ export const ImagesSection = ({
   onWrongChosen,
   isPortrait,
 }: {
-  images: any[];
+  images: ImageSourcePropType[];
   answerIndex: number;
   onCorrectChosen: () => void;
   onWrongChosen: () => void;
   isPortrait: boolean;
 }) => {
+  // Адзін стан на два заданьні: якая плітка ўзьнятая наверх, і ці ідзе зараз анімацыя.
+  // Пакуль анімацыя ідзе, усе пліткі заблякаваныя - інакш другі хуткі націск залічваецца двойчы.
+  const [frontIndex, setFrontIndex] = useState<number | null>(null);
 
   return (
     <View style={styles.imageBlock}>
-      {images.map((image: any, index: number) => {
-        const [atTheFront, setAtTheFront] = useState(false);
-        const zIndex = atTheFront ? 1 : 0;
+      {images.map((image, index) => {
+        const zIndex = frontIndex === index ? 1 : 0;
         return (
           <View
             key={index}
-            style={{
-              ...(isPortrait ? styles.imageWrapperPortrait : styles.imageWrapperLandscape),
-              zIndex,
-              elevation: zIndex,
-            }}>
+            style={[
+              isPortrait ? styles.imageWrapperPortrait : styles.imageWrapperLandscape,
+              { zIndex, elevation: zIndex },
+            ]}>
             <ImageBlock
               image={image}
               isCorrect={index === answerIndex}
-              onCorrectChosen={onCorrectChosen}
-              onWrongChosen={onWrongChosen}
-              bringToFront={() => setAtTheFront(true)}
-              bringBack={() => setAtTheFront(false)}
+              disabled={frontIndex !== null}
+              onStart={() => setFrontIndex(index)}
+              onSettled={onSettled}
             />
           </View>
         );
@@ -178,6 +170,16 @@ export const ImagesSection = ({
       }
     </View>
   );
+
+  function onSettled(finished: boolean, isCorrect: boolean) {
+    setFrontIndex(null);
+    if (!finished)
+      return;
+    if (isCorrect)
+      onCorrectChosen();
+    else
+      onWrongChosen();
+  }
 };
 
 const styles = StyleSheet.create({
@@ -198,5 +200,10 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     height: '100%',
+  },
+  highlight: {
+    position: 'absolute',
+    top: 0,
+    borderWidth: 5,
   },
 });

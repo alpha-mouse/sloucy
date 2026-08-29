@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ViewStyle } from 'react-native';
+import { StyleProp, StyleSheet, ViewStyle } from 'react-native';
 import { SafeAreaView, Edge } from 'react-native-safe-area-context';
 import { color } from '../theme';
 
@@ -16,7 +16,7 @@ const Screen = ({
   // Screens under a navigation header pass ['bottom', 'left', 'right'] -
   // the header already covers the top inset.
   edges?: readonly Edge[];
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
 }) => (
   <SafeAreaView edges={edges} style={[styles.screen, { backgroundColor: background }, style]}>
     {children}

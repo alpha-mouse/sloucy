@@ -1,16 +1,16 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native';
-import { Routes } from './../Routes';
+import { Routes } from './Routes';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import Svg, { Path } from "react-native-svg"
-import { pluralize } from '../linguistics';
-import Screen from './../components/Screen';
-import Button from './../components/Button';
-import { color, space, type } from './../theme';
-import { useIsPortrait } from './../utils';
+import { pluralize } from './linguistics';
+import Screen from './components/Screen';
+import Button from './components/Button';
+import { color, space, type } from './theme';
+import { useIsPortrait } from './utils';
 
-type Props = NativeStackScreenProps<Routes, 'ImageSelectionCompletion'>;
+type Props = NativeStackScreenProps<Routes, 'Completion'>;
 
-const ImageSelectionCompletion = ({ route, navigation }: Props) => {
+const Completion = ({ route, navigation }: Props) => {
 
   const { isPerfect, newWordsSeen } = route.params;
   const isPortrait = useIsPortrait();
@@ -50,7 +50,7 @@ const ImageSelectionCompletion = ({ route, navigation }: Props) => {
   );
 };
 
-export default ImageSelectionCompletion;
+export default Completion;
 
 const styles = StyleSheet.create({
   tapTarget: {

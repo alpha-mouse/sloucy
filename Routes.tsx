@@ -1,6 +1,7 @@
 export type Routes = {
   Home: undefined,
   ImageSelectionGame: undefined,
-  ImageSelectionCompletion: { isPerfect: boolean, newWordsSeen: number },
+  WordSelectionGame: undefined,
+  Completion: { isPerfect: boolean, newWordsSeen: number },
   Statistics: undefined,
 };

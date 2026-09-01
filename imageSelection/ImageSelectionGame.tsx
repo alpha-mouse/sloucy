@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { ImageSourcePropType, StyleSheet, Text, View } from 'react-native';
-import vocabulary, { TextStyle, VocabularyItem } from './vocabulary';
-import { electManyWeighted, electManyExceptFor, electOne, randomInsert } from '../randomization';
+import { TextStyle, VocabularyItem } from './../vocabulary';
+import { generateQuestions } from './../gameRun';
+import { electOne } from './../randomization';
 import { copyStats, mutateStats, getStats } from './persistence';
 import { ImagesSection } from './ImagesSection';
 import { Routes } from './../Routes';
@@ -82,7 +83,7 @@ const ImageSelectionGame = ({ navigation }: Props) => {
 
     if (runCompleted) {
       run = generateRun();
-      navigation.replace("ImageSelectionCompletion", {
+      navigation.replace("Completion", {
         isPerfect: isPerfectRun,
         newWordsSeen: newWordsSeen + (isNewWord ? 1 : 0),
       });
@@ -124,41 +125,8 @@ const styles = StyleSheet.create({
 });
 
 function generateRun(questionsNumber: number = questionsPerRun, imagesNumber: number = imagesPerQuestion) {
-  const stats = getStats();
-  const answers = electManyWeighted(vocabulary, vocabularyItemWeight, questionsNumber);
-  return answers.map(answer => {
-    const set = electManyExceptFor(vocabulary, exclusionChecker(answer), imagesNumber - 1);
-    randomInsert(set, answer);
-    return { set, answer, images: set.map(x => electOne(x.images)) };
-  });
-
-  function vocabularyItemWeight(item: VocabularyItem) : number {
-    // show less of perfected words
-    if (stats.perfectedWords.includes(item.key))
-      return 1;
-    // but a bit more of attempted but not perfected ones
-    if (stats.seenWords.includes(item.key))
-      return 3;
-    return 2;
-  }
-
-  function exclusionChecker(answer: VocabularyItem): (takenItems: VocabularyItem[], item: VocabularyItem) => boolean {
-    const answerWords = [answer.canonical];
-    answerWords.push(...(answer.exclusion || []));
-    return (takenItems: VocabularyItem[], item: VocabularyItem) => {
-      if (takenItems.includes(item))
-        return false;
-      if (answerWords.includes(item.canonical))
-        return false;
-      if (item.exclusion) {
-        for (const word of item.exclusion) {
-          if (answerWords.includes(word))
-            return false;
-        }
-      }
-      return true;
-    }
-  }
+  return generateQuestions(getStats(), questionsNumber, imagesNumber)
+    .map(question => ({ ...question, images: question.set.map(x => electOne(x.images)) }));
 }
 
 export default ImageSelectionGame;

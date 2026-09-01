@@ -1,15 +1,17 @@
 import { useCallback, useEffect, useState } from 'react';
 import ImageSelectionGame from './imageSelection/ImageSelectionGame';
+import WordSelectionGame from './wordSelection/WordSelectionGame';
 import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
-import { initializationPromise } from './imageSelection/persistence';
+import { initializationPromise as imageSelectionInitialization } from './imageSelection/persistence';
+import { initializationPromise as wordSelectionInitialization } from './wordSelection/persistence';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Home from './Home';
 import { Routes } from './Routes'
-import ImageSelectionCompletion from './imageSelection/ImageSelectionCompletion';
+import Completion from './Completion';
 import Statistics from './Statistics';
 import { color, font, fontAssets } from './theme';
 
@@ -20,9 +22,10 @@ const App = () => {
   const [appIsReady, setAppIsReady] = useState(false);
 
   useEffect(() => {
-    // Статыстыка мусіць быць у памяці, а шрыфт - загружаны, да першага кадру.
+    // Статыстыка абодвух рэжымаў мусіць быць у памяці, а шрыфт - загружаны, да першага кадру.
     Promise.all([
-      initializationPromise,
+      imageSelectionInitialization,
+      wordSelectionInitialization,
       Font.loadAsync(fontAssets),
     ])
       // A failed font load must not hang on the splash screen forever - fall through and let the system font stand in.
@@ -47,7 +50,8 @@ const App = () => {
         <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Home">
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="ImageSelectionGame" component={ImageSelectionGame} />
-          <Stack.Screen name="ImageSelectionCompletion" component={ImageSelectionCompletion} />
+          <Stack.Screen name="WordSelectionGame" component={WordSelectionGame} />
+          <Stack.Screen name="Completion" component={Completion} />
           <Stack.Screen
             name="Statistics"
             component={Statistics}

@@ -1,6 +1,6 @@
 // This file is not about the app itself but rather about building vocabulary.md
 
-import { fullVocabulary, TextStyle  } from "../imageSelection/vocabulary";
+import { fullVocabulary, TextStyle  } from "../vocabulary";
 import * as fs from 'fs';
 
 // I'm stupefied by how file writing works in this bloody node

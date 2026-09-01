@@ -3,19 +3,15 @@ import { TextStyle, ViewStyle } from 'react-native';
 // The single source of truth for the app's look. Screens should not hardcode colors, font sizes or spacing - pull them from here.
 
 export const font = {
-  regular: 'Inter_400Regular',
-  medium: 'Inter_500Medium',
-  semiBold: 'Inter_600SemiBold',
-  bold: 'Inter_700Bold',
+  regular: 'NotoSerif_400Regular',
+  semiBold: 'NotoSerif_600SemiBold',
 } as const;
 
 // Assets for Font.loadAsync at app startup; keys must match `font` above.
-// The files are imported directly: import from the package root imports all 18 font files (~6 MB) into the build, but we only need four.
+// The files are imported directly: import from the package root imports all 18 font files (~11.5 MB) into the build, but we only need two.
 export const fontAssets = {
-  Inter_400Regular: require('@expo-google-fonts/inter/400Regular/Inter_400Regular.ttf'),
-  Inter_500Medium: require('@expo-google-fonts/inter/500Medium/Inter_500Medium.ttf'),
-  Inter_600SemiBold: require('@expo-google-fonts/inter/600SemiBold/Inter_600SemiBold.ttf'),
-  Inter_700Bold: require('@expo-google-fonts/inter/700Bold/Inter_700Bold.ttf'),
+  NotoSerif_400Regular: require('@expo-google-fonts/noto-serif/400Regular/NotoSerif_400Regular.ttf'),
+  NotoSerif_600SemiBold: require('@expo-google-fonts/noto-serif/600SemiBold/NotoSerif_600SemiBold.ttf'),
 };
 
 export const color = {
@@ -58,16 +54,17 @@ export const radius = {
   pill: 999,
 } as const;
 
+// lineHeight ніжэй за 1.362 * fontSize абразае вынасныя элементы: у Noto Serif ascent+descent = 1.362em (hhea і OS/2 typo супадаюць, USE_TYPO_METRICS выстаўлены).
+// Кожнае значэньне ніжэй - гэты мінімум, акруглены ўверх.
 export const type = {
-  display: { fontFamily: font.bold, fontSize: 40, lineHeight: 46, letterSpacing: 3 },
-  title: { fontFamily: font.semiBold, fontSize: 28, lineHeight: 34 },
-  headline: { fontFamily: font.semiBold, fontSize: 22, lineHeight: 28 },
-  number: { fontFamily: font.bold, fontSize: 30, lineHeight: 36, fontVariant: ['tabular-nums'] as const },
-  numberSmall: { fontFamily: font.semiBold, fontSize: 20, lineHeight: 26, fontVariant: ['tabular-nums'] as const },
+  display: { fontFamily: font.semiBold, fontSize: 40, lineHeight: 55, letterSpacing: 3 },
+  title: { fontFamily: font.semiBold, fontSize: 28, lineHeight: 40 },
+  headline: { fontFamily: font.semiBold, fontSize: 22, lineHeight: 31 },
+  number: { fontFamily: font.semiBold, fontSize: 30, lineHeight: 42, fontVariant: ['tabular-nums', 'lining-nums'] as const },
   body: { fontFamily: font.regular, fontSize: 17, lineHeight: 24 },
-  label: { fontFamily: font.medium, fontSize: 15, lineHeight: 20 },
+  label: { fontFamily: font.semiBold, fontSize: 15, lineHeight: 21 },
   caption: { fontFamily: font.regular, fontSize: 13, lineHeight: 18 },
-  overline: { fontFamily: font.semiBold, fontSize: 13, lineHeight: 16, letterSpacing: 1.6 },
+  overline: { fontFamily: font.semiBold, fontSize: 13, lineHeight: 18, letterSpacing: 1.6 },
 } satisfies Record<string, TextStyle>;
 
 // One soft, warm shadow. Each platform ignores the props it does not use.

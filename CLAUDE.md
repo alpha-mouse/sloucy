@@ -57,7 +57,7 @@ Mode-agnostic modules sit at the repo root ([vocabulary.ts](vocabulary.ts), [gam
 
 Both games build a run of 10 questions up front and share `generateQuestions` in [gameRun.ts](gameRun.ts), which uses the helpers in [randomization.ts](randomization.ts): `electManyWeighted` picks the answers, `electManyExceptFor` picks five non-confusable distractors, `randomInsert` slots the answer in at a random position. Each mode's own thin `generateRun` then attaches what it displays - six images for the picture game, one image of the answer for the word game.
 
-`run` is a **module-level mutable variable** in each game screen, deliberately - it survives screen unmount so returning from the completion screen doesn't reshuffle mid-run. It is regenerated when a run completes.
+Each game screen holds its run in **per-mount state** - `const [currentRun] = useState(generateRun)`. The lazy initializer runs once per mount, so the run is stable across re-renders (rotation, wrong taps) but never outlives the screen: **every entry into a game screen is a fresh run**, and backing out mid-run discards it. Completion pops the game screen (`navigation.replace('Completion', …)`), so the next visit builds a new run anyway.
 
 `vocabularyItemWeight` weights each word: perfected words get 1, seen-but-unperfected 3, unseen 2 - so words you have met but not mastered come up most often, and mastered ones least. It reads the *calling mode's* stats, so the two games steer independently.
 

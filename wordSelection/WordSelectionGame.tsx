@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { Image, ImageSourcePropType, StyleSheet, View } from 'react-native';
-import { VocabularyItem } from './../vocabulary';
+import { Image, StyleSheet, View } from 'react-native';
 import { generateQuestions } from './../gameRun';
 import { electOne } from './../randomization';
 import { copyStats, mutateStats, getStats } from './persistence';
@@ -17,15 +16,10 @@ type Props = NativeStackScreenProps<Routes, 'WordSelectionGame'>;
 
 const questionsPerRun = 10;
 const wordsPerQuestion = 6;
-// Наўмысна на ўзроўні модуля: забег перажывае размантаваньне экрана, каб вяртаньне з экрана заканчэньня не перамешвала пытаньні пасярод забегу.
-let run: {
-  set: VocabularyItem[];
-  answer: VocabularyItem;
-  image: ImageSourcePropType;
-}[] | null = null;
 
 const WordSelectionGame = ({ navigation }: Props) => {
-  const currentRun = run = run || generateRun(questionsPerRun);
+  // Забег ствараецца адзін раз на манціраваньне экрана: кожны новы заход у гульню - новы выпадковы забег.
+  const [currentRun] = useState(generateRun);
   const [runIndex, setRunIndex] = useState(0);
   const { set, answer, image } = currentRun[runIndex];
   const [isPerfectWord, setIsPerfectWord] = useState(true);
@@ -77,7 +71,6 @@ const WordSelectionGame = ({ navigation }: Props) => {
     setIsPerfectWord(true);
 
     if (runCompleted) {
-      run = generateRun();
       navigation.replace("Completion", {
         isPerfect: isPerfectRun,
         newWordsSeen: newWordsSeen + (isNewWord ? 1 : 0),

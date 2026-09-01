@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { ImageSourcePropType, StyleSheet, Text, View } from 'react-native';
-import { TextStyle, VocabularyItem } from './../vocabulary';
+import { StyleSheet, Text, View } from 'react-native';
+import { TextStyle } from './../vocabulary';
 import { generateQuestions } from './../gameRun';
 import { electOne } from './../randomization';
 import { copyStats, mutateStats, getStats } from './persistence';
@@ -17,14 +17,10 @@ type Props = NativeStackScreenProps<Routes, 'ImageSelectionGame'>;
 
 const questionsPerRun = 10;
 const imagesPerQuestion = 6;
-let run: {
-  set: VocabularyItem[];
-  answer: VocabularyItem;
-  images: ImageSourcePropType[];
-}[] | null = null;
 
 const ImageSelectionGame = ({ navigation }: Props) => {
-  const currentRun = run = run || generateRun(questionsPerRun);
+  // Забег ствараецца адзін раз на манціраваньне экрана: кожны новы заход у гульню - новы выпадковы забег.
+  const [currentRun] = useState(generateRun);
   const [runIndex, setRunIndex] = useState(0);
   const { set, answer, images } = currentRun[runIndex];
   const [isPerfectWord, setIsPerfectWord] = useState(true);
@@ -82,7 +78,6 @@ const ImageSelectionGame = ({ navigation }: Props) => {
     setIsPerfectWord(true);
 
     if (runCompleted) {
-      run = generateRun();
       navigation.replace("Completion", {
         isPerfect: isPerfectRun,
         newWordsSeen: newWordsSeen + (isNewWord ? 1 : 0),

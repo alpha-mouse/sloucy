@@ -102,6 +102,11 @@ const vocabulary = [
     require('./../data/blackberry2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./../data/blackberry3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('акан`іцы', [
+    require('./../data/shutters1.jpg'), // Сяргей Пехцераў
+    require('./../data/shutters2.jpg'), // Сяргей Пехцераў
+    require('./../data/shutters3.jpg'), // Сяргей Пехцераў
+  ], ['фіранкі']),
   new VocabularyItem('акул`яры', [
     require('./../data/glasses1.jpg'), // https://www.freepik.com/free-photo/glasses-office-desktop_4608903.htm
     require('./../data/glasses2.jpg'), // https://www.freepik.com/free-photo/glasses-with-slightly-rounded-frame_58425698.htm
@@ -116,7 +121,7 @@ const vocabulary = [
     require('./../data/pencil1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./../data/pencil2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./../data/pencil3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
-  ]),
+  ], ['рысунак']),
   new VocabularyItem('альт`анка', [
     require('./../data/gazebo1.jpg'), // https://pixabay.com/photos/snow-gazebo-winter-cold-white-616319/
     require('./../data/gazebo2.jpg'), // https://pixabay.com/photos/gazebo-spring-flowering-trees-pink-3404746/
@@ -136,7 +141,7 @@ const vocabulary = [
     require('./../data/sheet-of-paper1.jpg'), // https://unsplash.com/photos/white-printer-paper-4JxV3Gs42Ks
     require('./../data/sheet-of-paper2.jpg'), // https://unsplash.com/photos/white-paper-on-black-textile-BpuZCbAOhnw
     require('./../data/sheet-of-paper3.jpg'), // https://unsplash.com/photos/white-printer-paper-LZMDLa8rFYg
-  ], ['асадка']),
+  ], ['асадка', 'рысунак']),
   new VocabularyItem('ар`элі', [
     require('./../data/swing1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./../data/swing2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -250,7 +255,11 @@ const vocabulary = [
     require('./../data/cornflower2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./../data/cornflower3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
-  new VocabularyItem('вандр`оўнік', [], [], 'Не знайшоў фоткі'),
+  new VocabularyItem('вандр`оўні:ца', [
+    require('./../data/traveller1.jpg'), // https://www.magnific.com/free-photo/brunette-young-woman-beret-white-tee-coat-jeans-looks-into-camera-smiles-stylish-girl-sits-floor-leans-suitcase-holds-map-isolated-yellow-background_23986372.htm#fromView=search&page=1&position=0&uuid=028c666b-e32a-4e24-aa8d-f8967213fd90&track=ais_hybrid&query=traveller
+    require('./../data/traveller2.jpg'), // https://www.magnific.com/premium-photo/man-with-backpack-that-says-travel-it_245265003.htm#fromView=search&page=1&position=14&uuid=ba609cfe-1ef2-4d92-9bc7-b55f1370e988&track=ais_hybrid&query=traveller
+    require('./../data/traveller3.jpg'), // https://www.magnific.com/free-photo/smiling-man-with-map_2273418.htm#fromView=search&page=2&position=1&uuid=37213342-c726-49be-9213-1a00c71b3e09&track=ais_hybrid&query=traveller
+  ], ['мапа']),
   new VocabularyItem('в`ежа', [
     require('./../data/tower1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./../data/tower2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -281,6 +290,11 @@ const vocabulary = [
     require('./../data/eye2.jpg'), // https://www.freepik.com/free-photo/macro-shot-young-man-showing-brown-eyes-camera-blinking-looking-reflection-person-with-eyebrows-eyelashes-healthy-eyesight-having-good-vision-optical-focus-close-up_25858461.htm
     require('./../data/eye3.jpg'), // https://www.freepik.com/free-photo/gold-bengal-cat-black-background_8924011.htm
   ], ['раёк', 'зрэнка']),
+  new VocabularyItem('в`оўна', [
+    require('./../data/wool_b1.jpg'), // https://www.magnific.com/free-photo/close-up-wool-texture-details_29016724.htm#fromView=search&page=1&position=1&uuid=f09cdd8e-6ac9-4eee-84e9-91287a10c27c&track=ais_hybrid&query=wool
+    require('./../data/wool_b2.jpg'), // https://www.magnific.com/premium-photo/wool-fabric-marinos-wool-wool-fabric_381305045.htm#fromView=search&page=1&position=7&uuid=f09cdd8e-6ac9-4eee-84e9-91287a10c27c&track=ais_hybrid&query=wool
+    require('./../data/wool_b3.jpg'), // https://www.magnific.com/premium-photo/handmade-grey-knitting-wool-texture-background_25073096.htm#fromView=search&page=1&position=11&uuid=f09cdd8e-6ac9-4eee-84e9-91287a10c27c&track=ais_hybrid&query=wool
+  ], ['поўсьць', 'футра']),
   new VocabularyItem('в`опратка', [
     require('./../data/clothes1.jpg'), // https://www.freepik.com/premium-photo/colorful-women39s-dresses-hangers-retail-shop_40901510.htm
     require('./../data/clothes2.jpg'), // https://unsplash.com/photos/five-jackets-on-clothes-rack-zw_oaDbfzyE
@@ -453,7 +467,7 @@ const vocabulary = [
     require('./../data/carpet1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./../data/carpet2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./../data/carpet3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
-  ]),
+  ], ['махры']),
   new VocabularyItem('дыям`энт', [
     require('./../data/diamond1.jpg'), // https://www.freepik.com/premium-photo/diamond-black-leather-background_273093259.htm
     require('./../data/diamond2.jpg'), // https://www.freepik.com/premium-photo/close-up-elegant-diamond-white-shining-bokeh-background-concept-choosing-best-diamond-gem-design-3d-render_149477329.htm
@@ -491,7 +505,7 @@ const vocabulary = [
     require('./../data/backpack1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./../data/backpack2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./../data/backpack3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
-  ]),
+  ], ['вандроўнік']),
   new VocabularyItem('зб`ан', [
     require('./../data/jug1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./../data/jug2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -567,6 +581,11 @@ const vocabulary = [
     require('./../data/spinning-wheel2.jpg'), // https://be.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BB%D0%B0%D1%9E%D1%80%D0%BE%D1%82
     require('./../data/spinning-wheel3.jpg'), // https://en.wikipedia.org/wiki/Spinning_wheel
   ]),
+  new VocabularyItem('кал`ыска', [
+    require('./../data/cot1.jpg'), // https://www.magnific.com/premium-photo/beautiful-cradle-with-toy-rabbit-near-crib-dresser-baby-room-interior-design_37000700.htm#fromView=search&page=2&position=36&uuid=8427d84f-a47e-4d41-bffb-2cc5e63c3668&track=ais_hybrid&query=rocking+cot
+    require('./../data/cot2.jpg'), // https://www.magnific.com/premium-photo/white-baby-cot-white-background-minimal-concept-idea-monochrome-3d-render_33917800.htm#fromView=search&page=1&position=6&uuid=8427d84f-a47e-4d41-bffb-2cc5e63c3668&track=ais_hybrid&query=rocking+cot
+    require('./../data/cot3.jpg'), // https://www.magnific.com/premium-photo/beige-knitted-baby-romper-hat-hang-curved-wooden-crib-bright-minimalist-nursery-with-natural_428196817.htm#fromView=search&page=1&position=7&uuid=8427d84f-a47e-4d41-bffb-2cc5e63c3668&track=ais_hybrid&query=rocking+cot
+  ], ['ложак', 'немаўля']),
   new VocabularyItem('кал`яды', [
     require('./../data/christmas1.jpg'), // https://be.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BB%D1%8F%D0%B4%D1%8B
     require('./../data/christmas2.jpg'), // https://be.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BB%D1%8F%D0%B4%D1%8B	
@@ -786,7 +805,7 @@ const vocabulary = [
     require('./../data/bed1.jpg'), // https://www.freepik.com/free-photo/beautiful-bed-middle-bedroom_14601080.htm
     require('./../data/bed2.jpg'), // https://www.freepik.com/premium-photo/white-arched-window-bedroom-corner-with-king-size-bed-bedside-table-attached-wall-top-view-3d-rendering-mock-up_62524273.htm
     require('./../data/bed3.jpg'), // https://www.freepik.com/premium-photo/3d-images-isolated-double-bed-with-stunning-design-colorful-gray-solid-background-generative-ai-illustration_37022091.htm
-  ]),
+  ], ['калыска']),
   new VocabularyItem('л`окшына', [
     require('./../data/noodles1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./../data/noodles2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -801,6 +820,11 @@ const vocabulary = [
     require('./../data/slice1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./../data/slice2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./../data/slice3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
+  ]),
+  new VocabularyItem('л`юлька', [
+    require('./../data/pipe1.jpg'), // https://www.magnific.com/premium-photo/pipe-isolated-white-background-v-61-job-id-267826edff6b4246866c638e442527bd_425606786.htm#fromView=search&page=1&position=8&uuid=b41db2ef-d305-4f38-8a0d-5d9a99069736&track=ais_hybrid&query=smoking+pipe
+    require('./../data/pipe2.jpg'), // https://www.magnific.com/premium-photo/smoking-pipe-wooden-office-desk-tobacco-smoking-habit_35003651.htm#fromView=search&page=1&position=16&uuid=b41db2ef-d305-4f38-8a0d-5d9a99069736&track=ais_hybrid&query=smoking+pipe
+    require('./../data/pipe3.jpg'), // https://www.magnific.com/premium-photo/smoking-pipe-tobacco-wooden-table-closeup_88897802.htm#fromView=search&page=2&position=27&uuid=b41db2ef-d305-4f38-8a0d-5d9a99069736&track=ais_hybrid&query=smoking+pipe
   ]),
   new VocabularyItem('люст`эрка', [
     require('./../data/mirror1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -843,12 +867,17 @@ const vocabulary = [
     require('./../data/map1.jpg'), // https://www.freepik.com/free-photo/high-angle-view-different-maps_2544016.htm
     require('./../data/map2.jpg'), // https://www.freepik.com/premium-photo/world-map-image_251453399.htm
     require('./../data/map3.jpg'), // https://www.freepik.com/free-photo/unrecognizable-navigating-tourist-city_1291702.htm
-  ]),
+  ], ['вандроўні:ца']),
   new VocabularyItem('матузк`і', [
     require('./../data/shoelaces1.jpg'), // https://www.freepik.com/free-photo/young-backpacker-woman-tying-shoelaces-while-go-hiking-forest_1088855.htm
     require('./../data/shoelaces2.jpg'), // https://www.freepik.com/free-photo/hands-tying-trainers-shoelaces-fall-pave_1281743.htm
     require('./../data/shoelaces3.jpg'), // https://www.freepik.com/premium-photo/brides-back-wedding-white-dress-with-lace_22999883.htm
   ]),
+  new VocabularyItem('махр`ы', [
+    require('./../data/fringe1.jpg'), // https://www.magnific.com/free-photo/white-woven-carpet-background-floor_18099915.htm#fromView=search&page=1&position=12&uuid=c841382f-fb99-4f98-a000-675519db70fc&track=ais_hybrid&query=fringe
+    require('./../data/fringe2.jpg'), // https://www.magnific.com/free-photo/close-up-cozy-texture-detail_25714589.htm#fromView=search&page=1&position=14&uuid=c841382f-fb99-4f98-a000-675519db70fc&track=ais_hybrid&query=fringe
+    require('./../data/fringe3.jpg'), // https://www.magnific.com/free-photo/close-up-cozy-texture-detail_25714584.htm#fromView=search&page=1&position=43&uuid=c841382f-fb99-4f98-a000-675519db70fc&track=ais_hybrid&query=fringe
+  ], ['хустка', 'дыван']),
   new VocabularyItem('м`огілкі', [
     require('./../data/cemetery1.jpg'), // https://www.freepik.com/premium-photo/lviv-ukraine-apr-27-2016-old-graves-lychakivskyj-cemetery-lviv-ukraine-officially-state-history-culture-museum-preserve-lychakiv-cemetery_17330855.htm
     require('./../data/cemetery2.jpg'), // https://www.freepik.com/free-photo/world-war-i-cemetery_9760840.htm
@@ -859,7 +888,11 @@ const vocabulary = [
     require('./../data/ant2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./../data/ant3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
-  new VocabularyItem('мут`эрка', [], [], 'Не знайшоў фоткі'),
+  new VocabularyItem('мут`эрка', [
+    require('./../data/nut1.jpg'), // https://www.magnific.com/free-photo/top-view-mechanic-screw_8453508.htm#fromView=search&page=1&position=8&uuid=31a810e7-0962-4fc2-b62a-bed82b070694&track=ais_hybrid&query=bolt+nut
+    require('./../data/nut2.jpg'), // https://www.magnific.com/free-photo/abstract-metallic-background-close-up_12558750.htm#fromView=search&page=1&position=13&uuid=31a810e7-0962-4fc2-b62a-bed82b070694&track=ais_hybrid&query=bolt+nut
+    require('./../data/nut3.jpg'), // https://www.magnific.com/premium-photo/silver-bolt-nut-monochrome-industrial-tool_36987440.htm#fromView=search&page=1&position=38&uuid=31a810e7-0962-4fc2-b62a-bed82b070694&track=ais_hybrid&query=bolt+nut
+  ]),
   new VocabularyItem('м`ыліца', [
     require('./../data/crutches1.jpg'), // https://www.freepik.com/premium-photo/crutches-front-wall_32522628.htm
     require('./../data/crutches2.jpg'), // https://www.freepik.com/premium-photo/elderly-woman-with-crutch-walking-corridor_10726642.htm
@@ -892,7 +925,7 @@ const vocabulary = [
     require('./../data/infant1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./../data/infant2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./../data/infant3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
-  ]),
+  ], ['калыска']),
   new VocabularyItem('н`ітніца', [
     require('./../data/gauze1.jpg'), // https://www.freepik.com/premium-photo/concept-first-aid-supplies-bandag-close-up_39223659.htm
     require('./../data/gauze2.jpg'), // https://www.freepik.com/free-photo/white-medical-bandage-marble-table_11333110.htm
@@ -1009,6 +1042,11 @@ const vocabulary = [
     require('./../data/canteen2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./../data/canteen3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
+  new VocabularyItem('п`окуць', [
+    require('./../data/pokuc1.jpg'), // Andrei Liankevich https://storage.by-traditional-interior.org/3c25512f-4bfd-45d6-bad0-fdbd1cee6908.jpg
+    require('./../data/pokuc2.jpg'), // Andrei Liankevich https://storage.by-traditional-interior.org/8dcd11ff-e357-4829-afdb-032d36b8236e.jpg
+    require('./../data/pokuc3.jpg'), // Andrei Liankevich https://storage.by-traditional-interior.org/cf2f6b06-6dfd-43db-8669-e5d9b7814f6d.jpg
+  ]),
   new VocabularyItem('п`олымя', [
     require('./../data/fire1.jpg'), // https://www.freepik.com/free-photo/fire-flames-black-background-abstract-blaze-fire-flame-texture-background_233174356.htm
     require('./../data/fire2.jpg'), // https://pixabay.com/photos/firefighters-fire-firefighting-115800/
@@ -1032,7 +1070,7 @@ const vocabulary = [
     require('./../data/wool1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./../data/wool2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./../data/wool3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
-  ], ['футра']),
+  ], ['футра', 'воўна']),
   new VocabularyItem('прам`ень', [
     require('./../data/ray1.jpg'), // https://www.freepik.com/premium-photo/color-floodlight-illuminate-glow-dark-equipment-show-programs_18419416.htm
     require('./../data/ray2.jpg'), // https://pixabay.com/photos/night-photograph-flashlight-ray-2183637/
@@ -1107,7 +1145,11 @@ const vocabulary = [
     require('./../data/spade3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
   ]),
   new VocabularyItem('рызьз`ё', [], [], 'todo'),
-  new VocabularyItem('рыс`унак', [], [], 'Не знайшоў фоткі'),
+  new VocabularyItem('рыс`унак', [
+    require('./../data/sketch1.jpg'), // https://www.magnific.com/free-photo/still-life-graphic-design-studio_150835364.htm#fromView=search&page=1&position=9&uuid=02402c5d-6df4-401d-baba-4b9aee801de2&track=ais_hybrid&query=sketch
+    require('./../data/sketch2.jpg'), // https://www.magnific.com/free-photo/caucasian-designer-creating-new-design_2767713.htm#fromView=search&page=1&position=17&uuid=02402c5d-6df4-401d-baba-4b9aee801de2&track=ais_hybrid&query=sketch
+    require('./../data/sketch3.jpg'), // https://www.magnific.com/free-photo/artist-s-hand-sketching-drawing-white-paper-with-charcoal-stick_4371064.htm#fromView=search&page=3&position=10&uuid=02402c5d-6df4-401d-baba-4b9aee801de2&track=ais_hybrid&query=sketch
+  ], ['аркуш', 'аловак']),
   new VocabularyItem('р`эйкі', [
     require('./../data/rails1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./../data/rails2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -1316,7 +1358,7 @@ const vocabulary = [
     require('./../data/curtains1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./../data/curtains2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./../data/curtains3.jpg'), // Pixabay https://pixabay.com/service/terms/#license
-  ]),
+  ], ['аканіцы']),
   new VocabularyItem('футар`ал', [
     require('./../data/case1.jpg'), // https://www.freepik.com/premium-photo/high-angle-view-empty-paper-white-background_99966104.htm
     require('./../data/case2.jpg'), // https://www.freepik.com/premium-photo/close-up-guitar-case-footpath_101987565.htm
@@ -1326,7 +1368,7 @@ const vocabulary = [
     require('./../data/furs1.jpg'), // https://www.freepik.com/free-photo/woman-model-demonstrating-winter-cloths_5852101.htm
     require('./../data/furs2.jpg'), // https://www.freepik.com/free-photo/portrair-fashionable-woman-walking-city-warm-fur-coat-winter-season-cold-weather-wearing-black-cap-street-fashion-trend_10687582.htm
     require('./../data/furs3.jpg'), // https://www.freepik.com/premium-photo/portrait-beautiful-woman-wearing-fur-coat_108806750.htm
-  ], ['поўсьць', 'пальчаткі']),
+  ], ['поўсьць', 'пальчаткі', 'воўна']),
   new VocabularyItem('хал`ява', [
     require('./../data/boot-top1.jpg'), // https://www.freepik.com/free-photo/vertical-shot-woman-wearing-fashionable-brown-leather-kneehigh-boots-outdoors_27573082.htm
     require('./../data/boot-top2.jpg'), // https://www.freepik.com/free-photo/good-looking-sexy-blond-model-white-blouse-leather-skrt-knitted-block-thigh-high-boots-beige_10310209.htm
@@ -1351,7 +1393,7 @@ const vocabulary = [
     require('./../data/shawl1.jpg'), // https://www.freepik.com/premium-ai-image/green-silk-shawl-isolated-white-background-female-accessory_238663991.htm
     require('./../data/shawl2.jpg'), // https://www.freepik.com/free-photo/flamenca-dancer-with-manila-shawl-looking-camera_5228326.htm
     require('./../data/shawl3.jpg'), // https://www.freepik.com/free-photo/businesswoman-black-dress-with-evening-makeup-colorful-lips-red-shawl_7091897.htm
-  ]),
+  ], ['махры']),
   new VocabularyItem('царкв`а', [], [], 'не знайшоў фоткі'),
   new VocabularyItem('цм`ок', [
     require('./../data/dragon1.jpg'), // https://pixabay.com/photos/dragon-steampunk-fantasy-history-5450084/
@@ -1414,7 +1456,7 @@ const vocabulary = [
     require('./../data/shoes2.jpg'), // ШІ
     require('./../data/shoes3.jpg'), // ШІ
   ]),
-  new VocabularyItem('чарадзей:ка', [
+  new VocabularyItem('чарадз`ей:ка', [
     require('./../data/wizard1.jpg'), // ШІ
     require('./../data/wizard2.jpg'), // ШІ
     require('./../data/wizard3.jpg'), // ШІ

@@ -24,13 +24,16 @@
 **аж_ы_ны**   
 <img src="./data/blackberry1.jpg" width="200" height="200" alt="blackberry1" /> <img src="./data/blackberry2.jpg" width="200" height="200" alt="blackberry2" /> <img src="./data/blackberry3.jpg" width="200" height="200" alt="blackberry3" /> 
 
+**акан_і_цы** !(фіранкі)  
+<img src="./data/shutters1.jpg" width="200" height="200" alt="shutters1" /> <img src="./data/shutters2.jpg" width="200" height="200" alt="shutters2" /> <img src="./data/shutters3.jpg" width="200" height="200" alt="shutters3" /> 
+
 **акул_я_ры**   
 <img src="./data/glasses1.jpg" width="200" height="200" alt="glasses1" /> <img src="./data/glasses2.jpg" width="200" height="200" alt="glasses2" /> <img src="./data/glasses3.jpg" width="200" height="200" alt="glasses3" /> 
 
 **ал_е_й**   
 <img src="./data/vegetable-oil1.jpg" width="200" height="200" alt="vegetable-oil1" /> <img src="./data/vegetable-oil2.jpg" width="200" height="200" alt="vegetable-oil2" /> <img src="./data/vegetable-oil3.jpg" width="200" height="200" alt="vegetable-oil3" /> 
 
-**ал_о_вак**   
+**ал_о_вак** !(рысунак)  
 <img src="./data/pencil1.jpg" width="200" height="200" alt="pencil1" /> <img src="./data/pencil2.jpg" width="200" height="200" alt="pencil2" /> <img src="./data/pencil3.jpg" width="200" height="200" alt="pencil3" /> 
 
 **альт_а_нка**   
@@ -42,7 +45,7 @@
 **апал_о_нік**   
 <img src="./data/tadpole1.jpg" width="200" height="200" alt="tadpole1" /> <img src="./data/ladle2.jpg" width="200" height="200" alt="ladle2" /> <img src="./data/ladle3.jpg" width="200" height="200" alt="ladle3" /> 
 
-**_а_ркуш** !(асадка)  
+**_а_ркуш** !(асадка, рысунак)  
 <img src="./data/sheet-of-paper1.jpg" width="200" height="200" alt="sheet-of-paper1" /> <img src="./data/sheet-of-paper2.jpg" width="200" height="200" alt="sheet-of-paper2" /> <img src="./data/sheet-of-paper3.jpg" width="200" height="200" alt="sheet-of-paper3" /> 
 
 **ар_э_лі**   
@@ -120,8 +123,8 @@
 **вал_о_шка**   
 <img src="./data/cornflower1.jpg" width="200" height="200" alt="cornflower1" /> <img src="./data/cornflower2.jpg" width="200" height="200" alt="cornflower2" /> <img src="./data/cornflower3.jpg" width="200" height="200" alt="cornflower3" /> 
 
-**вандр_о_ўнік**   
-Не знайшоў фоткі
+**вандр_о_ўні:ца** !(мапа)  
+<img src="./data/traveller1.jpg" width="200" height="200" alt="traveller1" /> <img src="./data/traveller2.jpg" width="200" height="200" alt="traveller2" /> <img src="./data/traveller3.jpg" width="200" height="200" alt="traveller3" /> 
 
 **в_е_жа**   
 <img src="./data/tower1.jpg" width="200" height="200" alt="tower1" /> <img src="./data/tower2.jpg" width="200" height="200" alt="tower2" /> <img src="./data/tower3.jpg" width="200" height="200" alt="tower3" /> 
@@ -140,6 +143,9 @@
 
 **в_о_ка** !(раёк, зрэнка)  
 <img src="./data/eye1.jpg" width="200" height="200" alt="eye1" /> <img src="./data/eye2.jpg" width="200" height="200" alt="eye2" /> <img src="./data/eye3.jpg" width="200" height="200" alt="eye3" /> 
+
+**в_о_ўна** !(поўсьць, футра)  
+<img src="./data/wool_b1.jpg" width="200" height="200" alt="wool_b1" /> <img src="./data/wool_b2.jpg" width="200" height="200" alt="wool_b2" /> <img src="./data/wool_b3.jpg" width="200" height="200" alt="wool_b3" /> 
 
 **в_о_пратка**   
 <img src="./data/clothes1.jpg" width="200" height="200" alt="clothes1" /> <img src="./data/clothes2.jpg" width="200" height="200" alt="clothes2" /> <img src="./data/clothes3.jpg" width="200" height="200" alt="clothes3" /> 
@@ -249,7 +255,7 @@
 **дрыгв_а_**   
 <img src="./data/swamp1.jpg" width="200" height="200" alt="swamp1" /> <img src="./data/swamp2.jpg" width="200" height="200" alt="swamp2" /> <img src="./data/swamp3.jpg" width="200" height="200" alt="swamp3" /> 
 
-**дыв_а_н**   
+**дыв_а_н** !(махры)  
 <img src="./data/carpet1.jpg" width="200" height="200" alt="carpet1" /> <img src="./data/carpet2.jpg" width="200" height="200" alt="carpet2" /> <img src="./data/carpet3.jpg" width="200" height="200" alt="carpet3" /> 
 
 **дыям_э_нт**   
@@ -279,7 +285,7 @@
 **запальн_і_чка** !(полымя)  
 <img src="./data/lighter1.jpg" width="200" height="200" alt="lighter1" /> <img src="./data/lighter2.jpg" width="200" height="200" alt="lighter2" /> <img src="./data/lighter3.jpg" width="200" height="200" alt="lighter3" /> 
 
-**запл_е_чнік**   
+**запл_е_чнік** !(вандроўнік)  
 <img src="./data/backpack1.jpg" width="200" height="200" alt="backpack1" /> <img src="./data/backpack2.jpg" width="200" height="200" alt="backpack2" /> <img src="./data/backpack3.jpg" width="200" height="200" alt="backpack3" /> 
 
 **зб_а_н**   
@@ -338,6 +344,9 @@
 
 **калаўр_о_т**   
 <img src="./data/spinning-wheel1.jpg" width="200" height="200" alt="spinning-wheel1" /> <img src="./data/spinning-wheel2.jpg" width="200" height="200" alt="spinning-wheel2" /> <img src="./data/spinning-wheel3.jpg" width="200" height="200" alt="spinning-wheel3" /> 
+
+**кал_ы_ска** !(ложак, немаўля)  
+<img src="./data/cot1.jpg" width="200" height="200" alt="cot1" /> <img src="./data/cot2.jpg" width="200" height="200" alt="cot2" /> <img src="./data/cot3.jpg" width="200" height="200" alt="cot3" /> 
 
 **кал_я_ды**   
 <img src="./data/christmas1.jpg" width="200" height="200" alt="christmas1" /> <img src="./data/christmas2.jpg" width="200" height="200" alt="christmas2" /> <img src="./data/christmas3.jpg" width="200" height="200" alt="christmas3" /> 
@@ -492,7 +501,7 @@
 **ліхт_а_рык** !(прамень)  
 <img src="./data/flashlight1.jpg" width="200" height="200" alt="flashlight1" /> <img src="./data/flashlight2.jpg" width="200" height="200" alt="flashlight2" /> <img src="./data/flashlight3.jpg" width="200" height="200" alt="flashlight3" /> 
 
-**л_о_жак**   
+**л_о_жак** !(калыска)  
 <img src="./data/bed1.jpg" width="200" height="200" alt="bed1" /> <img src="./data/bed2.jpg" width="200" height="200" alt="bed2" /> <img src="./data/bed3.jpg" width="200" height="200" alt="bed3" /> 
 
 **л_о_кшына**   
@@ -503,6 +512,9 @@
 
 **л_у_ста**   
 <img src="./data/slice1.jpg" width="200" height="200" alt="slice1" /> <img src="./data/slice2.jpg" width="200" height="200" alt="slice2" /> <img src="./data/slice3.jpg" width="200" height="200" alt="slice3" /> 
+
+**л_ю_лька**   
+<img src="./data/pipe1.jpg" width="200" height="200" alt="pipe1" /> <img src="./data/pipe2.jpg" width="200" height="200" alt="pipe2" /> <img src="./data/pipe3.jpg" width="200" height="200" alt="pipe3" /> 
 
 **люст_э_рка**   
 <img src="./data/mirror1.jpg" width="200" height="200" alt="mirror1" /> <img src="./data/mirror2.jpg" width="200" height="200" alt="mirror2" /> <img src="./data/mirror3.jpg" width="200" height="200" alt="mirror3" /> 
@@ -531,11 +543,14 @@
 **мал_ю_нак**   
 <img src="./data/painting1.jpg" width="200" height="200" alt="painting1" /> <img src="./data/painting2.jpg" width="200" height="200" alt="painting2" /> <img src="./data/painting3.jpg" width="200" height="200" alt="painting3" /> 
 
-**м_а_па**   
+**м_а_па** !(вандроўні:ца)  
 <img src="./data/map1.jpg" width="200" height="200" alt="map1" /> <img src="./data/map2.jpg" width="200" height="200" alt="map2" /> <img src="./data/map3.jpg" width="200" height="200" alt="map3" /> 
 
 **матузк_і_**   
 <img src="./data/shoelaces1.jpg" width="200" height="200" alt="shoelaces1" /> <img src="./data/shoelaces2.jpg" width="200" height="200" alt="shoelaces2" /> <img src="./data/shoelaces3.jpg" width="200" height="200" alt="shoelaces3" /> 
+
+**махр_ы_** !(хустка, дыван)  
+<img src="./data/fringe1.jpg" width="200" height="200" alt="fringe1" /> <img src="./data/fringe2.jpg" width="200" height="200" alt="fringe2" /> <img src="./data/fringe3.jpg" width="200" height="200" alt="fringe3" /> 
 
 **м_о_гілкі**   
 <img src="./data/cemetery1.jpg" width="200" height="200" alt="cemetery1" /> <img src="./data/cemetery2.jpg" width="200" height="200" alt="cemetery2" /> <img src="./data/cemetery3.jpg" width="200" height="200" alt="cemetery3" /> 
@@ -544,7 +559,7 @@
 <img src="./data/ant1.jpg" width="200" height="200" alt="ant1" /> <img src="./data/ant2.jpg" width="200" height="200" alt="ant2" /> <img src="./data/ant3.jpg" width="200" height="200" alt="ant3" /> 
 
 **мут_э_рка**   
-Не знайшоў фоткі
+<img src="./data/nut1.jpg" width="200" height="200" alt="nut1" /> <img src="./data/nut2.jpg" width="200" height="200" alt="nut2" /> <img src="./data/nut3.jpg" width="200" height="200" alt="nut3" /> 
 
 **м_ы_ліца**   
 <img src="./data/crutches1.jpg" width="200" height="200" alt="crutches1" /> <img src="./data/crutches2.jpg" width="200" height="200" alt="crutches2" /> <img src="./data/crutches3.jpg" width="200" height="200" alt="crutches3" /> 
@@ -570,7 +585,7 @@
 **нач_о_ўка**   
 двухсэнсоўнае?
 
-**немаўл_я_**   
+**немаўл_я_** !(калыска)  
 <img src="./data/infant1.jpg" width="200" height="200" alt="infant1" /> <img src="./data/infant2.jpg" width="200" height="200" alt="infant2" /> <img src="./data/infant3.jpg" width="200" height="200" alt="infant3" /> 
 
 **н_і_тніца**   
@@ -657,6 +672,9 @@ acab
 **пл_я_шка**   
 <img src="./data/canteen1.jpg" width="200" height="200" alt="canteen1" /> <img src="./data/canteen2.jpg" width="200" height="200" alt="canteen2" /> <img src="./data/canteen3.jpg" width="200" height="200" alt="canteen3" /> 
 
+**п_о_куць**   
+<img src="./data/pokuc1.jpg" width="200" height="200" alt="pokuc1" /> <img src="./data/pokuc2.jpg" width="200" height="200" alt="pokuc2" /> <img src="./data/pokuc3.jpg" width="200" height="200" alt="pokuc3" /> 
+
 **п_о_лымя** !(вогнішча, грубка)  
 <img src="./data/fire1.jpg" width="200" height="200" alt="fire1" /> <img src="./data/fire2.jpg" width="200" height="200" alt="fire2" /> <img src="./data/fire3.jpg" width="200" height="200" alt="fire3" /> 
 
@@ -678,7 +696,7 @@ acab
 **п_о_ўня**   
 <img src="./data/fullmoon1.jpg" width="200" height="200" alt="fullmoon1" /> <img src="./data/fullmoon2.jpg" width="200" height="200" alt="fullmoon2" /> <img src="./data/fullmoon3.jpg" width="200" height="200" alt="fullmoon3" /> 
 
-**п_о_ўсьць** !(футра)  
+**п_о_ўсьць** !(футра, воўна)  
 <img src="./data/wool1.jpg" width="200" height="200" alt="wool1" /> <img src="./data/wool2.jpg" width="200" height="200" alt="wool2" /> <img src="./data/wool3.jpg" width="200" height="200" alt="wool3" /> 
 
 **прам_е_нь**   
@@ -735,8 +753,8 @@ acab
 **рызьз_ё_**   
 todo
 
-**рыс_у_нак**   
-Не знайшоў фоткі
+**рыс_у_нак** !(аркуш, аловак)  
+<img src="./data/sketch1.jpg" width="200" height="200" alt="sketch1" /> <img src="./data/sketch2.jpg" width="200" height="200" alt="sketch2" /> <img src="./data/sketch3.jpg" width="200" height="200" alt="sketch3" /> 
 
 **р_э_йкі**   
 <img src="./data/rails1.jpg" width="200" height="200" alt="rails1" /> <img src="./data/rails2.jpg" width="200" height="200" alt="rails2" /> <img src="./data/rails3.jpg" width="200" height="200" alt="rails3" /> 
@@ -894,13 +912,13 @@ todo
 **фат_э_ль**   
 <img src="./data/armchair1.jpg" width="200" height="200" alt="armchair1" /> <img src="./data/armchair2.jpg" width="200" height="200" alt="armchair2" /> <img src="./data/armchair3.jpg" width="200" height="200" alt="armchair3" /> 
 
-**фір_а_нкі**   
+**фір_а_нкі** !(аканіцы)  
 <img src="./data/curtains1.jpg" width="200" height="200" alt="curtains1" /> <img src="./data/curtains2.jpg" width="200" height="200" alt="curtains2" /> <img src="./data/curtains3.jpg" width="200" height="200" alt="curtains3" /> 
 
 **футар_а_л**   
 <img src="./data/case1.jpg" width="200" height="200" alt="case1" /> <img src="./data/case2.jpg" width="200" height="200" alt="case2" /> <img src="./data/case3.jpg" width="200" height="200" alt="case3" /> 
 
-**ф_у_тра** !(поўсьць, пальчаткі)  
+**ф_у_тра** !(поўсьць, пальчаткі, воўна)  
 <img src="./data/furs1.jpg" width="200" height="200" alt="furs1" /> <img src="./data/furs2.jpg" width="200" height="200" alt="furs2" /> <img src="./data/furs3.jpg" width="200" height="200" alt="furs3" /> 
 
 **хал_я_ва** !(боты)  
@@ -915,7 +933,7 @@ todo
 **хр_у_шч**   
 <img src="./data/cockchafer1.jpg" width="200" height="200" alt="cockchafer1" /> <img src="./data/cockchafer2.jpg" width="200" height="200" alt="cockchafer2" /> <img src="./data/cockchafer3.jpg" width="200" height="200" alt="cockchafer3" /> 
 
-**х_у_стка**   
+**х_у_стка** !(махры)  
 <img src="./data/shawl1.jpg" width="200" height="200" alt="shawl1" /> <img src="./data/shawl2.jpg" width="200" height="200" alt="shawl2" /> <img src="./data/shawl3.jpg" width="200" height="200" alt="shawl3" /> 
 
 **царкв_а_**   
@@ -960,7 +978,7 @@ todo
 **чарав_і_кі**   
 <img src="./data/shoes1.jpg" width="200" height="200" alt="shoes1" /> <img src="./data/shoes2.jpg" width="200" height="200" alt="shoes2" /> <img src="./data/shoes3.jpg" width="200" height="200" alt="shoes3" /> 
 
-**чарадзей:ка**   
+**чарадз_е_й:ка**   
 <img src="./data/wizard1.jpg" width="200" height="200" alt="wizard1" /> <img src="./data/wizard2.jpg" width="200" height="200" alt="wizard2" /> <img src="./data/wizard3.jpg" width="200" height="200" alt="wizard3" /> 
 
 **чарг_а_**   

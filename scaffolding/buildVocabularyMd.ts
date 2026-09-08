@@ -14,6 +14,9 @@ fullVocabulary.forEach(item => {
     exclusion = '!(' + item.exclusion.join(', ') + ')';
   }
   content += `**${heading}** ${exclusion}  \n`;
+  if (item.comment) {
+    content += item.comment + (item.isEnabled ? '  \n' : '\n');
+  }
   if (item.isEnabled) {
     item.images.forEach(source => {
       const image = source as unknown as string;
@@ -21,8 +24,6 @@ fullVocabulary.forEach(item => {
       content += `<img src="${image.replace('../', '')}" width="200" height="200" alt="${imageName}" /> `;
     });
     content += '\n';
-  } else {
-    content += item.comment + '\n';
   }
   content += '\n';
 });

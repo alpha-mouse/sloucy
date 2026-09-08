@@ -6,7 +6,7 @@ export class VocabularyItem {
     this.canonical = word.replace(/`/g, '');
     this.entry = VocabularyEntry.fromString(word);
     this.images = images;
-    this.isEnabled = comment === undefined;
+    this.isEnabled = !!images.length;
     this.exclusion = exclusion;
     this.comment = comment;
   }
@@ -106,7 +106,7 @@ const vocabulary = [
     require('./data/shutters1.jpg'), // Сяргей Пехцераў
     require('./data/shutters2.jpg'), // Сяргей Пехцераў
     require('./data/shutters3.jpg'), // Сяргей Пехцераў
-  ], ['фіранкі']),
+  ], ['фіранкі'], '© Сяргей Пехцераў'),
   new VocabularyItem('акул`яры', [
     require('./data/glasses1.jpg'), // https://www.freepik.com/free-photo/glasses-office-desktop_4608903.htm
     require('./data/glasses2.jpg'), // https://www.freepik.com/free-photo/glasses-with-slightly-rounded-frame_58425698.htm
@@ -1046,7 +1046,7 @@ const vocabulary = [
     require('./data/pokuc1.jpg'), // https://storage.by-traditional-interior.org/3c25512f-4bfd-45d6-bad0-fdbd1cee6908.jpg
     require('./data/pokuc2.jpg'), // https://storage.by-traditional-interior.org/8dcd11ff-e357-4829-afdb-032d36b8236e.jpg
     require('./data/pokuc3.jpg'), // https://storage.by-traditional-interior.org/cf2f6b06-6dfd-43db-8669-e5d9b7814f6d.jpg
-  ]),
+  ], [], '© Andrei Liankevich https://by-traditional-interior.org'),
   new VocabularyItem('п`олымя', [
     require('./data/fire1.jpg'), // https://www.freepik.com/free-photo/fire-flames-black-background-abstract-blaze-fire-flame-texture-background_233174356.htm
     require('./data/fire2.jpg'), // https://pixabay.com/photos/firefighters-fire-firefighting-115800/

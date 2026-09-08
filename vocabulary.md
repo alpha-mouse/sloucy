@@ -25,6 +25,7 @@
 <img src="./data/blackberry1.jpg" width="200" height="200" alt="blackberry1" /> <img src="./data/blackberry2.jpg" width="200" height="200" alt="blackberry2" /> <img src="./data/blackberry3.jpg" width="200" height="200" alt="blackberry3" /> 
 
 **акан_і_цы** !(фіранкі)  
+© Сяргей Пехцераў  
 <img src="./data/shutters1.jpg" width="200" height="200" alt="shutters1" /> <img src="./data/shutters2.jpg" width="200" height="200" alt="shutters2" /> <img src="./data/shutters3.jpg" width="200" height="200" alt="shutters3" /> 
 
 **акул_я_ры**   
@@ -575,7 +576,6 @@
 
 **нал_е_пка**   
 
-
 **нам_ё_т**   
 <img src="./data/tent1.jpg" width="200" height="200" alt="tent1" /> <img src="./data/tent2.jpg" width="200" height="200" alt="tent2" /> <img src="./data/tent3.jpg" width="200" height="200" alt="tent3" /> 
 
@@ -592,7 +592,6 @@
 <img src="./data/gauze1.jpg" width="200" height="200" alt="gauze1" /> <img src="./data/gauze2.jpg" width="200" height="200" alt="gauze2" /> <img src="./data/gauze3.jpg" width="200" height="200" alt="gauze3" /> 
 
 **няб_о_жчык**   
-
 
 **падаб_а_йка**   
 <img src="./data/like1.jpg" width="200" height="200" alt="like1" /> <img src="./data/like2.jpg" width="200" height="200" alt="like2" /> <img src="./data/like3.jpg" width="200" height="200" alt="like3" /> 
@@ -673,6 +672,7 @@ acab
 <img src="./data/canteen1.jpg" width="200" height="200" alt="canteen1" /> <img src="./data/canteen2.jpg" width="200" height="200" alt="canteen2" /> <img src="./data/canteen3.jpg" width="200" height="200" alt="canteen3" /> 
 
 **п_о_куць**   
+© Andrei Liankevich https://by-traditional-interior.org  
 <img src="./data/pokuc1.jpg" width="200" height="200" alt="pokuc1" /> <img src="./data/pokuc2.jpg" width="200" height="200" alt="pokuc2" /> <img src="./data/pokuc3.jpg" width="200" height="200" alt="pokuc3" /> 
 
 **п_о_лымя** !(вогнішча, грубка)  
@@ -683,15 +683,12 @@ acab
 
 **п_о_плаў**   
 
-
 **п_о_рткі**   
 Не знайшоў фоткі, і што наконт "нагавіцаў"?
 
 **п_о_ўдзень**   
 
-
 **п_о_ўнач**   
-
 
 **п_о_ўня**   
 <img src="./data/fullmoon1.jpg" width="200" height="200" alt="fullmoon1" /> <img src="./data/fullmoon2.jpg" width="200" height="200" alt="fullmoon2" /> <img src="./data/fullmoon3.jpg" width="200" height="200" alt="fullmoon3" /> 
@@ -764,7 +761,6 @@ todo
 
 **с_е_нцы**   
 
-
 **ск_а_лкі**   
 Не знайшоў фоткі
 
@@ -830,7 +826,6 @@ todo
 
 **стр_э_мка**   
 
-
 **ст_у_дня**   
 калодзеж?
 
@@ -854,7 +849,6 @@ todo
 
 **сут_о_ка**   
 
-
 **сх_о_ды**   
 Не знайшоў фоткі
 
@@ -862,7 +856,6 @@ todo
 Не знайшоў фоткі
 
 **сьв_е_дка**   
-
 
 **сьв_е_рдзел**   
 <img src="./data/drill1.jpg" width="200" height="200" alt="drill1" /> <img src="./data/drill2.jpg" width="200" height="200" alt="drill2" /> <img src="./data/drill3.jpg" width="200" height="200" alt="drill3" /> 
@@ -880,7 +873,6 @@ todo
 <img src="./data/heart1.jpg" width="200" height="200" alt="heart1" /> <img src="./data/heart2.jpg" width="200" height="200" alt="heart2" /> <img src="./data/heart3.jpg" width="200" height="200" alt="heart3" /> 
 
 **с_я_бар**   
-
 
 **сяк_е_ра**   
 <img src="./data/axe1.jpg" width="200" height="200" alt="axe1" /> <img src="./data/axe2.jpg" width="200" height="200" alt="axe2" /> <img src="./data/axe3.jpg" width="200" height="200" alt="axe3" /> 
@@ -904,7 +896,6 @@ todo
 Канфлікт з "чаротам"?
 
 **усх_о_д**   
-
 
 **фа_е_рка**   
 <img src="./data/stove-burner1.jpg" width="200" height="200" alt="stove-burner1" /> <img src="./data/stove-burner2.jpg" width="200" height="200" alt="stove-burner2" /> <img src="./data/stove-burner3.jpg" width="200" height="200" alt="stove-burner3" /> 
@@ -1015,7 +1006,6 @@ todo
 <img src="./data/socks1.jpg" width="200" height="200" alt="socks1" /> <img src="./data/socks2.jpg" width="200" height="200" alt="socks2" /> <img src="./data/socks3.jpg" width="200" height="200" alt="socks3" /> 
 
 **шкл_о_**   
-
 
 **шпал_е_ры**   
 <img src="./data/wallpapers1.jpg" width="200" height="200" alt="wallpapers1" /> <img src="./data/wallpapers2.jpg" width="200" height="200" alt="wallpapers2" /> <img src="./data/wallpapers3.jpg" width="200" height="200" alt="wallpapers3" /> 

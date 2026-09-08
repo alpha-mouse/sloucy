@@ -9,8 +9,8 @@
 Каб запусьціць лякальна - `npx expo start -a`. А перад тым напэўна трэба паставіць ды наладзіць тое expo, ды Android Studio, ды можа яшчэ штось.
 
 Каб сабраць _vocabulary.md_
- * `npx tsc .\buildVocabularyMd.ts`
+ * `npx tsc .\scaffolding\buildVocabularyMd.ts --ignoreConfig`
  * у файле _vocabulary.js_ стварыць функцыю `function require(x) { return x }`
- * `node .\buildVocabularyMd.js`
+ * `node .\scaffolding\buildVocabularyMd.js`
 
 Калі хочацца дадаць больш словаў, можна напісаць тут issue, ды пералічыць тыя словы. Ці лепей пералічыць словы, ды скінуць спасылкі на стокі на малюнкі для гэтых словаў. Ці яшчэ лепей зрабіць Pull Request з ужо даданымі словамі. Малюнкі маюць памер 400x400 і jpg-якасцьь 80. Буду ўдзячны за любы ўнёсак!

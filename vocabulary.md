@@ -310,7 +310,7 @@
 **з_ё_лкі**   
 <img src="./data/herbs1.jpg" width="200" height="200" alt="herbs1" /> <img src="./data/herbs2.jpg" width="200" height="200" alt="herbs2" /> <img src="./data/herbs3.jpg" width="200" height="200" alt="herbs3" /> 
 
-**з_о_рка**   
+**з_о_рка** !(налепка)  
 <img src="./data/star1.jpg" width="200" height="200" alt="star1" /> <img src="./data/star2.jpg" width="200" height="200" alt="star2" /> <img src="./data/star3.jpg" width="200" height="200" alt="star3" /> 
 
 **зр_э_нка** !(раёк, вока)  
@@ -574,7 +574,8 @@
 **нажн_і_цы**   
 <img src="./data/scissors1.jpg" width="200" height="200" alt="scissors1" /> <img src="./data/scissors2.jpg" width="200" height="200" alt="scissors2" /> <img src="./data/scissors3.jpg" width="200" height="200" alt="scissors3" /> 
 
-**нал_е_пка**   
+**нал_е_пка** !(падабайка, зорка)  
+<img src="./data/sticker1.jpg" width="200" height="200" alt="sticker1" /> <img src="./data/sticker2.jpg" width="200" height="200" alt="sticker2" /> <img src="./data/sticker3.jpg" width="200" height="200" alt="sticker3" /> 
 
 **нам_ё_т**   
 <img src="./data/tent1.jpg" width="200" height="200" alt="tent1" /> <img src="./data/tent2.jpg" width="200" height="200" alt="tent2" /> <img src="./data/tent3.jpg" width="200" height="200" alt="tent3" /> 
@@ -593,7 +594,7 @@
 
 **няб_о_жчык**   
 
-**падаб_а_йка**   
+**падаб_а_йка** !(налепка)  
 <img src="./data/like1.jpg" width="200" height="200" alt="like1" /> <img src="./data/like2.jpg" width="200" height="200" alt="like2" /> <img src="./data/like3.jpg" width="200" height="200" alt="like3" /> 
 
 **падар_у_нак**   

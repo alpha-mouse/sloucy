@@ -541,7 +541,7 @@ const vocabulary = [
     require('./data/star1.jpg'), // https://www.freepik.com/free-photo/star-made-from-garland-wall_3390908.htm
     require('./data/star2.jpg'), // https://www.freepik.com/premium-photo/close-up-lizard-against-blue-background_112862760.htm
     require('./data/star3.jpg'), // https://www.freepik.com/premium-photo/sun-cosmic-rays-from-sun-solar-flare-explosion-emissions-from-nuclear-fusion-radiation_44658432.htm
-  ]),
+  ], ['налепка']),
   new VocabularyItem('зр`энка', [
     require('./data/eye-pupil1.jpg'), // https://www.freepik.com/free-photo/human-s-deep-eye_8024229.htm
     require('./data/eye-pupil2.jpg'), // https://www.freepik.com/free-photo/closeup-female-human-s-deep-eyes_8024295.htm
@@ -909,7 +909,11 @@ const vocabulary = [
     require('./data/scissors2.jpg'), // https://www.freepik.com/free-photo/front-closed-up-view-silver-hair-scissors-womans-hand-yellow-background-color-body-hair_9159073.htm
     require('./data/scissors3.jpg'), // https://www.freepik.com/free-photo/top-view-orange-scissors-dark-background_13465854.htm
   ]),
-  new VocabularyItem('нал`епка', [], [], ''),
+  new VocabularyItem('нал`епка', [
+    require('./data/sticker1.jpg'), // фота
+    require('./data/sticker2.jpg'), // фота
+    require('./data/sticker3.jpg'), // фота
+  ], ['падабайка', 'зорка']),
   new VocabularyItem('нам`ёт', [
     require('./data/tent1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/tent2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -936,7 +940,7 @@ const vocabulary = [
     require('./data/like1.jpg'), // https://www.freepik.com/free-photo/blue-bubble-like-button-icon-thumbs-up-like-sign-feedback-concept-white-background-3d-rendering_22405791.htm
     require('./data/like2.jpg'), // https://www.freepik.com/premium-photo/middle-age-caucasian-man_37205347.htm
     require('./data/like3.jpg'), // https://www.freepik.com/free-photo/women-holding-thumbs-up-symbol_2861223.htm
-  ]),
+  ], ['налепка']),
   new VocabularyItem('падар`унак', [
     require('./data/gift1.jpg'), // https://www.freepik.com/free-photo/hand-holding-gift_11373156.htm
     require('./data/gift2.jpg'), // https://www.freepik.com/free-photo/happy-woman-opening-gift_17298128.htm

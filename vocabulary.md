@@ -184,7 +184,7 @@
 **г_а_нак**   
 <img src="./data/porch1.jpg" width="200" height="200" alt="porch1" /> <img src="./data/porch2.jpg" width="200" height="200" alt="porch2" /> <img src="./data/porch3.jpg" width="200" height="200" alt="porch3" /> 
 
-**гарб_а_та**   
+**гарб_а_та** !(зёлкі)  
 <img src="./data/tea1.jpg" width="200" height="200" alt="tea1" /> <img src="./data/tea2.jpg" width="200" height="200" alt="tea2" /> <img src="./data/tea3.jpg" width="200" height="200" alt="tea3" /> 
 
 **гарб_у_з**   
@@ -307,7 +307,7 @@
 **з_е_ўра**   
 Не прыдумаў як перадаць
 
-**з_ё_лкі**   
+**з_ё_лкі** !(гарбата)  
 <img src="./data/herbs1.jpg" width="200" height="200" alt="herbs1" /> <img src="./data/herbs2.jpg" width="200" height="200" alt="herbs2" /> <img src="./data/herbs3.jpg" width="200" height="200" alt="herbs3" /> 
 
 **з_о_рка** !(налепка)  

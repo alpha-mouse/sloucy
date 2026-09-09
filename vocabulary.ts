@@ -359,7 +359,7 @@ const vocabulary = [
     require('./data/tea1.jpg'), // https://pixabay.com/photos/cup-tee-porcelain-drink-decor-829527/
     require('./data/tea2.jpg'), // https://pixabay.com/photos/tea-drink-cup-mug-herbal-tea-6680090/
     require('./data/tea3.jpg'), // https://www.freepik.com/premium-photo/herbal-tea-with-medicinal-herbs-flowers-selective-focus_39876898.htm
-  ]),
+  ], ['зёлкі']),
   new VocabularyItem('гарб`уз', [
     require('./data/pumpkin1.jpg'), // Pixabay https://pixabay.com/service/terms/#license
     require('./data/pumpkin2.jpg'), // Pixabay https://pixabay.com/service/terms/#license
@@ -536,7 +536,7 @@ const vocabulary = [
     require('./data/herbs1.jpg'), // https://www.freepik.com/free-photo/top-view-natural-medicinal-spices-herbs_11375837.htm
     require('./data/herbs2.jpg'), // https://www.freepik.com/free-photo/flat-lay-cup-herbal-tea-with-plants_5906727.htm
     require('./data/herbs3.jpg'), // https://www.freepik.com/premium-photo/collection-different-herbs-including-basil-basil-other-herbs_39153767.htm
-  ]),
+  ], ['гарбата']),
   new VocabularyItem('з`орка', [
     require('./data/star1.jpg'), // https://www.freepik.com/free-photo/star-made-from-garland-wall_3390908.htm
     require('./data/star2.jpg'), // https://www.freepik.com/premium-photo/close-up-lizard-against-blue-background_112862760.htm

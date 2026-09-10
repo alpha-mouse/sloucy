@@ -2,7 +2,7 @@
   "expo": {
     "name": "Sloucy",
     "slug": "Sloucy",
-    "version": "1.4.1",
+    "version": "1.4.2",
     "icon": "./assets/icon.png",
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -12,7 +12,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "buildNumber": "6",
+      "buildNumber": "7",
       "bundleIdentifier": "se.alphamou.sloucy",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
@@ -24,7 +24,14 @@
         "backgroundColor": "#FFFFFF"
       },
       "permissions": [],
-      "versionCode": 12,
+      "blockedPermissions": [
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "INTERNET",
+        "VIBRATE",
+        "SYSTEM_ALERT_WINDOW"
+      ],
+      "versionCode": 13,
       "package": "se.alphamou.sloucy"
     },
     "web": {
@@ -48,7 +55,16 @@
         }
       ],
       "expo-status-bar",
-      "expo-font"
+      "expo-font",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "enableMinifyInReleaseBuilds": true,
+            "enableShrinkResourcesInReleaseBuilds": true
+          }
+        }
+      ]
     ]
   }
 }
